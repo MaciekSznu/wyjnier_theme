@@ -1,0 +1,239 @@
+@import './variables';
+@import './mixins';
+
+.single-offer {
+  margin-top: 60px;
+  width: 100%;
+  height: auto;
+
+  &__gallery {
+    width: 100%;
+    height: 50vh;
+    max-height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    &--image {
+      height: 100%;
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+
+      @media (min-width: 768px) {
+        width: 50%;
+      }
+
+      @media (min-width: 1024px) {
+        width: 33.33%;
+      }
+
+    }
+
+    &--image:nth-child(1) {
+      background-image: url('./images/gallery/livingroom_1000_600.jpg');
+    }
+
+    &--image:nth-child(2) {
+      background-image: url('./images/gallery/bedroom_1092_600.jpg');
+    }
+
+    &--image:nth-child(3) {
+      background-image: url('./images/gallery/kitchen_1067_600.jpg');
+    }
+
+    &--image:nth-child(4) {
+      background-image: url('./images/gallery/bathroom_900_600.jpg');
+    }
+  }
+  
+  &__summary {
+    position: sticky;
+    opacity: 1;
+    top: $mobile-top-bar-height;
+    width: 100%;
+    height: 20vh;
+    margin-top: 1rem;
+    background-color: $summary-bg-color;
+    font-family: $text-font-family;
+    color: $summary-font-color;
+    font-size: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &-price, &-localization, &-data {
+      display: flex;
+
+      p {
+        margin: .5rem 0 .5rem 1rem,
+      }
+    }
+
+    &-data--area, &-data--rooms {
+      border-right: 1px solid $summary-font-color;
+      padding-right: 1rem;
+    }
+  }
+
+  &__description {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: $description-bg-color;
+
+    &--title {
+      margin: .8rem 0;
+      font-size: $single-offer-title-font-size;
+      font-weight: 500;
+      line-height: 125%;
+      font-family:$text-font-family;
+      color: $single-offer-title-font-color;
+    }
+
+    &--localization, &--property, &--info, &--list {
+      .title, .description, .list {
+        margin: .8rem 0;
+        font-family: $text-font-family;
+      }
+
+      .title {
+        font-size: $single-offer-subtitle-font-size;
+        font-weight: 500;
+        color: $single-offer-subtitle-font-color;
+      }
+
+      .description, .list {
+        font-size: $single-offer-text-font-size;
+        font-weight: 400;
+        color: $single-offer-text-font-color;
+      }
+
+      .list {
+        padding: 0 0 0 1.25rem;
+
+        .list-item {
+          padding-bottom: .4rem;
+        }
+      }
+    }
+  }
+
+  &__contact {
+    background-color: $description-bg-color;
+    @include flex-center-center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    &--photo, &--description, &--phone, &--email {
+      margin-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    &--photo {
+      background-image: url('./images/gallery/face_01_533_533.jpg');
+      background-position: center;
+      background-size: cover;
+      width: 20vw;
+      height: 20vw;
+      max-width: 100px;
+      max-height: 100px;
+      border: none;
+      border-radius: 50%;
+    }
+
+    &--description {
+      width: 200;
+      max-width: 200px;
+      font-family: $text-font-family;
+      font-size: $single-offer-subtitle-font-size;
+      font-weight: 500;
+      color: $single-offer-subtitle-font-color;
+    }
+
+    &--phone, &--email {
+
+      .contact-link {
+        font-size: 1rem;
+        text-decoration: none;
+        color: $single-offer-subtitle-font-color;
+        font-family: $text-font-family;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        transition: color 1s ease;
+
+        .contact-icon {
+          height: 1.25rem;
+          width: auto;
+          margin-right: .5rem;
+        }
+      }
+
+      &:hover .contact-link {
+        color: $base-gold-color;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__gallery {
+      width: 100%;
+      height: 40vh;
+      max-height: 500px;
+    }
+    &__summary {
+      padding: 1rem;
+    }
+
+    &__description {
+      padding: 2rem;
+    }
+
+    &__contact {
+      justify-content: center;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: $desktop-top-bar-height;
+
+    &__summary {
+      padding: 1rem calc((100vw - 1280px) / 2);
+      height: $desktop-top-bar-height;
+      top: 89px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      &-data--year {
+        padding-right: 1rem;
+      }
+
+      &-price p:first-of-type  {
+        margin: .5rem 0;
+      }
+    }
+
+    &__description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &--list, &--title {
+        width: 100%;
+      }
+
+    }
+    &__description > h2, &__description > div {
+      max-width: 1280px;
+    }
+    &__contact {
+      padding: 1rem calc((100vw - 1280px) / 2);
+
+      &--photo {
+        margin-left: 0;
+      }
+    }
+  }
+}

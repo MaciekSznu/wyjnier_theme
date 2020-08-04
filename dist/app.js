@@ -91,9 +91,84 @@
   !*** ./src/app.js ***!
   \********************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-alert('hello');
+"use strict";
+
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var clickPreventDefault = function clickPreventDefault(target, callback) {
+  target.addEventListener('click', function (e) {
+    e.preventDefault();
+    return callback(e);
+  });
+};
+
+var click = function click(target, callback) {
+  target.addEventListener('click', function (e) {
+    return callback(e);
+  });
+};
+
+var hamburgerButton = document.querySelector('.hamburger-menu');
+var mobileMenu = document.querySelector('.menu');
+
+var showMobileMenu = function showMobileMenu() {
+  mobileMenu.classList.toggle('visible');
+};
+
+var hamburgerActive = function hamburgerActive() {
+  hamburgerButton.classList.toggle('hamburger-active');
+};
+
+hamburgerButton.addEventListener('click', function (e) {
+  showMobileMenu();
+  hamburgerActive();
+});
+var mobileMenuItems = document.querySelectorAll('.menu__list-item:not(.to-section) a');
+var mobileMenuItemsScroll = document.querySelectorAll('.menu__list-item.to-section a');
+var documentSections = document.querySelectorAll('*[id^="section"]');
+
+var documentSectionsArray = _toConsumableArray(documentSections);
+
+var scrollToSection = function scrollToSection(i) {
+  documentSectionsArray[i].scrollIntoView({
+    bahavior: 'smooth'
+  });
+};
+
+mobileMenuItemsScroll.forEach(function (item, index) {
+  clickPreventDefault(item, function () {
+    scrollToSection(index);
+    var width = window.innerWidth;
+
+    if (width < 1024) {
+      showMobileMenu();
+      hamburgerActive();
+    }
+  });
+});
+mobileMenuItems.forEach(function (item) {
+  click(item, function () {
+    var width = window.innerWidth;
+
+    if (width < 1024) {
+      showMobileMenu();
+      hamburgerActive();
+    }
+  });
+});
 
 /***/ }),
 
@@ -115,8 +190,8 @@ alert('hello');
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\sass\wp-content\themes\sasstheme\src\app.js */"./src/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\sass\wp-content\themes\sasstheme\src\app.scss */"./src/app.scss");
+__webpack_require__(/*! C:\Wordpress\Xampp\htdocs\bysiek\wordpress\wp-content\themes\wyjnier\src\app.js */"./src/app.js");
+module.exports = __webpack_require__(/*! C:\Wordpress\Xampp\htdocs\bysiek\wordpress\wp-content\themes\wyjnier\src\app.scss */"./src/app.scss");
 
 
 /***/ })

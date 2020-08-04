@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
-Front Page
+<?php get_template_part('includes/hero', 'homepage'); ?>
+
 
 <?php get_footer(); ?>

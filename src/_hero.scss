@@ -1,0 +1,223 @@
+@import "./variables";
+@import "./mixins";
+
+.hero,
+.hero-about,
+.hero-offers,
+.hero-services {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 60px;
+  padding-top: 60px;
+  width: 100%;
+  max-width: 100vw;
+  height: calc(80vw + #{$mobile-top-bar-height});
+  max-height: 600px;
+  background-image: url("../images/heroes/contact_768_432.jpg");
+  background-position: center;
+  background-size: cover;
+
+  &__title {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    padding: 0.8rem 0;
+    margin: 0;
+    background-color: $hero-image-description-bg-color;
+    font-size: 1.25rem;
+    font-family: $text-font-family;
+    font-weight: 500;
+    letter-spacing: .125rem;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 40%;
+      max-width: 400px;
+      height: 2px;
+      bottom: 0.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: url("../images/gallery/page_title_underline.svg");
+      border-radius: 1px;
+    }
+  }
+
+  @media (orientation: landscape) {
+    height: 100vh;
+    max-height: calc(100vh - #{$mobile-top-bar-height} * 2);
+  }
+
+  .hero-image-description-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 3rem;
+    width: 50%;
+    background-color: $hero-image-description-bg-color;
+    font-family: $text-font-family;
+    color: $hero-image-description-font-color;
+    font-size: 0.8rem;
+    font-weight: 400;
+
+    .hero-image-description {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      // flex-wrap: wrap;
+      margin: 0.5rem 1rem;
+
+      &--city,
+      &--price {
+        // width: 100%;
+        margin: 0.25rem 0;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    height: 50vh;
+    max-height: 600px;
+    background-image: url("../images/heroes/contact_1024_576.jpg");
+
+    &__title {
+      bottom: 3rem;
+      font-size: 2rem;
+      padding: 1rem 0;
+
+      &::after {
+        width: 30%;
+        bottom: 0.8rem;
+      }
+    }
+
+    .hero-image-description-wrapper {
+      bottom: 4rem;
+      font-size: 1rem;
+      font-weight: 400;
+
+      .hero-image-description {
+        margin-left: 2rem;
+
+        &--city,
+        &--price {
+          margin: 0.5rem 0;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: 0;
+    padding-top: $desktop-top-bar-height;
+    height: 100vh;
+    max-height: 100vh;
+    background-image: url("../images/heroes/contact_1920_1080.jpg");
+
+    @media (orientation: portrait) {
+      height: 75vh;
+      max-height: 75vh;
+    }
+
+    &__title {
+      font-size: 2.5rem;
+      padding: 1.25rem 0;
+
+      &::after {
+        width: 30%;
+        bottom: 1.05rem;
+      }
+    }
+
+    .hero-image-description-wrapper {
+      bottom: 8rem;
+      font-size: 1.15rem;
+      font-weight: 300;
+
+      .hero-image-description {
+        margin: 1rem 1.5rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+
+    &__title {
+      bottom: 4rem;
+      font-size: 3rem;
+      padding: 1.35rem 0;
+
+      &::after {
+        width: 30%;
+        height: 3px;
+        bottom: 1.15rem;
+      }
+    }
+
+    .hero-image-description-wrapper {
+      bottom: 4rem;
+      font-size: 1.25rem;
+
+      @media (min-height: 960px) {
+        bottom: 8rem;
+      }
+
+      .hero-image-description {
+        margin: 1.25rem 2rem;
+      }
+    }
+  }
+}
+
+.hero-about {
+  background-image: url("../images/heroes/contact_768_432.jpg");
+
+  @media (min-width: 768px) {
+    background-image: url("../images/heroes/contact_1024_576.jpg");
+  }
+
+  @media (min-width: 1024px) {
+    background-image: url("../images/heroes/contact_1920_1080.jpg");
+  }
+}
+
+.hero-offers {
+  background-image: url("../images/heroes/offers_1024_532.jpg");
+  background-position: top;
+
+  .hero__title {
+    position: absolute;
+    width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    background-image: url("../images/heroes/offers_1920_998.jpg");
+    height: calc(100vh - 80px);
+    max-height: calc(100vh - 80px);
+
+    @media (orientation: portrait) {
+      height: 75vh;
+      max-height: 75vh;
+    }
+  }
+}
+
+.hero-services {
+  background-image: url("../images/heroes/krakow_01_768_522_dark.jpg");
+
+  @media (min-width: 768px) {
+    background-image: url("../images/heroes/krakow_01_1024_697_dark.jpg");
+  }
+
+  @media (min-width: 1024px) {
+    background-image: url("../images/heroes/krakow_01_1920_1306_dark.jpg");
+  }
+}
+

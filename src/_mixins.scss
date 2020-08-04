@@ -1,0 +1,86 @@
+@mixin flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin show-offer-anchor {
+  a {
+    width: 50%;
+    height: 36px;
+    max-width: 160px;
+    color: white;
+    background-color: $new-offer-font-color;
+    line-height: 32px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    border: 2px solid rgba($new-offer-font-color, 0.5);
+    border-radius: 18px;
+    transition: background-color 1s ease, color 1s ease;
+
+    &:hover {
+      color: $new-offer-font-color;
+      background-color: white;
+    }
+  }
+}
+
+@mixin select-item {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  width: 100%;
+
+  select {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    padding-left: 0.9rem;
+    outline: 0;
+    border: 1px solid #36446d;
+    border-radius: 0px;
+    background: #ffffff;
+    color: #36446d;
+    appearance: none;
+    text-align: center;
+    text-align-last: center;
+    padding-right: 12px;
+  }
+  select::-ms-expand {
+    display: none;
+  }
+  select:hover,
+  select:focus {
+    color: #36446d;
+    background: #ffffff;
+  }
+  select:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .select-arrow {
+    position: absolute;
+    cursor: pointer;
+    top: 15px;
+    right: 0.9rem;
+    width: 6px;
+    height: 6px;
+    border: solid #36446d;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+  select:hover ~ .select-arrow,
+  select:focus ~ .select-arrow {
+    border-color: #36446d;
+  }
+  select:disabled ~ .select-arrow {
+    border-top-color: #cccccc;
+  }
+}

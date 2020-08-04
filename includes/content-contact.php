@@ -1,0 +1,36 @@
+<section class='contact-page'>
+  <h2 class='contact-page__title'>Kontakt</h2>
+  <div class='contact-page__content-wrapper'>
+    <div class='contact-page__map'>mapa</div>
+    <div class='contact-page__content'>
+      <h3 class='contact-page__content--title'>Wyjątkowe nieruchomości</h3>
+      <p class='contact-page__content--adress'>
+        <img class='contact-icon' src="<?php bloginfo('template_url'); ?>/images/icons/map-marker-alt-black.svg" alt="Wyślij email">
+        ul. Solna 1
+      </p>
+      <p class='contact-page__content--adress'>30-527 Kraków</p>
+      <p class='contact-page__content--phone'>
+        <a class='contact-page__content--phone-link' href='tel:733-003-652'>
+          <img class='contact-icon' src="<?php bloginfo('template_url'); ?>/images/icons/phone-square-about.svg" alt="Zadzwoń do nas">
+          733-003-652
+        </a>
+      </p>
+      <p class='contact-page__content--email'>
+        <a class='contact-page__content--email-link' href='mailto: biuro@wyjatkowenieruchomosci.pl'>
+          <img class='contact-icon' src="<?php bloginfo('template_url'); ?>/images/icons/envelope-square-about.svg" alt="Wyślij email">
+          biuro@wyjatkowenieruchomosci.pl
+        </a>
+      </p>
+      <h4 class='contact-page__content--subtitle'>Napisz do nas</h4>
+      <div class='contact-form-wrapper'>
+        <form class='contact-form'>
+          <input class='contact-form--input-name' type="text" name="imie" aria-required="true" aria-invalid="false" placeholder="Twoje Imię (wymagane)">
+          <input class='contact-form--input-email' type="email" name="email" aria-required="true" aria-invalid="false" placeholder="Twój E-mail (wymagane)">
+          <input class='contact-form--input-phone' type="tel" name="telefon" aria-required="true" aria-invalid="false" placeholder="Twój Telefon (wymagane)">
+          <textarea class='contact-form--input-message' type="text" name="message" aria-invalid="false" placeholder="Twoja wiadomość"></textarea>
+          <input class='contact-form--input-submit' type="submit" value="Wyślij wiadomość">
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
