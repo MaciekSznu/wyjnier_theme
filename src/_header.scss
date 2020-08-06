@@ -61,6 +61,7 @@
           font-size: $mobile-menu-font-size;
           font-family: $mobile-menu-font-family;
           font-weight: $mobile-menu-font-weight;
+          text-transform: uppercase;
         }
       }
     }
@@ -114,7 +115,7 @@
           }
 
           a {
-            letter-spacing: 1px;
+            letter-spacing: $desktop-menu-font-letter-spacing;
             font-family: $desktop-menu-font-family;
             font-size: $desktop-menu-font-size;
             font-weight: $desktop-menu-font-weight;
@@ -132,114 +133,5 @@
 
   @media (min-width: 1280px) {
     padding: 0 calc((100% - 1280px) / 2);
-  }
-}
-
-.header-01, .header-02, .header-03, .header-04, .header-05, .header-06, .header-07, .header-08 {
-  @extend .header;
-}
-
-.header-01 {
-  top: 90px;
-
-  //invilla
-  .menu__list-item a {
-    letter-spacing: 1px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    color: $desktop-menu-font-color;
-  }
-}
-
-.header-02 {
-  top: 180px;
-
-  //zurychsothebys
-  .menu__list-item a {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    color: $desktop-menu-font-color;
-  }
-}
-
-.header-03 {
-  top: 270px;
-  
-  //nestbrokers
-  .menu__list-item a {
-    letter-spacing: 1px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: $desktop-menu-font-color;
-  }
-}
-
-.header-04 {
-  top: 360px;
-
-  .menu__list-item a {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'Lato', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: $desktop-menu-font-color;
-  }
-}
-
-.header-05 {
-  top: 450px;
-
-  .menu__list-item a {
-    text-transform: none;
-    letter-spacing: initial;
-    font-family: 'Spartan', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: $desktop-menu-font-color;
-  }
-}
-
-.header-06 {
-  top: 540px;
-
-  .menu__list-item a {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'Archivo', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: $desktop-menu-font-color;
-  }
-}
-
-.header-07 {
-  top: 630px;
-
-  .menu__list-item a {
-    // text-transform: none;
-    letter-spacing: initial;
-    font-family: 'Work Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    color: $desktop-menu-font-color;
-  }
-}
-
-.header-08 {
-  top: 720px;
-
-  .menu__list-item a {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: $desktop-menu-font-color;
   }
 }

@@ -338,7 +338,7 @@ template {
   display: none;
 }
 
-.header, .header-01, .header-02, .header-03, .header-04, .header-05, .header-06, .header-07, .header-08 {
+.header {
   width: 100%;
   max-width: 100vw;
   height: 60px;
@@ -347,25 +347,25 @@ template {
   top: 0;
   z-index: 10;
 }
-.header .logo, .header-01 .logo, .header-02 .logo, .header-03 .logo, .header-04 .logo, .header-05 .logo, .header-06 .logo, .header-07 .logo, .header-08 .logo {
+.header .logo {
   width: 100%;
   height: 100%;
   max-height: 60px;
   margin: 0;
   background-color: #002349;
 }
-.header .logo a, .header-01 .logo a, .header-02 .logo a, .header-03 .logo a, .header-04 .logo a, .header-05 .logo a, .header-06 .logo a, .header-07 .logo a, .header-08 .logo a {
+.header .logo a {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
 }
-.header .logo a .logo__image, .header-01 .logo a .logo__image, .header-02 .logo a .logo__image, .header-03 .logo a .logo__image, .header-04 .logo a .logo__image, .header-05 .logo a .logo__image, .header-06 .logo a .logo__image, .header-07 .logo a .logo__image, .header-08 .logo a .logo__image {
+.header .logo a .logo__image {
   height: 90%;
   width: auto;
 }
-.header .main-menu, .header-01 .main-menu, .header-02 .main-menu, .header-03 .main-menu, .header-04 .main-menu, .header-05 .main-menu, .header-06 .main-menu, .header-07 .main-menu, .header-08 .main-menu {
+.header .main-menu {
   position: fixed;
   left: 100vw;
   top: 60px;
@@ -378,42 +378,43 @@ template {
   justify-content: center;
   align-items: center;
 }
-.header .main-menu ul, .header-01 .main-menu ul, .header-02 .main-menu ul, .header-03 .main-menu ul, .header-04 .main-menu ul, .header-05 .main-menu ul, .header-06 .main-menu ul, .header-07 .main-menu ul, .header-08 .main-menu ul {
+.header .main-menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
   text-align: center;
 }
-.header .main-menu ul .page_item, .header-01 .main-menu ul .page_item, .header-02 .main-menu ul .page_item, .header-03 .main-menu ul .page_item, .header-04 .main-menu ul .page_item, .header-05 .main-menu ul .page_item, .header-06 .main-menu ul .page_item, .header-07 .main-menu ul .page_item, .header-08 .main-menu ul .page_item {
+.header .main-menu ul .page_item {
   margin-bottom: 1rem;
 }
-.header .main-menu ul .page_item a, .header-01 .main-menu ul .page_item a, .header-02 .main-menu ul .page_item a, .header-03 .main-menu ul .page_item a, .header-04 .main-menu ul .page_item a, .header-05 .main-menu ul .page_item a, .header-06 .main-menu ul .page_item a, .header-07 .main-menu ul .page_item a, .header-08 .main-menu ul .page_item a {
+.header .main-menu ul .page_item a {
   letter-spacing: 3px;
   color: #ffffff;
   text-decoration: none;
   font-size: 1.35rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "Archivo", sans-serif;
   font-weight: 400;
+  text-transform: uppercase;
 }
-.header .main-menu.visible, .header-01 .main-menu.visible, .header-02 .main-menu.visible, .header-03 .main-menu.visible, .header-04 .main-menu.visible, .header-05 .main-menu.visible, .header-06 .main-menu.visible, .header-07 .main-menu.visible, .header-08 .main-menu.visible {
+.header .main-menu.visible {
   transform: translateX(-100vw);
 }
 @media (min-width: 1024px) {
-  .header, .header-01, .header-02, .header-03, .header-04, .header-05, .header-06, .header-07, .header-08 {
+  .header {
     height: 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .header .logo, .header-01 .logo, .header-02 .logo, .header-03 .logo, .header-04 .logo, .header-05 .logo, .header-06 .logo, .header-07 .logo, .header-08 .logo {
+  .header .logo {
     max-height: 80px;
     max-width: 270px;
     margin: 0 2rem;
   }
-  .header .logo a, .header-01 .logo a, .header-02 .logo a, .header-03 .logo a, .header-04 .logo a, .header-05 .logo a, .header-06 .logo a, .header-07 .logo a, .header-08 .logo a {
+  .header .logo a {
     justify-content: flex-start;
   }
-  .header .main-menu, .header-01 .main-menu, .header-02 .main-menu, .header-03 .main-menu, .header-04 .main-menu, .header-05 .main-menu, .header-06 .main-menu, .header-07 .main-menu, .header-08 .main-menu {
+  .header .main-menu {
     position: relative;
     left: initial;
     top: initial;
@@ -421,7 +422,7 @@ template {
     height: 100%;
     justify-content: flex-end;
   }
-  .header .main-menu ul, .header-01 .main-menu ul, .header-02 .main-menu ul, .header-03 .main-menu ul, .header-04 .main-menu ul, .header-05 .main-menu ul, .header-06 .main-menu ul, .header-07 .main-menu ul, .header-08 .main-menu ul {
+  .header .main-menu ul {
     width: 100%;
     max-width: 700px;
     display: flex;
@@ -429,123 +430,30 @@ template {
     flex-wrap: nowrap;
     justify-content: space-evenly;
   }
-  .header .main-menu ul .page_item, .header-01 .main-menu ul .page_item, .header-02 .main-menu ul .page_item, .header-03 .main-menu ul .page_item, .header-04 .main-menu ul .page_item, .header-05 .main-menu ul .page_item, .header-06 .main-menu ul .page_item, .header-07 .main-menu ul .page_item, .header-08 .main-menu ul .page_item {
+  .header .main-menu ul .page_item {
     margin: 0;
     min-width: 100px;
     border-bottom: 2px solid transparent;
     transition: border-color 1s ease;
   }
-  .header .main-menu ul .page_item:hover, .header-01 .main-menu ul .page_item:hover, .header-02 .main-menu ul .page_item:hover, .header-03 .main-menu ul .page_item:hover, .header-04 .main-menu ul .page_item:hover, .header-05 .main-menu ul .page_item:hover, .header-06 .main-menu ul .page_item:hover, .header-07 .main-menu ul .page_item:hover, .header-08 .main-menu ul .page_item:hover {
+  .header .main-menu ul .page_item:hover {
     border-color: #ffffff;
   }
-  .header .main-menu ul .page_item a, .header-01 .main-menu ul .page_item a, .header-02 .main-menu ul .page_item a, .header-03 .main-menu ul .page_item a, .header-04 .main-menu ul .page_item a, .header-05 .main-menu ul .page_item a, .header-06 .main-menu ul .page_item a, .header-07 .main-menu ul .page_item a, .header-08 .main-menu ul .page_item a {
+  .header .main-menu ul .page_item a {
     letter-spacing: 1px;
-    font-family: "Roboto", sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
+    font-family: "Archivo", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
     color: #ffffff;
   }
-  .header .main-menu ul .page_item.current_page_item, .header-01 .main-menu ul .page_item.current_page_item, .header-02 .main-menu ul .page_item.current_page_item, .header-03 .main-menu ul .page_item.current_page_item, .header-04 .main-menu ul .page_item.current_page_item, .header-05 .main-menu ul .page_item.current_page_item, .header-06 .main-menu ul .page_item.current_page_item, .header-07 .main-menu ul .page_item.current_page_item, .header-08 .main-menu ul .page_item.current_page_item {
+  .header .main-menu ul .page_item.current_page_item {
     border-color: #ffffff;
   }
 }
 @media (min-width: 1280px) {
-  .header, .header-01, .header-02, .header-03, .header-04, .header-05, .header-06, .header-07, .header-08 {
+  .header {
     padding: 0 calc((100% - 1280px) / 2);
   }
-}
-
-.header-01 {
-  top: 90px;
-}
-.header-01 .menu__list-item a {
-  letter-spacing: 1px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  color: #ffffff;
-}
-
-.header-02 {
-  top: 180px;
-}
-.header-02 .menu__list-item a {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  color: #ffffff;
-}
-
-.header-03 {
-  top: 270px;
-}
-.header-03 .menu__list-item a {
-  letter-spacing: 1px;
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #ffffff;
-}
-
-.header-04 {
-  top: 360px;
-}
-.header-04 .menu__list-item a {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: "Lato", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #ffffff;
-}
-
-.header-05 {
-  top: 450px;
-}
-.header-05 .menu__list-item a {
-  text-transform: none;
-  letter-spacing: initial;
-  font-family: "Spartan", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #ffffff;
-}
-
-.header-06 {
-  top: 540px;
-}
-.header-06 .menu__list-item a {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: "Archivo", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #ffffff;
-}
-
-.header-07 {
-  top: 630px;
-}
-.header-07 .menu__list-item a {
-  letter-spacing: initial;
-  font-family: "Work Sans", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  color: #ffffff;
-}
-
-.header-08 {
-  top: 720px;
-}
-.header-08 .menu__list-item a {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-family: "Oswald", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #ffffff;
 }
 
 .hero,
