@@ -23,22 +23,13 @@
     </div>
     <div class='contact-footer-menu-wrapper'>
       <p class='footer-menu-title'>menu</p>
-      <nav aria-label='secondary' class='footer-menu'>
-        <ul class="footer-menu__list">
-          <li class="footer-menu__list-item"><a href="<?php echo home_url(); ?>">home</a></li>
-          <li class="footer-menu__list-item">
-            <a href="<?php echo home_url(); ?>/oferty">oferty</a>
-          </li>
-          <li class="footer-menu__list-item">
-            <a href="<?php echo home_url(); ?>/uslugi">usługi</a>
-          </li><li class="footer-menu__list-item">
-            <a href="<?php echo home_url(); ?>/onas">o nas</a>
-          </li>
-          <li class="footer-menu__list-item">
-            <a href="<?php echo home_url(); ?>/kontakt">kontakt</a>
-          </li>
-        </ul>
-      </nav>
+      <?php wp_nav_menu(
+        array(
+          'theme_location' => 'footer-menu',
+          'container' => 'nav',
+          'menu_class' => 'footer-menu',
+        )
+      ); ?>
     </div>
     <div class='contact-footer-form-wrapper'>
       <form class='contact-form'>
