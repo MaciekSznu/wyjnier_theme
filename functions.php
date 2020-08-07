@@ -28,3 +28,54 @@ register_nav_menus(
     'footer-menu' => 'Footer Menu Location'
   )
 );
+
+/* CUSTOM POST TYPES */
+function offer_post_type() {
+  $args = array(
+    'labels' => array(
+      'name' => 'Oferty',
+      'singular_name' => 'Oferta',
+    ),
+    // icon form wordpress dashicons
+    'menu_icon' => 'dashicons-plus-alt',
+    // hierarchical true - post works as a page, false - post works as a blogpost
+    'hierarchical' => true,
+    'public' => true,
+    'has_archive' => true,
+    'supports' => array('title', 'editor', 'custom-fields'),
+    // 'rewrite' => array('slug' => 'cars'),
+  );
+
+  register_post_type('oferty', $args);
+}
+add_action('init', 'offer_post_type');
+
+function offer_property_taxonomy(){
+  $args = array(
+    'labels' => array(
+      'name' => 'Rodzaje',
+      'singular_name' => 'Rodzaj',
+    ),
+    'public' => true,
+    // hierarchical true - works as a category, false - works as a tag
+    'hierarchical' => false,
+  );
+
+  register_taxonomy('rodzaje', array('oferty'), $args);
+}
+add_action( 'init', 'offer_property_taxonomy');
+
+function offer_transactions_taxonomy(){
+  $args = array(
+    'labels' => array(
+      'name' => 'Transakcje',
+      'singular_name' => 'Transakcja',
+    ),
+    'public' => true,
+    // hierarchical true - works as a category, false - works as a tag
+    'hierarchical' => false,
+  );
+
+  register_taxonomy('transakcje', array('oferty'), $args);
+}
+add_action( 'init', 'offer_transactions_taxonomy');
