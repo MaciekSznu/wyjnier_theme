@@ -13,14 +13,10 @@ function scripts(){
 }
 add_action('wp_enqueue_scripts', 'scripts');
 
-// MENU
-// function wyjnier_register_theme_menu() {
-//   register_nav_menu( 'primary', 'Main Navigation Menu' );
-// }
-// add_action( 'init', 'wyjnier_register_theme_menu' );
-add_theme_support('menus');
 
 /* MENUS */
+
+add_theme_support('menus');
 
 register_nav_menus(
   array(
@@ -78,3 +74,63 @@ function offer_transactions_taxonomy(){
   register_taxonomy('transakcje', array('oferty'), $args);
 }
 add_action( 'init', 'offer_transactions_taxonomy');
+
+// CUSTOM SEARCH
+
+function search_query(){
+
+  // paginacja
+  $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+
+    // 'posts_per_page' => 0 - zero oznacza unlimited
+  // 'relation' => 'AND' - wyszukiwanie musi spełniać wszystkie warunki jednocześnie
+  $args = [
+    'paged' => $paged,
+    'post_type' => 'oferty',
+    'posts_per_page' => 3,
+    'tax_query' => [],
+    'meta_query' => [
+      'relation' => 'AND',
+    ],
+  ];
+
+  // dodajemy keyword do wyszukiwania jesli jest podane i nie jest pustym stringiem
+
+  //dodajemy rodzaj do wyszukiwania w
+  if( isset($_GET['rodzaj']) )
+  {
+    if(!empty($_GET['rodzaj']))
+    {
+      $args['tax_query'][] = [
+        'taxonomy' => 'rodzaje',
+        'field' => 'slug',
+        'terms' => array( sanitize_text_field($_GET['rodzaj']) ),
+      ];
+    }
+  }
+
+  if( isset($_GET['transakcja']) )
+  {
+    if(!empty($_GET['transakcja']))
+    {
+      $args['tax_query'][] = [
+        'taxonomy' => 'transakcje',
+        'field' => 'slug',
+        'terms' => array( sanitize_text_field($_GET['transakcja']) ),
+      ];
+    }
+  }
+  return new WP_Query($args);
+}
+
+function new_offers_query(){
+
+    // 'posts_per_page' => 0 - zero oznacza unlimited
+  // 'relation' => 'AND' - wyszukiwanie musi spełniać wszystkie warunki jednocześnie
+  $args = [
+    'post_type' => 'oferty',
+    'posts_count' => 3,
+    'tax_query' => [],
+  ];
+  return new WP_Query($args);
+}

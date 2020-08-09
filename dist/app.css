@@ -365,7 +365,7 @@ template {
   height: 90%;
   width: auto;
 }
-.header .main-menu {
+.header .menu-main-menu-container {
   position: fixed;
   left: 100vw;
   top: 60px;
@@ -378,16 +378,16 @@ template {
   justify-content: center;
   align-items: center;
 }
-.header .main-menu ul {
+.header .menu-main-menu-container .main-menu {
   list-style: none;
   margin: 0;
   padding: 0;
   text-align: center;
 }
-.header .main-menu ul .page_item {
+.header .menu-main-menu-container .main-menu .menu-item {
   margin-bottom: 1rem;
 }
-.header .main-menu ul .page_item a {
+.header .menu-main-menu-container .main-menu .menu-item a {
   letter-spacing: 3px;
   color: #ffffff;
   text-decoration: none;
@@ -396,7 +396,7 @@ template {
   font-weight: 400;
   text-transform: uppercase;
 }
-.header .main-menu.visible {
+.header .menu-main-menu-container.visible {
   transform: translateX(-100vw);
 }
 @media (min-width: 1024px) {
@@ -414,7 +414,7 @@ template {
   .header .logo a {
     justify-content: flex-start;
   }
-  .header .main-menu {
+  .header .menu-main-menu-container {
     position: relative;
     left: initial;
     top: initial;
@@ -422,7 +422,7 @@ template {
     height: 100%;
     justify-content: flex-end;
   }
-  .header .main-menu ul {
+  .header .menu-main-menu-container .main-menu {
     width: 100%;
     max-width: 700px;
     display: flex;
@@ -430,23 +430,23 @@ template {
     flex-wrap: nowrap;
     justify-content: space-evenly;
   }
-  .header .main-menu ul .page_item {
+  .header .menu-main-menu-container .main-menu .menu-item {
     margin: 0;
     min-width: 100px;
     border-bottom: 2px solid transparent;
     transition: border-color 1s ease;
   }
-  .header .main-menu ul .page_item:hover {
+  .header .menu-main-menu-container .main-menu .menu-item:hover {
     border-color: #ffffff;
   }
-  .header .main-menu ul .page_item a {
+  .header .menu-main-menu-container .main-menu .menu-item a {
     letter-spacing: 1px;
     font-family: "Archivo", sans-serif;
     font-size: 14px;
     font-weight: 400;
     color: #ffffff;
   }
-  .header .main-menu ul .page_item.current_page_item {
+  .header .menu-main-menu-container .main-menu .menu-item.current-menu-item {
     border-color: #ffffff;
   }
 }
@@ -1293,6 +1293,179 @@ template {
   }
 }
 
+.new-offers {
+  width: 100%;
+  height: auto;
+  margin-top: 2rem;
+}
+.new-offers__title {
+  margin: 0;
+  font-size: 1.7rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #002349;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .new-offers__title {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .new-offers__title {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+}
+.new-offers__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.new-offers__wrapper .new-offers__single-offer {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  margin-bottom: 2rem;
+}
+.new-offers__wrapper .new-offers__single-offer--image {
+  width: 100%;
+  height: 80vw;
+  max-height: 440px;
+  background-image: url("../images/heroes/hero_01_1024_768.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.new-offers__wrapper .new-offers__single-offer--description {
+  color: #002349;
+  font-family: "Roboto", sans-serif;
+}
+.new-offers__wrapper .new-offers__single-offer--description .main-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  border-bottom: 1px solid rgba(0, 35, 73, 0.5);
+}
+.new-offers__wrapper .new-offers__single-offer--description .main-description--city, .new-offers__wrapper .new-offers__single-offer--description .main-description--price {
+  margin: 0.75rem 0;
+}
+.new-offers__wrapper .new-offers__single-offer--description .main-description--city {
+  text-transform: uppercase;
+}
+.new-offers__wrapper .new-offers__single-offer--description .additional-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 0.5rem;
+  border-bottom: 1px solid rgba(0, 35, 73, 0.5);
+}
+.new-offers__wrapper .new-offers__single-offer--description .additional-description--type {
+  min-width: 25%;
+  text-transform: uppercase;
+}
+.new-offers__wrapper .new-offers__single-offer--description .additional-description--rooms, .new-offers__wrapper .new-offers__single-offer--description .additional-description--bathrooms, .new-offers__wrapper .new-offers__single-offer--description .additional-description--area, .new-offers__wrapper .new-offers__single-offer--description .additional-description--ground-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+.new-offers__wrapper .new-offers__single-offer--description .additional-description--rooms .description-icon, .new-offers__wrapper .new-offers__single-offer--description .additional-description--bathrooms .description-icon, .new-offers__wrapper .new-offers__single-offer--description .additional-description--area .description-icon, .new-offers__wrapper .new-offers__single-offer--description .additional-description--ground-area .description-icon {
+  height: 20px;
+  width: 20px;
+  margin: 0.25rem;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+.new-offers__wrapper .new-offers__single-offer--description .additional-description--rooms .description-value, .new-offers__wrapper .new-offers__single-offer--description .additional-description--bathrooms .description-value, .new-offers__wrapper .new-offers__single-offer--description .additional-description--area .description-value, .new-offers__wrapper .new-offers__single-offer--description .additional-description--ground-area .description-value {
+  font-size: 0.7rem;
+  z-index: -1;
+}
+.new-offers__wrapper .new-offers__single-offer--description .additional-description--rooms .description-icon {
+  background-image: url("../images/icons/door-open.svg");
+}
+.new-offers__wrapper .new-offers__single-offer--description .additional-description--bathrooms .description-icon {
+  background-image: url("../images/icons/bath.svg");
+}
+.new-offers__wrapper .new-offers__single-offer--description .additional-description--area .description-icon {
+  background-image: url("../images/icons/clone.svg");
+}
+.new-offers__wrapper .new-offers__single-offer--description .additional-description--ground-area .description-icon {
+  background-image: url("../images/icons/square.svg");
+}
+.new-offers__wrapper .new-offers__single-offer--description .show-offer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  border-bottom: 1px solid rgba(0, 35, 73, 0.5);
+}
+.new-offers__wrapper .new-offers__single-offer--description .show-offer a {
+  width: 50%;
+  height: 36px;
+  max-width: 160px;
+  color: white;
+  background-color: #002349;
+  line-height: 32px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  border: 2px solid rgba(0, 35, 73, 0.5);
+  border-radius: 18px;
+  transition: background-color 1s ease, color 1s ease;
+}
+.new-offers__wrapper .new-offers__single-offer--description .show-offer a:hover {
+  color: #002349;
+  background-color: white;
+}
+@media (min-width: 768px) {
+  .new-offers__wrapper .new-offers__single-offer {
+    width: 50%;
+  }
+  .new-offers__wrapper .new-offers__single-offer--image {
+    height: 35vw;
+  }
+}
+@media (min-width: 1024px) {
+  .new-offers__wrapper .new-offers__single-offer {
+    width: 30%;
+    min-width: 333px;
+  }
+  .new-offers__wrapper .new-offers__single-offer--image {
+    height: 25vw;
+  }
+}
+@media (min-width: 1280px) {
+  .new-offers__wrapper .new-offers__single-offer {
+    width: 30%;
+  }
+  .new-offers__wrapper .new-offers__single-offer--image {
+    height: 20vw;
+  }
+}
+@media (min-width: 1024px) {
+  .new-offers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .new-offers__wrapper {
+    max-width: 1280px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
 .investments {
   width: 100%;
   height: auto;
@@ -1328,7 +1501,7 @@ template {
   width: 100%;
   height: 80vw;
   max-height: 440px;
-  background-image: url("./images/heroes/hero_01_1024_768.jpg");
+  background-image: url("../images/heroes/hero_01_1024_768.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -1364,36 +1537,33 @@ template {
   font-weight: 400;
   margin: 1rem 0 0.5rem;
 }
-.investments__wrapper .investments__single-offer--description .additional-description--rooms, .investments__wrapper .investments__single-offer--description .additional-description--bedrooms, .investments__wrapper .investments__single-offer--description .additional-description--bathrooms, .investments__wrapper .investments__single-offer--description .additional-description--area, .investments__wrapper .investments__single-offer--description .additional-description--price {
+.investments__wrapper .investments__single-offer--description .additional-description--rooms, .investments__wrapper .investments__single-offer--description .additional-description--bathrooms, .investments__wrapper .investments__single-offer--description .additional-description--area, .investments__wrapper .investments__single-offer--description .additional-description--price {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem;
 }
-.investments__wrapper .investments__single-offer--description .additional-description--rooms .description-icon, .investments__wrapper .investments__single-offer--description .additional-description--bedrooms .description-icon, .investments__wrapper .investments__single-offer--description .additional-description--bathrooms .description-icon, .investments__wrapper .investments__single-offer--description .additional-description--area .description-icon, .investments__wrapper .investments__single-offer--description .additional-description--price .description-icon {
+.investments__wrapper .investments__single-offer--description .additional-description--rooms .description-icon, .investments__wrapper .investments__single-offer--description .additional-description--bathrooms .description-icon, .investments__wrapper .investments__single-offer--description .additional-description--area .description-icon, .investments__wrapper .investments__single-offer--description .additional-description--price .description-icon {
   height: 20px;
   width: 20px;
   margin: 0.25rem;
   background-repeat: no-repeat;
 }
-.investments__wrapper .investments__single-offer--description .additional-description--rooms .description-value, .investments__wrapper .investments__single-offer--description .additional-description--bedrooms .description-value, .investments__wrapper .investments__single-offer--description .additional-description--bathrooms .description-value, .investments__wrapper .investments__single-offer--description .additional-description--area .description-value, .investments__wrapper .investments__single-offer--description .additional-description--price .description-value {
+.investments__wrapper .investments__single-offer--description .additional-description--rooms .description-value, .investments__wrapper .investments__single-offer--description .additional-description--bathrooms .description-value, .investments__wrapper .investments__single-offer--description .additional-description--area .description-value, .investments__wrapper .investments__single-offer--description .additional-description--price .description-value {
   font-size: 0.7rem;
 }
 .investments__wrapper .investments__single-offer--description .additional-description--rooms .description-icon {
-  background-image: url("./images/icons/door-open.svg");
-}
-.investments__wrapper .investments__single-offer--description .additional-description--bedrooms .description-icon {
-  background-image: url("./images/icons/bed.svg");
+  background-image: url("../images/icons/door-open.svg");
 }
 .investments__wrapper .investments__single-offer--description .additional-description--bathrooms .description-icon {
-  background-image: url("./images/icons/bath.svg");
+  background-image: url("../images/icons/bath.svg");
 }
 .investments__wrapper .investments__single-offer--description .additional-description--area .description-icon {
-  background-image: url("./images/icons/home.svg");
+  background-image: url("../images/icons/clone.svg");
 }
 .investments__wrapper .investments__single-offer--description .additional-description--price .description-icon {
-  background-image: url("./images/icons/money-bill-wave.svg");
+  background-image: url("../images/icons/money-bill-wave.svg");
 }
 .investments__wrapper .investments__single-offer--description .long-description {
   display: none;
@@ -1453,6 +1623,7 @@ template {
   .investments__wrapper .investments__single-offer--image {
     width: 50%;
     height: auto;
+    min-height: 400px;
   }
   .investments__wrapper .investments__single-offer--description {
     width: 50%;
@@ -1466,11 +1637,11 @@ template {
     padding: 0 3rem;
     border-bottom: none;
   }
-  .investments__wrapper .investments__single-offer--description .additional-description--rooms .description-icon, .investments__wrapper .investments__single-offer--description .additional-description--bedrooms .description-icon, .investments__wrapper .investments__single-offer--description .additional-description--bathrooms .description-icon, .investments__wrapper .investments__single-offer--description .additional-description--area .description-icon, .investments__wrapper .investments__single-offer--description .additional-description--price .description-icon {
+  .investments__wrapper .investments__single-offer--description .additional-description--rooms .description-icon, .investments__wrapper .investments__single-offer--description .additional-description--bathrooms .description-icon, .investments__wrapper .investments__single-offer--description .additional-description--area .description-icon, .investments__wrapper .investments__single-offer--description .additional-description--price .description-icon {
     height: 25px;
     width: 25px;
   }
-  .investments__wrapper .investments__single-offer--description .additional-description--rooms .description-value, .investments__wrapper .investments__single-offer--description .additional-description--bedrooms .description-value, .investments__wrapper .investments__single-offer--description .additional-description--bathrooms .description-value, .investments__wrapper .investments__single-offer--description .additional-description--area .description-value, .investments__wrapper .investments__single-offer--description .additional-description--price .description-value {
+  .investments__wrapper .investments__single-offer--description .additional-description--rooms .description-value, .investments__wrapper .investments__single-offer--description .additional-description--bathrooms .description-value, .investments__wrapper .investments__single-offer--description .additional-description--area .description-value, .investments__wrapper .investments__single-offer--description .additional-description--price .description-value {
     font-size: 0.8rem;
   }
   .investments__wrapper .investments__single-offer--description .long-description {
@@ -1484,6 +1655,7 @@ template {
   .investments__wrapper .investments__single-offer--description .long-description--text {
     margin: 0.5rem 0;
     font-size: 0.9rem;
+    line-height: 1.25;
   }
   .investments__wrapper .investments__single-offer--description .show-offer {
     height: 15%;
@@ -1504,6 +1676,9 @@ template {
   }
   .investments__wrapper .investments__single-offer--description {
     width: 60%;
+  }
+  .investments__wrapper .investments__single-offer--description .long-description--text {
+    line-height: 1.45;
   }
 }
 @media (min-width: 768px) {

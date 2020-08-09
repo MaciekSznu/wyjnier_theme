@@ -42,7 +42,7 @@
         width: 100%;
         height: 80vw;
         max-height: 440px;
-        background-image: url("./images/heroes/hero_01_1024_768.jpg");
+        background-image: url("../images/heroes/hero_01_1024_768.jpg");
         background-position: center;
         background-size: cover;
       }
@@ -82,7 +82,6 @@
           }
 
           &--rooms,
-          &--bedrooms,
           &--bathrooms,
           &--area,
           &--ground-area {
@@ -108,31 +107,25 @@
 
           &--rooms {
             .description-icon {
-              background-image: url("./images/icons/door-open.svg");
-            }
-          }
-
-          &--bedrooms {
-            .description-icon {
-              background-image: url("./images/icons/bed.svg");
+              background-image: url("../images/icons/door-open.svg");
             }
           }
 
           &--bathrooms {
             .description-icon {
-              background-image: url("./images/icons/bath.svg");
+              background-image: url("../images/icons/bath.svg");
             }
           }
 
           &--area {
             .description-icon {
-              background-image: url("./images/icons/home.svg");
+              background-image: url("../images/icons/clone.svg");
             }
           }
 
           &--ground-area {
             .description-icon {
-              background-image: url("./images/icons/square.svg");
+              background-image: url("../images/icons/square.svg");
             }
           }
         }
