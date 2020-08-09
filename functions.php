@@ -43,7 +43,6 @@ function offer_post_type() {
     'public' => true,
     'has_archive' => true,
     'supports' => array('title', 'editor', 'custom-fields'),
-    // 'rewrite' => array('slug' => 'cars'),
   );
 
   register_post_type('oferty', $args);

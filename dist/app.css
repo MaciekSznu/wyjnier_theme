@@ -1530,6 +1530,210 @@ template {
   }
 }
 
+.single-offer {
+  margin-top: 60px;
+  width: 100%;
+  height: auto;
+}
+.single-offer__gallery {
+  width: 100%;
+  height: 50vh;
+  max-height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.single-offer__gallery--image {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .single-offer__gallery--image {
+    width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .single-offer__gallery--image {
+    width: 33.33%;
+  }
+}
+.single-offer__gallery--image:nth-child(1) {
+  background-image: url("./images/gallery/livingroom_1000_600.jpg");
+}
+.single-offer__gallery--image:nth-child(2) {
+  background-image: url("./images/gallery/bedroom_1092_600.jpg");
+}
+.single-offer__gallery--image:nth-child(3) {
+  background-image: url("./images/gallery/kitchen_1067_600.jpg");
+}
+.single-offer__gallery--image:nth-child(4) {
+  background-image: url("./images/gallery/bathroom_900_600.jpg");
+}
+.single-offer__summary {
+  position: -webkit-sticky;
+  position: sticky;
+  opacity: 1;
+  top: 60px;
+  width: 100%;
+  height: 20vh;
+  margin-top: 1rem;
+  background-color: #dbe3fd;
+  font-family: "Roboto", sans-serif;
+  color: #0a1612;
+  font-size: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.single-offer__summary-price, .single-offer__summary-localization, .single-offer__summary-data {
+  display: flex;
+}
+.single-offer__summary-price p, .single-offer__summary-localization p, .single-offer__summary-data p {
+  margin: 0.5rem 0 0.5rem 1rem;
+}
+.single-offer__summary-data--area, .single-offer__summary-data--rooms {
+  border-right: 1px solid #0a1612;
+  padding-right: 1rem;
+}
+.single-offer__description {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #f1f4fe;
+}
+.single-offer__description--title {
+  margin: 0.8rem 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 125%;
+  font-family: "Roboto", sans-serif;
+  color: #0a1612;
+}
+.single-offer__description--localization .title, .single-offer__description--localization .description, .single-offer__description--localization .list, .single-offer__description--property .title, .single-offer__description--property .description, .single-offer__description--property .list, .single-offer__description--info .title, .single-offer__description--info .description, .single-offer__description--info .list, .single-offer__description--list .title, .single-offer__description--list .description, .single-offer__description--list .list {
+  margin: 0.8rem 0;
+  font-family: "Roboto", sans-serif;
+}
+.single-offer__description--localization .title, .single-offer__description--property .title, .single-offer__description--info .title, .single-offer__description--list .title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1a2930;
+}
+.single-offer__description--localization .description, .single-offer__description--localization .list, .single-offer__description--property .description, .single-offer__description--property .list, .single-offer__description--info .description, .single-offer__description--info .list, .single-offer__description--list .description, .single-offer__description--list .list {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1d2731;
+}
+.single-offer__description--localization .list, .single-offer__description--property .list, .single-offer__description--info .list, .single-offer__description--list .list {
+  padding: 0 0 0 1.25rem;
+}
+.single-offer__description--localization .list .list-item, .single-offer__description--property .list .list-item, .single-offer__description--info .list .list-item, .single-offer__description--list .list .list-item {
+  padding-bottom: 0.4rem;
+}
+.single-offer__contact {
+  background-color: #f1f4fe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.single-offer__contact--photo, .single-offer__contact--description, .single-offer__contact--phone, .single-offer__contact--email {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+.single-offer__contact--photo {
+  background-image: url("./images/gallery/face_01_533_533.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 20vw;
+  height: 20vw;
+  max-width: 100px;
+  max-height: 100px;
+  border: none;
+  border-radius: 50%;
+}
+.single-offer__contact--description {
+  width: 200;
+  max-width: 200px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1a2930;
+}
+.single-offer__contact--phone .contact-link, .single-offer__contact--email .contact-link {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #1a2930;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: color 1s ease;
+}
+.single-offer__contact--phone .contact-link .contact-icon, .single-offer__contact--email .contact-link .contact-icon {
+  height: 1.25rem;
+  width: auto;
+  margin-right: 0.5rem;
+}
+.single-offer__contact--phone:hover .contact-link, .single-offer__contact--email:hover .contact-link {
+  color: #CD9B32;
+}
+@media (min-width: 768px) {
+  .single-offer__gallery {
+    width: 100%;
+    height: 40vh;
+    max-height: 500px;
+  }
+  .single-offer__summary {
+    padding: 1rem;
+  }
+  .single-offer__description {
+    padding: 2rem;
+  }
+  .single-offer__contact {
+    justify-content: center;
+  }
+}
+@media (min-width: 1024px) {
+  .single-offer {
+    margin-top: 90px;
+  }
+  .single-offer__summary {
+    padding: 1rem calc((100vw - 1280px) / 2);
+    height: 90px;
+    top: 89px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .single-offer__summary-data--year {
+    padding-right: 1rem;
+  }
+  .single-offer__summary-price p:first-of-type {
+    margin: 0.5rem 0;
+  }
+  .single-offer__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .single-offer__description--list, .single-offer__description--title {
+    width: 100%;
+  }
+  .single-offer__description > h2, .single-offer__description > div {
+    width: 100%;
+    max-width: 1280px;
+  }
+  .single-offer__contact {
+    padding: 1rem calc((100vw - 1280px) / 2);
+  }
+  .single-offer__contact--photo {
+    margin-left: 0;
+  }
+}
+
 .contact-page {
   width: 100%;
   height: auto;
