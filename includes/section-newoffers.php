@@ -6,6 +6,7 @@
   <h2 class='new-offers__title'>Najnowsze oferty</h2>
   <div class='new-offers__wrapper'>
   <?php while( $query->have_posts() ) : $query->the_post();?>
+      <?php $image = get_field('zdjecie_glowne');?>
       <?php $summary = get_field('podsumowanie');?>
       <?php $description = get_field('opis');?>
       <?php $localization = $description['lokalizacja'];?>
@@ -20,7 +21,7 @@
         $items = explode( '|' , $custom_list );
       ?>
     <div class='new-offers__single-offer'>
-      <div class='new-offers__single-offer--image'></div>
+      <div class='new-offers__single-offer--image'><?php echo wp_get_attachment_image( $image, 'offer-large' );?></div>
       <div class='new-offers__single-offer--description'>
         <div class='main-description'>
           <p class='main-description--city'><?php echo $summary['miasto'];?></p>

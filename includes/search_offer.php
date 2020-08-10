@@ -65,6 +65,7 @@ $transactions = get_terms([
   <div class='investments__wrapper'>
   <?php if( $query->have_posts() ) :?>
     <?php while( $query->have_posts() ) : $query->the_post();?>
+      <?php $image = get_field('zdjecie_glowne');?>
       <?php $summary = get_field('podsumowanie');?>
       <?php $description = get_field('opis');?>
       <?php $localization = $description['lokalizacja'];?>
@@ -79,7 +80,7 @@ $transactions = get_terms([
         $items = explode( '|' , $custom_list );
       ?>
     <div class='investments__single-offer'>
-      <div class='investments__single-offer--image'></div>
+      <div class='investments__single-offer--image'><?php echo wp_get_attachment_image( $image, 'offer-large' );?></div>
       <div class='investments__single-offer--description'>
         <div class='main-description'>
           <p class='main-description--city'><?php echo $summary['miasto'];?></p>

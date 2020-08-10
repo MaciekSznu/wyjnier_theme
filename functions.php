@@ -171,4 +171,4 @@ add_action('nav_menu_css_class', 'add_current_nav_class', 10, 2 );
 /* CUSTOM IMAGES SIZES */
 add_image_size('offer-small', 768, 522, false);
 add_image_size('offer-medium', 1024, 576, false);
-add_image_size('offer-large', 1920, 1080, false);
+add_image_size('offer-large', 1920, false);
