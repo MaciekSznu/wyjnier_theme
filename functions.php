@@ -15,7 +15,6 @@ add_action('wp_enqueue_scripts', 'scripts');
 
 
 /* MENUS */
-
 add_theme_support('menus');
 
 register_nav_menus(
@@ -25,16 +24,14 @@ register_nav_menus(
   )
 );
 
-/* CUSTOM POST TYPES */
+/* OFFER POST TYPE */
 function offer_post_type() {
   $args = array(
     'labels' => array(
       'name' => 'Oferty',
       'singular_name' => 'Oferta',
     ),
-    // icon form wordpress dashicons
     'menu_icon' => 'dashicons-plus-alt',
-    // hierarchical true - post works as a page, false - post works as a blogpost
     'hierarchical' => true,
     'public' => true,
     'has_archive' => true,
@@ -52,7 +49,6 @@ function offer_property_taxonomy(){
       'singular_name' => 'Rodzaj',
     ),
     'public' => true,
-    // hierarchical true - works as a category, false - works as a tag
     'hierarchical' => false,
   );
 
@@ -67,7 +63,6 @@ function offer_transactions_taxonomy(){
       'singular_name' => 'Transakcja',
     ),
     'public' => true,
-    // hierarchical true - works as a category, false - works as a tag
     'hierarchical' => false,
   );
 
@@ -75,15 +70,11 @@ function offer_transactions_taxonomy(){
 }
 add_action( 'init', 'offer_transactions_taxonomy');
 
-// CUSTOM SEARCH
-
+/* CUSTOM SEARCH */
 function search_query(){
 
-  // paginacja
   $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
-    // 'posts_per_page' => 0 - zero oznacza unlimited
-  // 'relation' => 'AND' - wyszukiwanie musi spełniać wszystkie warunki jednocześnie
   $args = [
     'paged' => $paged,
     'post_type' => 'oferty',
@@ -94,9 +85,6 @@ function search_query(){
     ],
   ];
 
-  // dodajemy keyword do wyszukiwania jesli jest podane i nie jest pustym stringiem
-
-  //dodajemy rodzaj do wyszukiwania w
   if( isset($_GET['rodzaj']) )
   {
     if(!empty($_GET['rodzaj']))
@@ -123,10 +111,9 @@ function search_query(){
   return new WP_Query($args);
 }
 
-function new_offers_query(){
 
-    // 'posts_per_page' => 0 - zero oznacza unlimited
-  // 'relation' => 'AND' - wyszukiwanie musi spełniać wszystkie warunki jednocześnie
+/* POSTS ON MAIN PAGE */
+function new_offers_query(){
   $args = [
     'post_type' => 'oferty',
     'posts_count' => 3,
@@ -134,3 +121,54 @@ function new_offers_query(){
   ];
   return new WP_Query($args);
 }
+
+/* MENU ITEM ADDING CURRENT MENU CLASS */
+function add_current_nav_class($classes, $item) {
+
+  // Getting the current post details
+  global $post;
+
+  // Get post ID, if nothing found set to NULL
+  $id = ( isset( $post->ID ) ? get_the_ID() : NULL );
+
+  // Checking if post ID exist...
+  if (isset( $id )){
+
+      // Getting the post type of the current post
+      $current_post_type = get_post_type_object(get_post_type($post->ID));
+
+      // Getting the rewrite slug containing the post type's ancestors
+      $ancestor_slug = $current_post_type->rewrite['slug'];
+
+      // Split the slug into an array of ancestors and then slice off the direct parent.
+      $ancestors = explode('/',$ancestor_slug);
+      $parent = array_pop($ancestors);
+
+      // Getting the URL of the menu item
+      $menu_slug = strtolower(trim($item->url));
+
+      // Remove domain from menu slug
+      $menu_slug = str_replace($_SERVER['SERVER_NAME'], "", $menu_slug);
+
+      // If the menu item URL contains the post type's parent
+      if (!empty($menu_slug) && !empty($parent) && strpos($menu_slug,$parent) !== false) {
+          $classes[] = 'current-menu-item';
+      }
+      
+      // If the menu item URL contains any of the post type's ancestors
+      foreach ( $ancestors as $ancestor ) {
+          if (strpos($menu_slug,$ancestor) !== false) {
+              $classes[] = 'current-page-ancestor';
+          }
+      }
+  }
+  // Return the corrected set of classes to be added to the menu item
+  return $classes;
+
+}
+add_action('nav_menu_css_class', 'add_current_nav_class', 10, 2 );
+
+/* CUSTOM IMAGES SIZES */
+add_image_size('offer-small', 768, 522, false);
+add_image_size('offer-medium', 1024, 576, false);
+add_image_size('offer-large', 1920, 1080, false);
