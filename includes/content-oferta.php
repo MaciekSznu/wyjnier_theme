@@ -1,15 +1,14 @@
-<?php $summary = get_field('podsumowanie');?>
-<?php $description = get_field('opis');?>
-<?php $localization = $description['lokalizacja'];?>
-<?php $property = $description['nieruchomosc'];?>
-<?php $information = $description['informacje'];?>
-<?php $list = $description['lista'];?>
-
-<?php 
+<?php
+  $summary = get_field('podsumowanie');
+  $description = get_field('opis');
+  $localization = $description['lokalizacja'];
+  $property = $description['nieruchomosc'];
+  $information = $description['informacje'];
+  $list = $description['lista'];
   $custom_list = $list['opis'];
   $custom_list = substr($custom_list, 0, strlen($custom_list));
   $custom_list = str_replace( '<br />', '|', $custom_list);
-  $items = explode( '|' , $custom_list );  
+  $items = explode( '|' , $custom_list );
 ?>
 
 <section class='single-offer'>
@@ -51,7 +50,7 @@
       <div class='single-offer__description--list'>
         <h3 class='title'><?php echo $list['tytul'];?></h3>
         <ul class='list'>
-          <?php 
+          <?php
             if (count($items) > 1) {
               foreach ( $items as $item ) :
                 echo "<li class='list-item'>$item</li>";

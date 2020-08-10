@@ -6,26 +6,17 @@
   <h2 class='new-offers__title'>Najnowsze oferty</h2>
   <div class='new-offers__wrapper'>
   <?php while( $query->have_posts() ) : $query->the_post();?>
-      <?php $image = get_field('zdjecie_glowne');?>
-      <?php $summary = get_field('podsumowanie');?>
-      <?php $description = get_field('opis');?>
-      <?php $localization = $description['lokalizacja'];?>
-      <?php $property = $description['nieruchomosc'];?>
-      <?php $information = $description['informacje'];?>
-      <?php $list = $description['lista'];?>
-
       <?php
-        $custom_list = $list['opis'];
-        $custom_list = substr($custom_list, 0, strlen($custom_list));
-        $custom_list = str_replace( '<br />', '|', $custom_list);
-        $items = explode( '|' , $custom_list );
+        $image = get_field('zdjecie_glowne');
+        $summary = get_field('podsumowanie');
+        $img_src = wp_get_attachment_image_src( $image, 'offer-small' );
       ?>
     <div class='new-offers__single-offer'>
-      <div class='new-offers__single-offer--image'><?php echo wp_get_attachment_image( $image, 'offer-large' );?></div>
+      <div class='new-offers__single-offer--image' style="background-image: url(<?php echo $img_src[0]; ?>)"></div>
       <div class='new-offers__single-offer--description'>
         <div class='main-description'>
           <p class='main-description--city'><?php echo $summary['miasto'];?></p>
-          <p class='main-description--price'><?php echo number_format($summary['cena'], 0, ',', ' ');?></p>
+          <p class='main-description--price'><?php echo number_format($summary['cena'], 0, ',', ' ');?> zł</p>
         </div>
         <div class='additional-description'>
           <p class='additional-description--type'><?php echo $summary['nieruchomosc'];?></p>

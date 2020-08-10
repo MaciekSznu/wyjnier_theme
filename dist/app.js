@@ -94,12 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
- // const clickPreventDefault = (target, callback) => {
-//   target.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     return callback(e)
-//   });
-// };
+
 
 var click = function click(target, callback) {
   target.addEventListener('click', function (e) {
@@ -108,7 +103,7 @@ var click = function click(target, callback) {
 };
 
 var hamburgerButton = document.querySelector('.hamburger-menu');
-var mobileMenu = document.querySelector('.main-menu');
+var mobileMenu = document.querySelector('.menu-main-menu-container');
 
 var showMobileMenu = function showMobileMenu() {
   mobileMenu.classList.toggle('visible');
