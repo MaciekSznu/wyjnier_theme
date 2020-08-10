@@ -7,12 +7,12 @@
   <div class='new-offers__wrapper'>
   <?php while( $query->have_posts() ) : $query->the_post();?>
       <?php
-        $image = get_field('zdjecie_glowne');
+        $main_image = get_field('zdjecie_glowne');
+        $main_image_src = wp_get_attachment_image_src( $main_image, 'offer-small' );
         $summary = get_field('podsumowanie');
-        $img_src = wp_get_attachment_image_src( $image, 'offer-small' );
       ?>
     <div class='new-offers__single-offer'>
-      <div class='new-offers__single-offer--image' style="background-image: url(<?php echo $img_src[0]; ?>)"></div>
+      <div class='new-offers__single-offer--image' style="background-image: url(<?php echo $main_image_src[0]; ?>)"></div>
       <div class='new-offers__single-offer--description'>
         <div class='main-description'>
           <p class='main-description--city'><?php echo $summary['miasto'];?></p>

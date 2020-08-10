@@ -1734,18 +1734,6 @@ template {
     width: 33.33%;
   }
 }
-.single-offer__gallery--image:nth-child(1) {
-  background-image: url("./images/gallery/livingroom_1000_600.jpg");
-}
-.single-offer__gallery--image:nth-child(2) {
-  background-image: url("./images/gallery/bedroom_1092_600.jpg");
-}
-.single-offer__gallery--image:nth-child(3) {
-  background-image: url("./images/gallery/kitchen_1067_600.jpg");
-}
-.single-offer__gallery--image:nth-child(4) {
-  background-image: url("./images/gallery/bathroom_900_600.jpg");
-}
 .single-offer__summary {
   position: -webkit-sticky;
   position: sticky;
@@ -1768,9 +1756,9 @@ template {
 .single-offer__summary-price p, .single-offer__summary-localization p, .single-offer__summary-data p {
   margin: 0.5rem 0 0.5rem 1rem;
 }
-.single-offer__summary-data--area, .single-offer__summary-data--rooms {
-  border-right: 1px solid #0a1612;
-  padding-right: 1rem;
+.single-offer__summary-data--year, .single-offer__summary-data--rooms {
+  border-left: 1px solid #0a1612;
+  padding-left: 1rem;
 }
 .single-offer__description {
   width: 100%;

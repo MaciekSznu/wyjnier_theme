@@ -30,21 +30,21 @@
 
     }
 
-    &--image:nth-child(1) {
-      background-image: url('./images/gallery/livingroom_1000_600.jpg');
-    }
+    // &--image:nth-child(1) {
+    //   background-image: url('./images/gallery/livingroom_1000_600.jpg');
+    // }
 
-    &--image:nth-child(2) {
-      background-image: url('./images/gallery/bedroom_1092_600.jpg');
-    }
+    // &--image:nth-child(2) {
+    //   background-image: url('./images/gallery/bedroom_1092_600.jpg');
+    // }
 
-    &--image:nth-child(3) {
-      background-image: url('./images/gallery/kitchen_1067_600.jpg');
-    }
+    // &--image:nth-child(3) {
+    //   background-image: url('./images/gallery/kitchen_1067_600.jpg');
+    // }
 
-    &--image:nth-child(4) {
-      background-image: url('./images/gallery/bathroom_900_600.jpg');
-    }
+    // &--image:nth-child(4) {
+    //   background-image: url('./images/gallery/bathroom_900_600.jpg');
+    // }
   }
   
   &__summary {
@@ -70,9 +70,9 @@
       }
     }
 
-    &-data--area, &-data--rooms {
-      border-right: 1px solid $summary-font-color;
-      padding-right: 1rem;
+    &-data--year, &-data--rooms {
+      border-left: 1px solid $summary-font-color;
+      padding-left: 1rem;
     }
   }
 

@@ -65,14 +65,15 @@ $transactions = get_terms([
   <div class='investments__wrapper'>
   <?php if( $query->have_posts() ) :?>
     <?php while( $query->have_posts() ) : $query->the_post();?>
-      <?php $image = get_field('zdjecie_glowne');
+      <?php
+        $main_image = get_field('zdjecie_glowne');
         $summary = get_field('podsumowanie');
         $description = get_field('opis');
         $property = $description['nieruchomosc'];
-        $img_src = wp_get_attachment_image_src( $image, 'offer-small' );
+        $main_image_src = wp_get_attachment_image_src( $main_image, 'offer-small' );
       ?>
     <div class='investments__single-offer'>
-      <div class='investments__single-offer--image' style="background-image: url(<?php echo $img_src[0]; ?>)"></div>
+      <div class='investments__single-offer--image' style="background-image: url(<?php echo $main_image_src[0]; ?>)"></div>
       <div class='investments__single-offer--description'>
         <div class='main-description'>
           <p class='main-description--city'><?php echo $summary['miasto'];?></p>

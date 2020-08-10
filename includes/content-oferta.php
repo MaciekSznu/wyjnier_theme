@@ -9,15 +9,28 @@
   $custom_list = substr($custom_list, 0, strlen($custom_list));
   $custom_list = str_replace( '<br />', '|', $custom_list);
   $items = explode( '|' , $custom_list );
+  $main_image = get_field('zdjecie_glowne');
+  $main_image_src = wp_get_attachment_image_src( $main_image, 'offer-small' );
+  $images = get_field('zdjecia');
+  $image_01 = $images['zdjecie_01'];
+  $image_src = wp_get_attachment_image_src( $image, 'offer-small' );
 ?>
 
 <section class='single-offer'>
     <div class='single-offer__gallery'>
+      <div class='single-offer__gallery--image' style="background-image: url(<?php echo $main_image_src[0]; ?>)"></div>
+      <?php
+        if ( !empty($images)) {
+          foreach ( $images as $image ) :
+            echo "<div class='single-offer__gallery--image' style='background-image: url(" . wp_get_attachment_image_src( $image, 'offer-small' )[0] . ")'></div>";
+          endforeach;
+        }
+      ?>
+      <div class='single-offer__gallery--image' style="background-image: url(<?php echo $image_src[0]; ?>)"></div>
       <!-- <div class='single-offer__gallery--image'></div>
-      <div class='single-offer__gallery--image'></div>
-      <div class='single-offer__gallery--image'></div>
       <div class='single-offer__gallery--image'></div> -->
     </div>
+   
     <div class='single-offer__summary'>
       <div class='single-offer__summary-price'>
         <p class='single-offer__summary-price--total'><?php echo number_format($summary['cena'], 2, ',', ' ');?> zł</p>
@@ -29,8 +42,14 @@
       </div>
       <div class='single-offer__summary-data'>
         <p class='single-offer__summary-data--area'><?php echo $summary['powierzchnia'];?> m<sup>2</sup></p>
-        <p class='single-offer__summary-data--rooms'><?php echo $summary['pokoje'];?></p>
-        <p class='single-offer__summary-data--year'><?php echo $summary['rok_budowy'];?></p>
+        <?php if($summary['pokoje'] > 0)
+          echo
+            "<p class='single-offer__summary-data--rooms'>" . $summary['pokoje'] . "</p>"
+        ?>
+        <?php if($summary['rok_budowy'] > 0)
+          echo
+            "<p class='single-offer__summary-data--year'>" . $summary['rok_budowy'] . "</p>"
+        ?>
       </div>
     </div>
     <div class='single-offer__description'>
