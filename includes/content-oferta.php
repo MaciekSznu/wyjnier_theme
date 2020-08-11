@@ -13,7 +13,6 @@
   $main_image_src = wp_get_attachment_image_src( $main_image, 'offer-small' );
   $images = get_field('zdjecia');
   $image_01 = $images['zdjecie_01'];
-  $image_src = wp_get_attachment_image_src( $image, 'offer-small' );
 ?>
 
 <section class='single-offer'>
@@ -27,8 +26,6 @@
         }
       ?>
       <div class='single-offer__gallery--image' style="background-image: url(<?php echo $image_src[0]; ?>)"></div>
-      <!-- <div class='single-offer__gallery--image'></div>
-      <div class='single-offer__gallery--image'></div> -->
     </div>
    
     <div class='single-offer__summary'>

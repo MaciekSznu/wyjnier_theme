@@ -1,0 +1,113 @@
+@import "./variables";
+@import "./mixins";
+
+.hero-404 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 60px;
+  padding-top: 60px;
+  width: 100%;
+  max-width: 100vw;
+  height: calc(100vh - #{$mobile-top-bar-height} - 216px - 60px);
+  max-height: 600px;
+  background-image: url("../images/heroes/contact_768_432.jpg");
+  background-position: center;
+  background-size: cover;
+
+  &__title {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    padding: 0.8rem 0;
+    margin: 0;
+    background-color: $hero-image-description-bg-color;
+    font-size: 1.15rem;
+    font-family: $text-font-family;
+    font-weight: 500;
+    letter-spacing: .125rem;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 40%;
+      max-width: 400px;
+      height: 2px;
+      bottom: 0.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: url("../images/gallery/page_title_underline.svg");
+      border-radius: 1px;
+    }
+  }
+
+  @media (orientation: landscape) {
+    height: 100vh;
+    max-height: calc(100vh - #{$mobile-top-bar-height} * 2);
+  }
+
+  .show-offer {
+    position: absolute;
+    left: 0;
+    top: 60%;
+    width: 100%;
+    height: auto;
+    @include flex-center-center;
+    @include show-offer-anchor;
+
+    a {
+      width: auto;
+      max-width: 100%;
+      padding: .75rem 1.5rem;
+      line-height: initial;
+      height: 44px;
+      border-radius: 22px;
+      font-family: $text-font-family;
+      font-weight: 700;
+      background-color: #ffffff;
+      color: $new-offer-font-color;
+
+      &:hover {
+      color: #ffffff;
+      background-color: $new-offer-font-color;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    height: calc(100vh - 120px - 124px);
+    max-height: 100vh;
+    background-image: url("../images/heroes/contact_1024_576.jpg");
+    background-position: center;
+
+    &__title {
+      top: 40%;
+      font-size: 2rem;
+      padding: 2rem 0;
+
+      &::after {
+        width: 30%;
+        bottom: 0.8rem;
+      }
+    }
+
+    .show-offer a {
+      height: 60px;
+      border-radius: 30px;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: 0;
+    padding-top: $desktop-top-bar-height;
+    height: calc(100vh - 124px);
+    max-height: 100vh;
+    background-image: url("../images/heroes/contact_1920_1080.jpg");
+  }
+}

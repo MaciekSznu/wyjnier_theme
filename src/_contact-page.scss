@@ -299,7 +299,7 @@
 .contact-page-footer {
   width: 100%;
   height: auto;
-  margin-top: 1rem;
+  // margin-top: 1rem;
   margin-bottom: 60px;
   padding: 1rem;
   background-color: $mobile-contact-bg-color;
@@ -342,15 +342,15 @@
       }
     
       &--facebook--link {
-        background-image: url('./images/logos/facebook-square.svg');
+        background-image: url('../images/logos/facebook-square.svg');
       }
     
       &--phone--link {
-        background-image: url('./images/logos/phone-square.svg');
+        background-image: url('../images/logos/phone-square.svg');
       }
     
       &--instagram--link {
-        background-image: url('./images/logos/instagram-square.svg');
+        background-image: url('../images/logos/instagram-square.svg');
       }
     }
 

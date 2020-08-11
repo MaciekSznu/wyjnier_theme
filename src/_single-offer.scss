@@ -28,6 +28,9 @@
         width: 33.33%;
       }
 
+      @media (min-width: 1280px) {
+        width: 25%;
+      }
     }
 
     // &--image:nth-child(1) {

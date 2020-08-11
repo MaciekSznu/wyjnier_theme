@@ -38,13 +38,9 @@
             <span class='description-icon'></span>
             <span class='description-value'><?php echo $summary['powierzchnia'];?> m<sup>2</sup></span>
           </div>
-          <!-- <div class='additional-description--ground-area'>
-            <span class='description-icon'></span>
-            <span class='description-value'>1 500 m<sup>2</sup></span>
-          </div> -->
         </div>
         <div class='show-offer'>
-          <a href="./single-offer.html" target='_blank' rel='noopener noreferrer'>zobacz</a>
+          <a href="<?php the_permalink() ?>" target="_blank" rel="noopener noreferrer">zobacz</a>
         </div>
       </div>
     </div>
