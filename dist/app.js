@@ -101,6 +101,8 @@ var click = function click(target, callback) {
     return callback(e);
   });
 };
+/* BURGER MENU */
+
 
 var hamburgerButton = document.querySelector('.hamburger-menu');
 var mobileMenu = document.querySelector('.menu-main-menu-container');
@@ -117,6 +119,28 @@ hamburgerButton.addEventListener('click', function (e) {
   showMobileMenu();
   hamburgerActive();
 });
+/* FORMM VALIDATION */
+
+var inputName = document.querySelector('#input-name');
+var inputEmail = document.querySelector('#input-email');
+var inputPhone = document.querySelector('#input-phone');
+var inputMessage = document.querySelector('#input-message');
+var submit = document.querySelector('.contact-form--input-submit');
+var mainContactForm = document.querySelector('#main-contact-form');
+var emailRegEx = /\S+@\S+\.\S+/;
+mainContactForm.addEventListener('input', function () {
+  checkInputs();
+});
+
+var checkInputs = function checkInputs() {
+  if (inputName.value.trim() !== "" && emailRegEx.test(inputEmail.value) && inputMessage.value.trim() !== "") {
+    submit.style.borderWidth = '2px';
+    submit.disabled = false;
+  } else {
+    submit.style.borderWidth = '1px';
+    submit.disabled = true;
+  }
+};
 
 /***/ }),
 

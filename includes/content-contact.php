@@ -23,11 +23,11 @@
       </p>
       <h4 class='contact-page__content--subtitle'>Napisz do nas</h4>
       <div class='contact-form-wrapper'>
-        <form class='contact-form'>
-          <input class='contact-form--input-name' type="text" name="imie" aria-required="true" aria-invalid="false" placeholder="Twoje Imię (wymagane)">
-          <input class='contact-form--input-email' type="email" name="email" aria-required="true" aria-invalid="false" placeholder="Twój E-mail (wymagane)">
-          <input class='contact-form--input-phone' type="tel" name="telefon" aria-required="true" aria-invalid="false" placeholder="Twój Telefon (wymagane)">
-          <textarea class='contact-form--input-message' type="text" name="message" aria-invalid="false" placeholder="Twoja wiadomość"></textarea>
+        <form id='main-contact-form' class='contact-form' method='POST' action='send_form.php'>
+          <input id='input-name' class='contact-form--input-name' type="text" name="imie" aria-required="true" aria-invalid="false" placeholder="Twoje Imię (wymagane)">
+          <input id='input-email' class='contact-form--input-email' type="email" name="email" aria-required="true" aria-invalid="false" placeholder="Twój E-mail (wymagane)">
+          <input id='input-phone' class='contact-form--input-phone' type="tel" name="telefon" aria-required="true" aria-invalid="false" placeholder="Twój Telefon (wymagane)">
+          <textarea id='input-message' class='contact-form--input-message' type="text" name="message" aria-required="true" aria-invalid="false" placeholder="Wiadomość (wymagane)"></textarea>
           <input class='contact-form--input-submit' type="submit" value="Wyślij wiadomość">
         </form>
       </div>

@@ -59,22 +59,26 @@
         <h3 class='title'><?php echo $property['tytul'];?></h3>
         <p class='description'><?php echo $property['opis'];?></p>
       </div>
-      <div class='single-offer__description--info'>
-        <h3 class='title'><?php echo $information['tytul'];?></h3>
-        <p class='description'><?php echo $information['opis'];?></p>
-      </div>
-      <div class='single-offer__description--list'>
-        <h3 class='title'><?php echo $list['tytul'];?></h3>
-        <ul class='list'>
-          <?php
-            if (count($items) > 1) {
-              foreach ( $items as $item ) :
-                echo "<li class='list-item'>$item</li>";
-               endforeach;
-            }
-          ?>
-        </ul>
-      </div>
+      <?php if( !empty($information)): ?>
+        <div class='single-offer__description--info'>
+          <h3 class='title'><?php echo $information['tytul'];?></h3>
+          <p class='description'><?php echo $information['opis'];?></p>
+        </div>
+      <?php endif; ?>
+      <?php if( !empty($list)): ?>
+        <div class='single-offer__description--list'>
+          <h3 class='title'><?php echo $list['tytul'];?></h3>
+          <ul class='list'>
+            <?php
+              if (count($items) > 1) {
+                foreach ( $items as $item ) :
+                  echo "<li class='list-item'>$item</li>";
+                endforeach;
+              }
+            ?>
+          </ul>
+        </div>
+      <?php endif; ?>
     </div>
 
     <?php get_template_part('includes/section', 'singleoffercontact'); ?>

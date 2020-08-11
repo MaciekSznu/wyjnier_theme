@@ -382,6 +382,7 @@ template {
   list-style: none;
   margin: 0;
   padding: 0;
+  text-transform: uppercase;
   text-align: center;
 }
 .header .menu-main-menu-container .main-menu .menu-item {
@@ -433,7 +434,7 @@ template {
   .header .menu-main-menu-container .main-menu .menu-item {
     margin: 0;
     min-width: 100px;
-    border-bottom: 2px solid transparent;
+    border-bottom: 1px solid transparent;
     transition: border-color 1s ease;
   }
   .header .menu-main-menu-container .main-menu .menu-item:hover {
@@ -2093,6 +2094,7 @@ template {
 
 .contact-page {
   width: 100%;
+  max-width: 100vw;
   height: auto;
   display: flex;
   justify-content: center;
@@ -2217,7 +2219,7 @@ template {
 }
 .contact-page__content-wrapper .contact-page__content .contact-form-wrapper .contact-form {
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -2350,6 +2352,7 @@ template {
   }
   .contact-page__content-wrapper .contact-page__map {
     max-height: 500px;
+    margin-left: 1rem;
   }
   .contact-page__content-wrapper .contact-page__content {
     height: 500px;
@@ -2357,6 +2360,9 @@ template {
   .contact-page__content-wrapper .contact-page__content .contact-form-wrapper {
     width: 100%;
     max-width: 640px;
+  }
+  .contact-page__content-wrapper .contact-page__content .contact-form-wrapper .contact-form {
+    padding: 0 1rem;
   }
 }
 @media (min-width: 1280px) {
