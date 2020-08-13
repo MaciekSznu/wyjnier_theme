@@ -23,7 +23,23 @@
       </p>
       <h4 class='contact-page__content--subtitle'>Napisz do nas</h4>
       <div class='contact-form-wrapper'>
-        <form id='main-contact-form' class='contact-form' method='POST' action='send_form.php'>
+        <?php
+          $imie = $_POST['imie'];
+          $formemail = $_POST['email'];
+          $formtelefon = $_POST['telefon'];
+          $formmessage = $_POST['message'];
+          $to = 'msznurawa@gmail.com';
+          $subject = 'Wiadomość z formularza kontaktowego Wyjątkowe Nieruchomości';
+          $message = "Imię: $imie\n Email: $formemail\n Telefon: $formtelefon\n Wiadomość: $formmessage";
+          if ($_POST['submit']) {
+            if (mail($to, $subject, $message, $formemail)) {
+              echo '<p>Twoja wiadomośc została wysłana</p>';
+            } else {
+              echo '<p>Coś poszło nie tak, spróbuj raz jeszcze</p>';
+            }
+          }
+        ?>
+        <form id='main-contact-form' class='contact-form' method='post'>
           <input id='input-name' class='contact-form--input-name' type="text" name="imie" aria-required="true" aria-invalid="false" placeholder="Twoje Imię (wymagane)">
           <input id='input-email' class='contact-form--input-email' type="email" name="email" aria-required="true" aria-invalid="false" placeholder="Twój E-mail (wymagane)">
           <input id='input-phone' class='contact-form--input-phone' type="tel" name="telefon" aria-required="true" aria-invalid="false" placeholder="Twój Telefon (wymagane)">

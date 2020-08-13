@@ -18,16 +18,19 @@
 <section class='single-offer'>
     <div class='single-offer__gallery'>
       <div class='single-offer__gallery--image' style="background-image: url(<?php echo $main_image_src[0]; ?>)"></div>
+      <div class='single-offer__gallery--image'>
+        <img src="<?php echo $main_image_src[0]; ?>" alt="">
+      </div>
       <?php
         if ( !empty($images)) {
           foreach ( $images as $image ) :
-            echo "<div class='single-offer__gallery--image' style='background-image: url(" . wp_get_attachment_image_src( $image, 'offer-small' )[0] . ")'></div>";
+            echo "<div class='single-offer__gallery--image'>
+            <img src=" . wp_get_attachment_image_src( $image, 'offer-small' )[0] . " alt=''>
+            </div>";
           endforeach;
         }
       ?>
-      <div class='single-offer__gallery--image' style="background-image: url(<?php echo $image_src[0]; ?>)"></div>
     </div>
-   
     <div class='single-offer__summary'>
       <div class='single-offer__summary-price'>
         <p class='single-offer__summary-price--total'><?php echo number_format($summary['cena'], 2, ',', ' ');?> zł</p>

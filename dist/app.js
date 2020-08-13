@@ -101,6 +101,23 @@ var click = function click(target, callback) {
     return callback(e);
   });
 };
+
+var documentReady = function documentReady(callbackFunc) {
+  if (document.readyState !== 'loading') {
+    // Document is already ready, call the callback directly
+    callbackFunc();
+  } else if (document.addEventListener) {
+    // All modern browsers to register DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', callbackFunc);
+  } else {
+    // Old IE browsers
+    document.attachEvent('onreadystatechange', function () {
+      if (document.readyState === 'complete') {
+        callbackFunc();
+      }
+    });
+  }
+};
 /* BURGER MENU */
 
 
@@ -128,19 +145,78 @@ var inputMessage = document.querySelector('#input-message');
 var submit = document.querySelector('.contact-form--input-submit');
 var mainContactForm = document.querySelector('#main-contact-form');
 var emailRegEx = /\S+@\S+\.\S+/;
-mainContactForm.addEventListener('input', function () {
-  checkInputs();
-});
+var phoneRegEx = /^(?:\(?\?)?(?:[-\.\(\)\s]*(\d)){9}\)?$/; // mainContactForm.onsubmit = () => {
+//   if (inputName.value.trim() == "") {
+//     inputName.placeholder = 'Proszę podać imię';
+//     inputName.classList.add('incorrect');
+//   };
+//   if (!emailRegEx.test(inputEmail.value)) {
+//     inputEmail.placeholder = 'Proszę podać poprawny adres email';
+//     inputEmail.classList.add('incorrect');
+//   };
+//   if (!phoneRegEx.test(inputPhone.value)) {
+//     inputPhone.placeholder = 'Proszę podać poprawny nr telefonu';
+//     inputPhone.classList.add('incorrect');
+//   };
+//   if (inputMessage.value.trim() == "") {
+//     inputMessage.placeholder = 'Proszę uzupełnić treść wiadomości';
+//     inputMessage.classList.add('incorrect');
+//   };
+//   if (inputName.value.trim() !== "" && emailRegEx.test(inputEmail.value) && phoneRegEx.test(inputPhone.value) && inputMessage.value.trim() !== "") {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+// mainContactForm.oninput = () => {
+//   if (inputName.value.trim() !== "" && emailRegEx.test(inputEmail.value) && phoneRegEx.test(inputPhone.value) && inputMessage.value.trim() !== "") {
+//     submit.style.borderWidth = '2px';
+//   } else {
+//     submit.style.borderWidth = '1px';
+//   }
+// };
 
-var checkInputs = function checkInputs() {
-  if (inputName.value.trim() !== "" && emailRegEx.test(inputEmail.value) && inputMessage.value.trim() !== "") {
-    submit.style.borderWidth = '2px';
-    submit.disabled = false;
+/* SLIDERS */
+
+var singleOfferSelector = document.querySelector('.single-offer__gallery');
+var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+var mediaTabletPortraitWidth = 768;
+var mediaTabletLandscapeWidth = 1024;
+
+var singleOfferSlider = function singleOfferSlider() {
+  if (singleOfferSelector) {
+    if (width < mediaTabletPortraitWidth) {
+      new Siema({
+        selector: '.single-offer__gallery',
+        loop: true
+      });
+    } else if (width >= mediaTabletPortraitWidth && width <= mediaTabletLandscapeWidth) {
+      new Siema({
+        selector: '.single-offer__gallery',
+        loop: true,
+        perPage: 2
+      });
+    } else if (width > mediaTabletLandscapeWidth && width <= 1280) {
+      new Siema({
+        selector: '.single-offer__gallery',
+        loop: true,
+        perPage: 3
+      });
+    } else if (width > 1280) {
+      new Siema({
+        selector: '.single-offer__gallery',
+        loop: true,
+        perPage: 4
+      });
+    }
   } else {
-    submit.style.borderWidth = '1px';
-    submit.disabled = true;
+    null;
   }
+
+  ;
 };
+
+documentReady(singleOfferSlider);
 
 /***/ }),
 

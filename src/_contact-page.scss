@@ -189,6 +189,13 @@
             transition: color 1s ease;
           }
 
+          &--input-name.incorrect::placeholder,
+          &--input-email.incorrect::placeholder,
+          &--input-phone.incorrect::placeholder,
+          &--input-message.incorrect::placeholder {
+            color: #ff0000;
+          }
+
           &--input-message {
             height: 100px;
             resize: none;
