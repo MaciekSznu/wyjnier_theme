@@ -1,4 +1,4 @@
-<section class='hero' id='section-hero'>
+<section class='hero-services' id='section-hero'>
   <!-- <h2 class='hero__title'>wyjątkowe nieruchomości</h2> -->
   <div class='hero-image-description-wrapper'>
     <div class='hero-image-description'>

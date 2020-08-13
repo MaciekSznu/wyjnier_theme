@@ -95,6 +95,7 @@
 
 "use strict";
 
+/* BASE FUNCTIONS */
 
 var click = function click(target, callback) {
   target.addEventListener('click', function (e) {
@@ -104,13 +105,10 @@ var click = function click(target, callback) {
 
 var documentReady = function documentReady(callbackFunc) {
   if (document.readyState !== 'loading') {
-    // Document is already ready, call the callback directly
     callbackFunc();
   } else if (document.addEventListener) {
-    // All modern browsers to register DOMContentLoaded
     document.addEventListener('DOMContentLoaded', callbackFunc);
   } else {
-    // Old IE browsers
     document.attachEvent('onreadystatechange', function () {
       if (document.readyState === 'complete') {
         callbackFunc();
@@ -145,66 +143,107 @@ var inputMessage = document.querySelector('#input-message');
 var submit = document.querySelector('.contact-form--input-submit');
 var mainContactForm = document.querySelector('#main-contact-form');
 var emailRegEx = /\S+@\S+\.\S+/;
-var phoneRegEx = /^(?:\(?\?)?(?:[-\.\(\)\s]*(\d)){9}\)?$/; // mainContactForm.onsubmit = () => {
-//   if (inputName.value.trim() == "") {
-//     inputName.placeholder = 'Proszę podać imię';
-//     inputName.classList.add('incorrect');
-//   };
-//   if (!emailRegEx.test(inputEmail.value)) {
-//     inputEmail.placeholder = 'Proszę podać poprawny adres email';
-//     inputEmail.classList.add('incorrect');
-//   };
-//   if (!phoneRegEx.test(inputPhone.value)) {
-//     inputPhone.placeholder = 'Proszę podać poprawny nr telefonu';
-//     inputPhone.classList.add('incorrect');
-//   };
-//   if (inputMessage.value.trim() == "") {
-//     inputMessage.placeholder = 'Proszę uzupełnić treść wiadomości';
-//     inputMessage.classList.add('incorrect');
-//   };
-//   if (inputName.value.trim() !== "" && emailRegEx.test(inputEmail.value) && phoneRegEx.test(inputPhone.value) && inputMessage.value.trim() !== "") {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// };
-// mainContactForm.oninput = () => {
-//   if (inputName.value.trim() !== "" && emailRegEx.test(inputEmail.value) && phoneRegEx.test(inputPhone.value) && inputMessage.value.trim() !== "") {
-//     submit.style.borderWidth = '2px';
-//   } else {
-//     submit.style.borderWidth = '1px';
-//   }
-// };
+var phoneRegEx = /^(?:\(?\?)?(?:[-\.\(\)\s]*(\d)){9}\)?$/;
 
+var isNameCorrect = function isNameCorrect() {
+  if (inputName.value.trim() == "") {
+    inputName.placeholder = 'Proszę podać imię';
+    inputName.classList.add('incorrect');
+  }
+
+  ;
+};
+
+var isEmailCorrect = function isEmailCorrect() {
+  if (!emailRegEx.test(inputEmail.value)) {
+    inputEmail.placeholder = 'Proszę podać poprawny adres email';
+    inputEmail.classList.add('incorrect');
+  }
+
+  ;
+};
+
+var isPhoneCorrect = function isPhoneCorrect() {
+  if (!phoneRegEx.test(inputPhone.value)) {
+    inputPhone.placeholder = 'Proszę podać poprawny nr telefonu';
+    inputPhone.classList.add('incorrect');
+  }
+
+  ;
+};
+
+var isMessageCorrect = function isMessageCorrect() {
+  if (inputMessage.value.trim() == "") {
+    inputMessage.placeholder = 'Proszę uzupełnić treść wiadomości';
+    inputMessage.classList.add('incorrect');
+  }
+
+  ;
+};
+
+var enableForm = function enableForm() {
+  if (inputName.value.trim() !== "" && emailRegEx.test(inputEmail.value) && phoneRegEx.test(inputPhone.value) && inputMessage.value.trim() !== "") {
+    submit.style.borderWidth = '2px';
+    submit.disabled = false;
+    return true;
+  } else {
+    submit.style.borderWidth = '1px';
+    submit.disabled = true;
+    return false;
+  }
+
+  ;
+};
+
+var formValidate = function formValidate() {
+  if (mainContactForm) {
+    mainContactForm.oninput = function () {
+      enableForm();
+    };
+
+    mainContactForm.onsubmit = function () {
+      isNameCorrect();
+      isEmailCorrect();
+      isPhoneCorrect();
+      isMessageCorrect();
+    };
+  } else {
+    null;
+  }
+
+  ;
+};
 /* SLIDERS */
+
 
 var singleOfferSelector = document.querySelector('.single-offer__gallery');
 var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
 var mediaTabletPortraitWidth = 768;
 var mediaTabletLandscapeWidth = 1024;
+var mediaDesktopWidth = 1280;
 
 var singleOfferSlider = function singleOfferSlider() {
   if (singleOfferSelector) {
     if (width < mediaTabletPortraitWidth) {
       new Siema({
-        selector: '.single-offer__gallery',
+        selector: singleOfferSelector,
         loop: true
       });
     } else if (width >= mediaTabletPortraitWidth && width <= mediaTabletLandscapeWidth) {
       new Siema({
-        selector: '.single-offer__gallery',
+        selector: singleOfferSelector,
         loop: true,
         perPage: 2
       });
-    } else if (width > mediaTabletLandscapeWidth && width <= 1280) {
+    } else if (width > mediaTabletLandscapeWidth && width < mediaDesktopWidth) {
       new Siema({
-        selector: '.single-offer__gallery',
+        selector: singleOfferSelector,
         loop: true,
         perPage: 3
       });
-    } else if (width > 1280) {
+    } else if (width >= mediaDesktopWidth) {
       new Siema({
-        selector: '.single-offer__gallery',
+        selector: singleOfferSelector,
         loop: true,
         perPage: 4
       });
@@ -216,7 +255,32 @@ var singleOfferSlider = function singleOfferSlider() {
   ;
 };
 
-documentReady(singleOfferSlider);
+var mainPageSelector = document.querySelector('.hero');
+
+var homePageSlider = function homePageSlider() {
+  if (mainPageSelector) {
+    new Siema({
+      selector: mainPageSelector,
+      loop: true
+    });
+  } else {
+    null;
+  }
+
+  ;
+}; // autoplay - umieścić to w jakimś ifie
+// setInterval(() => {
+//   homePageSlider.next();
+// }, 3000);
+// setInterval(() => {
+//   singleOfferSlider.next();
+// }, 3000);
+
+
+documentReady(homePageSlider, singleOfferSlider); // dodać id ofert dla których ma się coś na home page wyświetlać
+// dodać strzałki
+// dodac pozycjonowanie obrazków
+// dodać stylowanie obrazka na homepage - nie popsuć pozostałych hero
 
 /***/ }),
 
