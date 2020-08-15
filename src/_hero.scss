@@ -15,7 +15,6 @@
   max-width: 100vw;
   height: calc(80vw + #{$mobile-top-bar-height});
   max-height: 600px;
-  // background-image: url("../images/heroes/contact_768_432.jpg");
   background-position: center;
   background-size: cover;
 
@@ -68,12 +67,10 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      // flex-wrap: wrap;
       margin: 0.5rem 1rem;
 
       &--city,
       &--price {
-        // width: 100%;
         margin: 0.25rem 0;
       }
     }
@@ -82,7 +79,6 @@
   @media (min-width: 768px) {
     height: 50vh;
     max-height: 600px;
-    // background-image: url("../images/heroes/contact_1024_576.jpg");
 
     &__title {
       bottom: 3rem;
@@ -116,7 +112,6 @@
     padding-top: $desktop-top-bar-height;
     height: 100vh;
     max-height: 100vh;
-    // background-image: url("../images/heroes/contact_1920_1080.jpg");
 
     @media (orientation: portrait) {
       height: 75vh;
@@ -134,7 +129,7 @@
     }
 
     .hero-image-description-wrapper {
-      bottom: 8rem;
+      bottom: 5rem;
       font-size: 1.15rem;
       font-weight: 300;
 
@@ -166,7 +161,7 @@
       font-size: 1.25rem;
 
       @media (min-height: 960px) {
-        bottom: 8rem;
+        bottom: 6rem;
       }
 
       .hero-image-description {
@@ -184,12 +179,14 @@
     position: relative;
     height: calc(80vw + #{$mobile-top-bar-height});
     max-height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
 
     .hero-image {
-      max-height: auto;
-      width: 100vw;
-      overflow: hidden;
-      object-fit: scale-down;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
     }
   }
 }

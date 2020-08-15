@@ -7,13 +7,13 @@
       <h4 class='about__content--job'>CEO</h4>
       <p class='about__content--phone'>
         <a class='about__content--phone-link' href='tel:733-003-652'>
-          <img class='contact-icon' src="./images/icons/phone-square-about.svg" alt="Zadzwoń do mnie">
+          <img class='contact-icon' src="<?php bloginfo('template_url'); ?>/images/icons/phone-square-about.svg" alt="Zadzwoń do mnie">
           733-003-652
         </a>
       </p>
       <p class='about__content--email'>
         <a class='about__content--email-link' href='mailto: biuro@wyjatkowenieruchomosci.pl'>
-          <img class='contact-icon' src="./images/icons/envelope-square-about.svg" alt="Wyślij email">
+          <img class='contact-icon' src="<?php bloginfo('template_url'); ?>/images/icons/envelope-square-about.svg" alt="Wyślij email">
           biuro@wyjatkowenieruchomosci.pl
         </a>
       </p>

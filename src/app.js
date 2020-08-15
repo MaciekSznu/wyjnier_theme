@@ -168,7 +168,6 @@ const homePageSlider = () => {
 
 documentReady(homePageSlider, singleOfferSlider);
 
-// dodać id ofert dla których ma się coś na home page wyświetlać
 // dodać strzałki
 // dodac pozycjonowanie obrazków
-// dodać stylowanie obrazka na homepage - nie popsuć pozostałych hero
+// poprawić pozycjonowanie obrazków na homepage - działa obecnie od 1280px
