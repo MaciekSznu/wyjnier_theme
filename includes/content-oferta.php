@@ -12,7 +12,6 @@
   $main_image = get_field('zdjecie_glowne');
   $main_image_src = wp_get_attachment_image_src( $main_image, 'offer-small' );
   $images = get_field('zdjecia');
-  $image_01 = $images['zdjecie_01'];
 ?>
 
 <section class='single-offer'>

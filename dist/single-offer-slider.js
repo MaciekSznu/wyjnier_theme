@@ -115,10 +115,9 @@ prev.addEventListener('click', function () {
 });
 next.addEventListener('click', function () {
   return singleOfferSlider.next();
-});
-setInterval(function () {
-  singleOfferSlider.next();
-}, 4000);
+}); // setInterval(() => {
+//   singleOfferSlider.next();
+// }, 4000);
 
 /***/ }),
 

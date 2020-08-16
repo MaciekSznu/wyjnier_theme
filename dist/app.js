@@ -134,7 +134,7 @@ hamburgerButton.addEventListener('click', function (e) {
   showMobileMenu();
   hamburgerActive();
 });
-/* FORMM VALIDATION */
+/* FORM VALIDATION */
 
 var inputName = document.querySelector('#input-name');
 var inputEmail = document.querySelector('#input-email');

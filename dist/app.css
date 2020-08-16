@@ -615,66 +615,82 @@ template {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.hero-carousel .hero-image-wrapper .hero-image-description-wrapper {
+.hero-carousel .hero-image-wrapper a {
   position: absolute;
+  width: 50%;
   right: 0;
   bottom: 3rem;
-  width: 50%;
+  text-decoration: none;
+}
+@media (min-width: 768px) {
+  .hero-carousel .hero-image-wrapper a {
+    bottom: 12rem;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-carousel .hero-image-wrapper a {
+    bottom: 5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-carousel .hero-image-wrapper a {
+    bottom: 4rem;
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 1280px) and (min-height: 960px) {
+  .hero-carousel .hero-image-wrapper a {
+    bottom: 6rem;
+  }
+}
+.hero-carousel .hero-image-wrapper a .hero-image-description-wrapper {
+  width: 100%;
   background-color: rgba(54, 68, 109, 0.75);
   font-family: "Roboto", sans-serif;
   color: #ffffff;
   font-size: 0.8rem;
   font-weight: 400;
+  padding: 0.2rem 0;
 }
-.hero-carousel .hero-image-wrapper .hero-image-description-wrapper .hero-image-description {
+.hero-carousel .hero-image-wrapper a .hero-image-description-wrapper .hero-image-description {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin: 0.5rem 1rem;
 }
-.hero-carousel .hero-image-wrapper .hero-image-description-wrapper .hero-image-description--city, .hero-carousel .hero-image-wrapper .hero-image-description-wrapper .hero-image-description--price {
+.hero-carousel .hero-image-wrapper a .hero-image-description-wrapper .hero-image-description--city, .hero-carousel .hero-image-wrapper a .hero-image-description-wrapper .hero-image-description--price {
   margin: 0.25rem 0;
 }
 @media (min-width: 768px) {
-  .hero-carousel .hero-image-wrapper .hero-image-description-wrapper {
-    bottom: 12rem;
+  .hero-carousel .hero-image-wrapper a .hero-image-description-wrapper {
     font-size: 1rem;
     font-weight: 400;
   }
-  .hero-carousel .hero-image-wrapper .hero-image-description-wrapper .hero-image-description {
-    margin-left: 2rem;
+  .hero-carousel .hero-image-wrapper a .hero-image-description-wrapper .hero-image-description {
+    margin: 0 0 0 2rem;
   }
-  .hero-carousel .hero-image-wrapper .hero-image-description-wrapper .hero-image-description--city, .hero-carousel .hero-image-wrapper .hero-image-description-wrapper .hero-image-description--price {
+  .hero-carousel .hero-image-wrapper a .hero-image-description-wrapper .hero-image-description--city, .hero-carousel .hero-image-wrapper a .hero-image-description-wrapper .hero-image-description--price {
     margin: 0.5rem 0;
   }
 }
 @media (min-width: 1024px) {
-  .hero-carousel .hero-image-wrapper .hero-image-description-wrapper {
-    bottom: 5rem;
+  .hero-carousel .hero-image-wrapper a .hero-image-description-wrapper {
     font-size: 1.15rem;
     font-weight: 300;
   }
-  .hero-carousel .hero-image-wrapper .hero-image-description-wrapper .hero-image-description {
-    margin: 1rem 1.5rem;
+  .hero-carousel .hero-image-wrapper a .hero-image-description-wrapper .hero-image-description {
+    margin: 0.75rem 1.5rem;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
 }
 @media (min-width: 1280px) {
-  .hero-carousel .hero-image-wrapper .hero-image-description-wrapper {
-    bottom: 4rem;
+  .hero-carousel .hero-image-wrapper a .hero-image-description-wrapper {
     font-size: 1.25rem;
   }
-}
-@media (min-width: 1280px) and (min-height: 960px) {
-  .hero-carousel .hero-image-wrapper .hero-image-description-wrapper {
-    bottom: 6rem;
-  }
-}
-@media (min-width: 1280px) {
-  .hero-carousel .hero-image-wrapper .hero-image-description-wrapper .hero-image-description {
-    margin: 1.25rem 2rem;
+  .hero-carousel .hero-image-wrapper a .hero-image-description-wrapper .hero-image-description {
+    margin: 0.75rem 2rem;
   }
 }
 .hero .hero-control-prev, .hero .hero-control-next {

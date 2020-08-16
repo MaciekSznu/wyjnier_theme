@@ -38,7 +38,7 @@ hamburgerButton.addEventListener('click', (e) => {
   hamburgerActive();
 });
 
-/* FORMM VALIDATION */
+/* FORM VALIDATION */
 const inputName = document.querySelector('#input-name');
 const inputEmail = document.querySelector('#input-email');
 const inputPhone = document.querySelector('#input-phone');
@@ -73,7 +73,6 @@ contactForm.addEventListener('submit', (e) => {
   } else {
     inputMessage.parentNode.classList.remove('incorrect');
   };
-
   if (errors.length > 0) {
     e.preventDefault();
   }

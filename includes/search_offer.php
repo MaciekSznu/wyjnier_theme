@@ -14,7 +14,6 @@ $transactions = get_terms([
 
 ?>
 
-
 <section class='search'>
   <div class='search-wrapper'>
     <form class='search-form' action="<?php echo home_url('/oferty'); ?>">
@@ -110,7 +109,7 @@ $transactions = get_terms([
           <p class='long-description--text'>Na dachu budynku do dyspozycji mieszkańców są dwa rozległe tarasy widokowe, z których można podziwiać panoramę Krakowa.</p> -->
         </div>
         <div class='show-offer'>
-          <a href="<?php the_permalink() ?>" target="_blank" rel="noopener noreferrer">zobacz</a>
+          <a href="<?php the_permalink() ?>">zobacz</a>
         </div>
       </div>
     </div>

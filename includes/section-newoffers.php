@@ -40,7 +40,7 @@
           </div>
         </div>
         <div class='show-offer'>
-          <a href="<?php the_permalink() ?>" target="_blank" rel="noopener noreferrer">zobacz</a>
+          <a href="<?php the_permalink() ?>">zobacz</a>
         </div>
       </div>
     </div>

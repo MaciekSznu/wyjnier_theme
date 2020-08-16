@@ -127,55 +127,19 @@
         object-fit: cover;
       }
   
-      .hero-image-description-wrapper {
+      a {
         position: absolute;
+        width: 50%;
         right: 0;
         bottom: 3rem;
-        width: 50%;
-        background-color: $hero-image-description-bg-color;
-        font-family: $text-font-family;
-        color: $hero-image-description-font-color;
-        font-size: 0.8rem;
-        font-weight: 400;
-    
-        .hero-image-description {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          margin: 0.5rem 1rem;
-    
-          &--city,
-          &--price {
-            margin: 0.25rem 0;
-          }
-        }
+        text-decoration: none;
 
         @media (min-width: 768px) {
           bottom: 12rem;
-          font-size: 1rem;
-          font-weight: 400;
-
-          .hero-image-description {
-            margin-left: 2rem;
-
-            &--city,
-            &--price {
-              margin: 0.5rem 0;
-            }
-          }
         }
 
         @media (min-width: 1024px) {
           bottom: 5rem;
-          font-size: 1.15rem;
-          font-weight: 300;
-    
-          .hero-image-description {
-            margin: 1rem 1.5rem;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-          }
         }
 
         @media (min-width: 1280px) {
@@ -185,9 +149,61 @@
           @media (min-height: 960px) {
             bottom: 6rem;
           }
-    
+        }
+
+        .hero-image-description-wrapper {
+          width: 100%;
+          background-color: $hero-image-description-bg-color;
+          font-family: $text-font-family;
+          color: $hero-image-description-font-color;
+          font-size: 0.8rem;
+          font-weight: 400;
+          padding: .2rem 0;
+      
           .hero-image-description {
-            margin: 1.25rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0.5rem 1rem;
+      
+            &--city,
+            &--price {
+              margin: 0.25rem 0;
+            }
+          }
+  
+          @media (min-width: 768px) {
+            font-size: 1rem;
+            font-weight: 400;
+  
+            .hero-image-description {
+              margin: 0 0 0 2rem;
+  
+              &--city,
+              &--price {
+                margin: 0.5rem 0;
+              }
+            }
+          }
+  
+          @media (min-width: 1024px) {
+            font-size: 1.15rem;
+            font-weight: 300;
+      
+            .hero-image-description {
+              margin: .75rem 1.5rem;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+            }
+          }
+  
+          @media (min-width: 1280px) {
+            font-size: 1.25rem;
+      
+            .hero-image-description {
+              margin: .75rem 2rem;
+            }
           }
         }
       }
