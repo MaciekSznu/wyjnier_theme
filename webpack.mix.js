@@ -16,6 +16,8 @@ mix
   processCssUrls: false,
 })
 .js('src/app.js', 'dist/')
+.js('src/home-page-slider.js', 'dist/')
+.js('src/single-offer-slider.js', 'dist/')
 .sass('src/app.scss', 'dist/');
 // .minify('dist/app.css');
 

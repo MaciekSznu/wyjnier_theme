@@ -226,12 +226,12 @@
       color: $contact-font-color;
       font-family: $text-font-family;
       font-weight: 300;
-      margin: .5rem 0;
-      font-size: .9rem;
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
 
       &-link {
         color: $contact-font-color;
-        font-family: 'Raleway', sans-serif;
+        font-family: "Raleway", sans-serif;
         font-weight: 700;
         text-decoration: none;
       }
@@ -278,7 +278,7 @@
 
     &-footer-copyright {
       flex-direction: row;
-      
+
       &--description {
         width: 50%;
 

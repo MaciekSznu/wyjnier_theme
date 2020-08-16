@@ -1,5 +1,7 @@
 <section class='hero' id='section-hero'>
-
+  <div class='hero-control-prev'><img src="<?php bloginfo('template_url'); ?>/images/icons/chevron-left.svg" alt="Previous slide"></div>
+  <div class='hero-control-next'><img src="<?php bloginfo('template_url'); ?>/images/icons/chevron-right.svg" alt="Next slide"></div>
+  <div class='hero-carousel'>
   <?php
     $main_image = get_field('zdjecie_glowne');
     $main_image_src = wp_get_attachment_image_src( $main_image, 'offer-large' );
@@ -20,4 +22,5 @@
         </div>";
     endforeach;
   ?>
+  </div>
 </section>

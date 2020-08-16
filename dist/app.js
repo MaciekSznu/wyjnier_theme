@@ -212,74 +212,7 @@ var formValidate = function formValidate() {
   }
 
   ;
-};
-/* SLIDERS */
-
-
-var singleOfferSelector = document.querySelector('.single-offer__gallery');
-var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
-var mediaTabletPortraitWidth = 768;
-var mediaTabletLandscapeWidth = 1024;
-var mediaDesktopWidth = 1280;
-
-var singleOfferSlider = function singleOfferSlider() {
-  if (singleOfferSelector) {
-    if (width < mediaTabletPortraitWidth) {
-      new Siema({
-        selector: singleOfferSelector,
-        loop: true
-      });
-    } else if (width >= mediaTabletPortraitWidth && width <= mediaTabletLandscapeWidth) {
-      new Siema({
-        selector: singleOfferSelector,
-        loop: true,
-        perPage: 2
-      });
-    } else if (width > mediaTabletLandscapeWidth && width < mediaDesktopWidth) {
-      new Siema({
-        selector: singleOfferSelector,
-        loop: true,
-        perPage: 3
-      });
-    } else if (width >= mediaDesktopWidth) {
-      new Siema({
-        selector: singleOfferSelector,
-        loop: true,
-        perPage: 4
-      });
-    }
-  } else {
-    null;
-  }
-
-  ;
-};
-
-var mainPageSelector = document.querySelector('.hero');
-
-var homePageSlider = function homePageSlider() {
-  if (mainPageSelector) {
-    new Siema({
-      selector: mainPageSelector,
-      loop: true
-    });
-  } else {
-    null;
-  }
-
-  ;
-}; // autoplay - umieścić to w jakimś ifie
-// setInterval(() => {
-//   homePageSlider.next();
-// }, 3000);
-// setInterval(() => {
-//   singleOfferSlider.next();
-// }, 3000);
-
-
-documentReady(homePageSlider, singleOfferSlider); // dodać strzałki
-// dodac pozycjonowanie obrazków
-// poprawić pozycjonowanie obrazków na homepage - działa obecnie od 1280px
+}; //documentReady(homePageSlider, singleOfferSlider);
 
 /***/ }),
 

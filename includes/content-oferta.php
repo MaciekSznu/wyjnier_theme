@@ -17,19 +17,22 @@
 
 <section class='single-offer'>
     <div class='single-offer__gallery'>
-      <div class='single-offer__gallery--image' style="background-image: url(<?php echo $main_image_src[0]; ?>)"></div>
-      <div class='single-offer__gallery--image'>
-        <img src="<?php echo $main_image_src[0]; ?>" alt="">
+      <div class='single-control-prev'><img src="<?php bloginfo('template_url'); ?>/images/icons/chevron-left.svg" alt="Previous slide"></div>
+      <div class='single-control-next'><img src="<?php bloginfo('template_url'); ?>/images/icons/chevron-right.svg" alt="Next slide"></div>
+      <div class='single-offer-carousel'>
+        <div class='single-offer-carousel--image'>
+          <img src="<?php echo $main_image_src[0]; ?>" alt="">
+        </div>
+        <?php
+          if ( !empty($images)) {
+            foreach ( $images as $image ) :
+              echo "<div class='single-offer-carousel--image'>
+              <img src=" . wp_get_attachment_image_src( $image, 'offer-small' )[0] . " alt=''>
+              </div>";
+            endforeach;
+          }
+        ?>
       </div>
-      <?php
-        if ( !empty($images)) {
-          foreach ( $images as $image ) :
-            echo "<div class='single-offer__gallery--image'>
-            <img src=" . wp_get_attachment_image_src( $image, 'offer-small' )[0] . " alt=''>
-            </div>";
-          endforeach;
-        }
-      ?>
     </div>
     <div class='single-offer__summary'>
       <div class='single-offer__summary-price'>

@@ -12,6 +12,16 @@ function scripts(){
 
   wp_register_script('app', get_template_directory_uri() . '/dist/app.js', ['jquery'], 1, true);
   wp_enqueue_script('app');
+  
+  if ( is_front_page() ) :
+    wp_register_script('homepageslider', get_template_directory_uri() . '/dist/home-page-slider.js', false, 1, true);
+    wp_enqueue_script('homepageslider');
+  endif;
+
+  if ( is_singular('oferty') ) :
+    wp_register_script('singleofferslider', get_template_directory_uri() . '/dist/single-offer-slider.js', false, 1, true);
+    wp_enqueue_script('singleofferslider');
+  endif;
 
 }
 add_action('wp_enqueue_scripts', 'scripts');

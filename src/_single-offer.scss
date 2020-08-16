@@ -1,5 +1,5 @@
-@import './variables';
-@import './mixins';
+@import "./variables";
+@import "./mixins";
 
 .single-offer {
   margin-top: 60px;
@@ -9,43 +9,89 @@
   &__gallery {
     height: 50vh;
     max-height: 600px;
+    position: relative;
+    overflow: hidden;
 
-    &--image {
+    .single-offer-carousel {
       height: 100%;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      
+
+      &--image {
+        position: relative;
+        height: 50vh;
+        max-height: 600px;
+        overflow: hidden;
+
+        img {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .single-control-prev,
+    .single-control-next {
+      @include flex-center-center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2rem;
+      height: 2rem;
+      border-radius: 1rem;
+      background-color: $hero-image-description-bg-color;
+      color: #ffffff;
+      z-index: 5;
+
       img {
-        height: 100%;
+        height: 50%;
+        width: auto;
+      }
+    }
+
+    .single-control-prev {
+      left: 1rem;
+      padding-right: 0.125rem;
+    }
+
+    .single-control-next {
+      right: 1rem;
+      padding-left: 0.125rem;
+
+      @media (min-width: 1025px) {
+        right: 2rem;
       }
     }
   }
-  
+
   &__summary {
     position: sticky;
     opacity: 1;
     top: $mobile-top-bar-height;
     width: 100%;
     height: 20vh;
+    max-height: 110px;
     margin-top: 1rem;
     background-color: $summary-bg-color;
     font-family: $text-font-family;
     color: $summary-font-color;
-    font-size: 1.15rem;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    &-price, &-localization, &-data {
+    &-price,
+    &-localization,
+    &-data {
       display: flex;
 
       p {
-        margin: .5rem 0 .5rem 1rem,
+        margin: 0.5rem 0 0.5rem 1rem;
       }
     }
 
-    &-data--year, &-data--rooms {
+    &-data--year,
+    &-data--rooms {
       border-left: 1px solid $summary-font-color;
       padding-left: 1rem;
     }
@@ -58,17 +104,22 @@
     background-color: $description-bg-color;
 
     &--title {
-      margin: .8rem 0;
+      margin: 0.8rem 0;
       font-size: $single-offer-title-font-size;
       font-weight: 500;
       line-height: 125%;
-      font-family:$text-font-family;
+      font-family: $text-font-family;
       color: $single-offer-title-font-color;
     }
 
-    &--localization, &--property, &--info, &--list {
-      .title, .description, .list {
-        margin: .8rem 0;
+    &--localization,
+    &--property,
+    &--info,
+    &--list {
+      .title,
+      .description,
+      .list {
+        margin: 0.8rem 0;
         font-family: $text-font-family;
       }
 
@@ -78,7 +129,8 @@
         color: $single-offer-subtitle-font-color;
       }
 
-      .description, .list {
+      .description,
+      .list {
         font-size: $single-offer-text-font-size;
         font-weight: 400;
         color: $single-offer-text-font-color;
@@ -88,7 +140,7 @@
         padding: 0 0 0 1.25rem;
 
         .list-item {
-          padding-bottom: .4rem;
+          padding-bottom: 0.4rem;
         }
       }
     }
@@ -100,13 +152,16 @@
     flex-wrap: wrap;
     justify-content: flex-start;
 
-    &--photo, &--description, &--phone, &--email {
+    &--photo,
+    &--description,
+    &--phone,
+    &--email {
       margin-left: 2rem;
       margin-bottom: 1rem;
     }
 
     &--photo {
-      background-image: url('../images/gallery/face_01_533_533.jpg');
+      background-image: url("../images/gallery/face_01_533_533.jpg");
       background-position: center;
       background-size: cover;
       width: 20vw;
@@ -126,8 +181,8 @@
       color: $single-offer-subtitle-font-color;
     }
 
-    &--phone, &--email {
-
+    &--phone,
+    &--email {
       .contact-link {
         font-size: 1rem;
         text-decoration: none;
@@ -141,7 +196,7 @@
         .contact-icon {
           height: 1.25rem;
           width: auto;
-          margin-right: .5rem;
+          margin-right: 0.5rem;
         }
       }
 
@@ -156,9 +211,18 @@
       width: 100%;
       height: 40vh;
       max-height: 400px;
+
+      .single-offer-carousel {
+        &--image {
+          height: 40vh;
+          max-height: 400px;
+        }
+      }
     }
     &__summary {
       padding: 1rem;
+      height: 15vh;
+      max-height: 120px;
     }
 
     &__description {
@@ -174,7 +238,7 @@
     margin-top: $desktop-top-bar-height;
 
     &__summary {
-      padding: 1rem calc((100vw - 1280px) / 2);
+      padding: 1rem 2rem;
       height: $desktop-top-bar-height;
       top: 89px;
       flex-direction: row;
@@ -185,8 +249,8 @@
         padding-right: 1rem;
       }
 
-      &-price p:first-of-type  {
-        margin: .5rem 0;
+      &-price p:first-of-type {
+        margin: 0.5rem 0;
       }
     }
 
@@ -195,12 +259,13 @@
       flex-direction: column;
       align-items: center;
 
-      &--list, &--title {
+      &--list,
+      &--title {
         width: 100%;
       }
-
     }
-    &__description > h2, &__description > div {
+    &__description > h2,
+    &__description > div {
       width: 100%;
       max-width: 1280px;
     }
@@ -210,6 +275,12 @@
       &--photo {
         margin-left: 0;
       }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    &__summary {
+      padding: 1rem calc((100vw - 1280px) / 2);
     }
   }
 }
