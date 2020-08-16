@@ -39,11 +39,19 @@
             }
           }
         ?>
-        <form id='main-contact-form' class='contact-form' method='post'>
-          <input id='input-name' class='contact-form--input-name' type="text" name="imie" aria-required="true" aria-invalid="false" placeholder="Twoje Imię (wymagane)">
-          <input id='input-email' class='contact-form--input-email' type="email" name="email" aria-required="true" aria-invalid="false" placeholder="Twój E-mail (wymagane)">
-          <input id='input-phone' class='contact-form--input-phone' type="tel" name="telefon" aria-required="true" aria-invalid="false" placeholder="Twój Telefon (wymagane)">
-          <textarea id='input-message' class='contact-form--input-message' type="text" name="message" aria-required="true" aria-invalid="false" placeholder="Wiadomość (wymagane)"></textarea>
+        <form id='contact-form' class='contact-form' method='post'>
+          <div class="input-wrapper">
+            <input id='input-name' class='contact-form--input-name' type="text" name="imie" aria-required="true" aria-invalid="false" placeholder="Twoje Imię (wymagane)">
+          </div>
+          <div class="input-wrapper">
+            <input id='input-email' class='contact-form--input-email' type="email" name="email" aria-required="true" aria-invalid="false" placeholder="Twój E-mail (wymagane)">
+          </div>
+          <div class="input-wrapper">
+            <input id='input-phone' class='contact-form--input-phone' type="tel" name="telefon" aria-required="true" aria-invalid="false" placeholder="Twój Telefon (wymagane)">
+          </div>
+          <div class="input-wrapper">
+            <textarea id='input-message' class='contact-form--input-message' type="text" name="message" aria-required="true" aria-invalid="false" placeholder="Wiadomość (wymagane)"></textarea>
+          </div>
           <input class='contact-form--input-submit' type="submit" value="Wyślij wiadomość">
         </form>
       </div>

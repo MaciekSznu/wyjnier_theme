@@ -11,7 +11,7 @@
   &__title {
     margin: calc(#{$mobile-top-bar-height} + 1rem) 0 2rem;
     font-size: 1.7rem;
-    font-family:$text-font-family;
+    font-family: $text-font-family;
     font-weight: 500;
     color: $new-offer-font-color;
     text-transform: uppercase;
@@ -66,15 +66,16 @@
         line-height: 1.25;
       }
 
-      &--title, &--subtitle {
-        font-family:$text-font-family;
+      &--title,
+      &--subtitle {
+        font-family: $text-font-family;
         font-weight: 500;
         font-size: 1.15rem;
       }
 
       &--subtitle {
         font-size: 1.1rem;
-        margin-top: .5rem;
+        margin-top: 0.5rem;
         margin-bottom: 0;
       }
 
@@ -148,72 +149,112 @@
           align-items: flex-start;
           margin-top: 1rem;
 
-          &--input-name,
-          &--input-email,
-          &--input-phone,
-          &--input-message,
-          &--input-submit {
+          .input-wrapper {
             width: 100%;
-            margin-top: 0.5rem;
-            padding: 0.5rem;
-            background-color: #ffffff;
-            border: none;
-            border-radius: 0;
-            border: 1px solid $mobile-contact-bg-color;
-            color: $mobile-contact-bg-color;
-            font-family: $text-font-family;
-            font-size: 0.9rem;
+            position: relative;
 
-            &:focus {
-              outline: none;
+            .contact-form--input-name,
+            .contact-form--input-email,
+            .contact-form--input-phone,
+            .contact-form--input-message {
+              width: 100%;
+              margin-top: 0.5rem;
+              padding: 0.5rem;
+              background-color: #ffffff;
+              border: none;
+              border-radius: 0;
+              border: 1px solid $mobile-contact-bg-color;
+              color: $mobile-contact-bg-color;
+              font-family: $text-font-family;
+              font-size: 0.9rem;
+
+              &:focus {
+                outline: none;
+              }
             }
-          }
 
-          &--input-name,
-          &--input-email,
-          &--input-phone,
-          &--input-message {
-            &:hover::placeholder {
-              color: $base-gold-color;
+            .contact-form--input-name,
+            .contact-form--input-email,
+            .contact-form--input-phone,
+            .contact-form--input-message {
+              &:hover::placeholder {
+                color: $base-gold-color;
+              }
             }
-          }
 
-          &--input-name::placeholder,
-          &--input-email::placeholder,
-          &--input-phone::placeholder,
-          &--input-message::placeholder {
-            color: $mobile-contact-bg-color;
-            font-family: $text-font-family;
-            font-weight: 300;
-            font-size: 0.9rem;
-            transition: color 1s ease;
-          }
+            .contact-form--input-name::placeholder,
+            .contact-form--input-email::placeholder,
+            .contact-form--input-phone::placeholder,
+            .contact-form--input-message::placeholder {
+              color: $mobile-contact-bg-color;
+              font-family: $text-font-family;
+              font-weight: 300;
+              font-size: 0.9rem;
+              transition: color 1s ease;
+            }
 
-          &--input-name.incorrect::placeholder,
-          &--input-email.incorrect::placeholder,
-          &--input-phone.incorrect::placeholder,
-          &--input-message.incorrect::placeholder {
-            color: #ff0000;
-          }
+            .contact-form--input-message {
+              height: 100px;
+              resize: none;
 
-          &--input-message {
-            height: 100px;
-            resize: none;
+              &::placeholder {
+                transform: translateY(70px);
+              }
+            }
 
-            &::placeholder {
-              transform: translateY(70px);
+            &::before {
+              // content: 'lalala';
+              position: absolute;
+              top: 0px;
+              left: 5px;
+              height: 20px;
+              line-height: 20px;
+              width: auto;
+              padding: 0 1rem;
+              color: #ff0000;
+              visibility: hidden;
+              background-color: #ffffff;
+              z-index: 5;
+              font-family: $text-font-family;
+              font-size: .9rem;
+            }
+            &:nth-of-type(1)::before {
+              content: 'Proszę podać Imię';
+            }
+            &:nth-of-type(2)::before {
+              content: 'Proszę podać poprawny adres email';
+            }
+            &:nth-of-type(3)::before {
+              content: 'Proszę podać poprawny numer telefonu';
+            }
+            &:nth-of-type(4)::before {
+              content: 'Proszę uzupełnić treść';
+            }
+
+            &.incorrect::before {
+              visibility: visible;
             }
           }
 
           &--input-submit {
             max-width: 240px;
-            margin: 1.5rem auto 0.5rem;
+            margin: 1rem auto 0.5rem;
             border: 1px solid $mobile-contact-bg-color;
             height: 2.25rem;
             font-weight: 500;
             font-size: 1rem;
             cursor: pointer;
             transition: background-color 1s ease, color 1s ease;
+            width: 100%;
+            padding: 0.5rem;
+            background-color: #ffffff;
+            border-radius: 0;
+            color: $mobile-contact-bg-color;
+            font-family: $text-font-family;
+
+            &:focus {
+              outline: none;
+            }
 
             &:hover {
               color: #ffffff;
@@ -264,7 +305,6 @@
     min-height: calc(100vh - 124px);
 
     &__content-wrapper {
-
       .contact-page__map {
         max-height: 500px;
         margin-left: 1rem;
@@ -340,12 +380,14 @@
       height: 60px;
       @include flex-center-center;
 
-      &--facebook, &--phone, &--instagram {
+      &--facebook,
+      &--phone,
+      &--instagram {
         width: 32px;
         height: 32px;
         background-color: transparent;
-        margin: .5rem;
-    
+        margin: 0.5rem;
+
         &--link {
           display: block;
           width: 100%;
@@ -353,17 +395,17 @@
           background-repeat: no-repeat;
         }
       }
-    
+
       &--facebook--link {
-        background-image: url('../images/logos/facebook-square.svg');
+        background-image: url("../images/logos/facebook-square.svg");
       }
-    
+
       &--phone--link {
-        background-image: url('../images/logos/phone-square.svg');
+        background-image: url("../images/logos/phone-square.svg");
       }
-    
+
       &--instagram--link {
-        background-image: url('../images/logos/instagram-square.svg');
+        background-image: url("../images/logos/instagram-square.svg");
       }
     }
 
@@ -376,12 +418,12 @@
         color: $contact-font-color;
         font-family: $text-font-family;
         font-weight: 300;
-        margin: .5rem 0;
-        font-size: .9rem;
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
 
         &-link {
           color: $contact-font-color;
-          font-family: 'Raleway', sans-serif;
+          font-family: "Raleway", sans-serif;
           font-weight: 700;
           text-decoration: none;
         }
@@ -393,7 +435,8 @@
       flex-wrap: wrap;
       justify-content: space-between;
 
-      .contact-logo, .contact-social {
+      .contact-logo,
+      .contact-social {
         width: 50%;
       }
 
@@ -406,7 +449,7 @@
 
       .contact-copyright {
         flex-direction: row;
-        
+
         &--description {
           width: 50%;
 

@@ -140,79 +140,52 @@ var inputName = document.querySelector('#input-name');
 var inputEmail = document.querySelector('#input-email');
 var inputPhone = document.querySelector('#input-phone');
 var inputMessage = document.querySelector('#input-message');
-var submit = document.querySelector('.contact-form--input-submit');
-var mainContactForm = document.querySelector('#main-contact-form');
+var contactForm = document.querySelector('#contact-form');
 var emailRegEx = /\S+@\S+\.\S+/;
 var phoneRegEx = /^(?:\(?\?)?(?:[-\.\(\)\s]*(\d)){9}\)?$/;
+contactForm.addEventListener('submit', function (e) {
+  var errors = [];
 
-var isNameCorrect = function isNameCorrect() {
-  if (inputName.value.trim() == "") {
-    inputName.placeholder = 'Proszę podać imię';
-    inputName.classList.add('incorrect');
+  if (inputName.value.trim() == "" || inputName.value == null) {
+    inputName.parentNode.classList.add('incorrect');
+    errors.push('name error');
+  } else {
+    inputName.parentNode.classList.remove('incorrect');
   }
 
   ;
-};
 
-var isEmailCorrect = function isEmailCorrect() {
   if (!emailRegEx.test(inputEmail.value)) {
-    inputEmail.placeholder = 'Proszę podać poprawny adres email';
-    inputEmail.classList.add('incorrect');
+    inputEmail.parentNode.classList.add('incorrect');
+    errors.push('mail error');
+  } else {
+    inputEmail.parentNode.classList.remove('incorrect');
   }
 
   ;
-};
 
-var isPhoneCorrect = function isPhoneCorrect() {
   if (!phoneRegEx.test(inputPhone.value)) {
-    inputPhone.placeholder = 'Proszę podać poprawny nr telefonu';
-    inputPhone.classList.add('incorrect');
-  }
-
-  ;
-};
-
-var isMessageCorrect = function isMessageCorrect() {
-  if (inputMessage.value.trim() == "") {
-    inputMessage.placeholder = 'Proszę uzupełnić treść wiadomości';
-    inputMessage.classList.add('incorrect');
-  }
-
-  ;
-};
-
-var enableForm = function enableForm() {
-  if (inputName.value.trim() !== "" && emailRegEx.test(inputEmail.value) && phoneRegEx.test(inputPhone.value) && inputMessage.value.trim() !== "") {
-    submit.style.borderWidth = '2px';
-    submit.disabled = false;
-    return true;
+    inputPhone.parentNode.classList.add('incorrect');
+    errors.push('phone error');
   } else {
-    submit.style.borderWidth = '1px';
-    submit.disabled = true;
-    return false;
+    inputPhone.parentNode.classList.remove('incorrect');
   }
 
   ;
-};
 
-var formValidate = function formValidate() {
-  if (mainContactForm) {
-    mainContactForm.oninput = function () {
-      enableForm();
-    };
-
-    mainContactForm.onsubmit = function () {
-      isNameCorrect();
-      isEmailCorrect();
-      isPhoneCorrect();
-      isMessageCorrect();
-    };
+  if (inputMessage.value.trim() == "" || inputMessage.value == null) {
+    inputMessage.parentNode.classList.add('incorrect');
+    errors.push('message error');
   } else {
-    null;
+    inputMessage.parentNode.classList.remove('incorrect');
   }
 
   ;
-}; //documentReady(homePageSlider, singleOfferSlider);
+
+  if (errors.length > 0) {
+    e.preventDefault();
+  }
+});
 
 /***/ }),
 

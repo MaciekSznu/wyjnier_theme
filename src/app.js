@@ -43,68 +43,38 @@ const inputName = document.querySelector('#input-name');
 const inputEmail = document.querySelector('#input-email');
 const inputPhone = document.querySelector('#input-phone');
 const inputMessage = document.querySelector('#input-message');
-const submit = document.querySelector('.contact-form--input-submit');
-const mainContactForm = document.querySelector('#main-contact-form');
+const contactForm = document.querySelector('#contact-form');
 const emailRegEx = /\S+@\S+\.\S+/;
 const phoneRegEx = /^(?:\(?\?)?(?:[-\.\(\)\s]*(\d)){9}\)?$/;
 
-const isNameCorrect = () => {
-  if (inputName.value.trim() == "") {
-        inputName.placeholder = 'Proszę podać imię';
-        inputName.classList.add('incorrect');
-  };
-}
-
-const isEmailCorrect = () => {
-  if (!emailRegEx.test(inputEmail.value)) {
-        inputEmail.placeholder = 'Proszę podać poprawny adres email';
-        inputEmail.classList.add('incorrect');
-  };
-}
-
-const isPhoneCorrect = () => {
-  if (!phoneRegEx.test(inputPhone.value)) {
-        inputPhone.placeholder = 'Proszę podać poprawny nr telefonu';
-        inputPhone.classList.add('incorrect');
-  };
-}
-
-const isMessageCorrect = () => {
-  if (inputMessage.value.trim() == "") {
-        inputMessage.placeholder = 'Proszę uzupełnić treść wiadomości';
-        inputMessage.classList.add('incorrect');
-  };
-}
-
-const enableForm = () => {
-  if (inputName.value.trim() !== ""
-      && emailRegEx.test(inputEmail.value)
-      && phoneRegEx.test(inputPhone.value)
-      && inputMessage.value.trim() !== "") {
-        submit.style.borderWidth = '2px';
-        submit.disabled = false;
-        return true;
-      } else {
-        submit.style.borderWidth = '1px';
-        submit.disabled = true;
-        return false;
-      };
-};
-
-const formValidate = () => {
-  if (mainContactForm) {
-    mainContactForm.oninput = () => {
-      enableForm();
-    }
-    mainContactForm.onsubmit = () => {
-      isNameCorrect();
-      isEmailCorrect();
-      isPhoneCorrect();
-      isMessageCorrect();
-    }
+contactForm.addEventListener('submit', (e) => {
+  let errors = [];
+  if (inputName.value.trim() == "" || inputName.value == null) {
+    inputName.parentNode.classList.add('incorrect');
+    errors.push('name error');
   } else {
-    null
+    inputName.parentNode.classList.remove('incorrect');
   };
-};
+  if (!emailRegEx.test(inputEmail.value)) {
+    inputEmail.parentNode.classList.add('incorrect');
+    errors.push('mail error');
+  } else {
+    inputEmail.parentNode.classList.remove('incorrect');
+  };
+  if (!phoneRegEx.test(inputPhone.value)) {
+    inputPhone.parentNode.classList.add('incorrect');
+    errors.push('phone error');
+  } else {
+    inputPhone.parentNode.classList.remove('incorrect');
+  };
+  if (inputMessage.value.trim() == "" || inputMessage.value == null) {
+    inputMessage.parentNode.classList.add('incorrect');
+    errors.push('message error');
+  } else {
+    inputMessage.parentNode.classList.remove('incorrect');
+  };
 
-//documentReady(homePageSlider, singleOfferSlider);
+  if (errors.length > 0) {
+    e.preventDefault();
+  }
+});

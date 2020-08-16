@@ -147,57 +147,101 @@
       align-items: flex-start;
       margin-top: 1rem;
 
-      &--input-name,
-      &--input-email,
-      &--input-phone,
-      &--input-message,
+      .input-wrapper {
+        width: 100%;
+        position: relative;
+
+        .contact-form--input-name,
+        .contact-form--input-email,
+        .contact-form--input-phone,
+        .contact-form--input-message {
+          width: 100%;
+          margin-top: 0.5rem;
+          padding: 0.5rem;
+          background-color: $mobile-contact-bg-color;
+          border: none;
+          border-radius: 0;
+          border-bottom: 1px solid #ffffff;
+          color: $contact-font-color;
+          font-family: $text-font-family;
+          font-size: 0.9rem;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .contact-form--input-name,
+        .contact-form--input-email,
+        .contact-form--input-phone,
+        .contact-form--input-message {
+          &:hover::placeholder {
+            color: $base-gold-color;
+          }
+        }
+
+        .contact-form--input-name::placeholder,
+        .contact-form--input-email::placeholder,
+        .contact-form--input-phone::placeholder,
+        .contact-form--input-message::placeholder {
+          color: $contact-font-color;
+          font-family: $text-font-family;
+          font-weight: 300;
+          font-size: 0.9rem;
+          transition: color 1s ease;
+        }
+
+        .contact-form--input-message {
+          height: 100px;
+          resize: none;
+
+          &::placeholder {
+            transform: translateY(70px);
+          }
+        }
+
+        &::before {
+          position: absolute;
+          bottom: 5px;
+          right: 0;
+          height: 20px;
+          line-height: 20px;
+          width: auto;
+          padding: 0 1rem;
+          color: #ff0000;
+          visibility: hidden;
+          background-color: rgba(#ffffff, .5);
+          z-index: 5;
+          font-family: $text-font-family;
+          font-size: .8rem;
+        }
+        &:nth-of-type(1)::before {
+          content: 'Proszę podać Imię';
+        }
+        &:nth-of-type(2)::before {
+          content: 'Proszę podać email';
+        }
+        &:nth-of-type(3)::before {
+          content: 'Proszę podać telefon';
+        }
+        &:nth-of-type(4)::before {
+          bottom: 9px;
+          content: 'Proszę uzupełnić treść';
+        }
+
+        &.incorrect::before {
+          visibility: visible;
+        }
+      }
+
       &--input-submit {
         width: 100%;
-        margin-top: 0.5rem;
         padding: 0.5rem;
         background-color: $mobile-contact-bg-color;
-        border: none;
         border-radius: 0;
-        border-bottom: 1px solid #ffffff;
         color: $contact-font-color;
         font-family: $text-font-family;
         font-size: 0.9rem;
-
-        &:focus {
-          outline: none;
-        }
-      }
-
-      &--input-name,
-      &--input-email,
-      &--input-phone,
-      &--input-message {
-        &:hover::placeholder {
-          color: $base-gold-color;
-        }
-      }
-
-      &--input-name::placeholder,
-      &--input-email::placeholder,
-      &--input-phone::placeholder,
-      &--input-message::placeholder {
-        color: $contact-font-color;
-        font-family: $text-font-family;
-        font-weight: 300;
-        font-size: 0.9rem;
-        transition: color 1s ease;
-      }
-
-      &--input-message {
-        height: 100px;
-        resize: none;
-
-        &::placeholder {
-          transform: translateY(70px);
-        }
-      }
-
-      &--input-submit {
         max-width: 240px;
         margin: 1.5rem auto 0.5rem;
         border: 1px solid #ffffff;
@@ -210,6 +254,10 @@
         &:hover {
           color: $mobile-contact-bg-color;
           background-color: white;
+        }
+
+        &:focus {
+          outline: none;
         }
       }
     }
@@ -315,16 +363,16 @@
         margin-top: 0;
         padding-left: 1.5rem;
 
-        &--input-name {
+        .input-wrapper .contact-form--input-name {
           margin-top: 0;
         }
 
-        &--input-message {
+        .input-wrapper .contact-form--input-message {
           height: 80px;
           resize: none;
 
           &::placeholder {
-            transform: translateY(52px);
+            transform: translateY(50px);
           }
         }
       }
