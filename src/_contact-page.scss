@@ -42,7 +42,6 @@
     .contact-page__map {
       width: 100%;
       height: 100vw;
-      background-color: $hero-image-description-bg-color;
       margin-bottom: 2rem;
     }
 
@@ -375,6 +374,7 @@
     }
 
     .contact-social {
+      visibility: hidden;
       width: 100%;
       height: 60px;
       @include flex-center-center;

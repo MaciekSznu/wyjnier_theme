@@ -23,6 +23,11 @@ function scripts(){
     wp_enqueue_script('singleofferslider');
   endif;
 
+  if ( is_page('kontakt') ) :
+    wp_register_script('contact', get_template_directory_uri() . '/dist/contact.js', false, 1, true);
+    wp_enqueue_script('contact');
+  endif;
+
 }
 add_action('wp_enqueue_scripts', 'scripts');
 
@@ -33,7 +38,6 @@ add_theme_support('menus');
 register_nav_menus(
   array(
     'main-menu' => 'Top Menu Location',
-    'footer-menu' => 'Footer Menu Location'
   )
 );
 

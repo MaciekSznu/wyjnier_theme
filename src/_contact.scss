@@ -3,6 +3,7 @@
 
 .contact {
   width: 100%;
+  max-width: 100vw;
   height: auto;
   margin-top: 1rem;
   margin-bottom: 60px;
@@ -13,14 +14,15 @@
 
   &-adress-wrapper {
     width: 100%;
+    max-width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     align-self: flex-start;
-    margin-bottom: 1.5rem;
 
     .contact__content-logo {
       width: 100%;
+      max-width: 100vw;
       height: 60px;
       margin: 0;
 
@@ -30,234 +32,55 @@
       }
     }
 
-    .contact__content {
-      margin: 0;
-      font-size: 0.9rem;
-      font-family: $text-font-family;
-      font-weight: 400;
-      color: $contact-font-color;
-      margin: 0.35rem 0;
+    .contact__content-wrapper {
+      width: 100%;
+      max-width: 100vw;
 
-      .contact-icon {
-        height: 1rem;
-        width: auto;
-        margin-right: 0.5rem;
-      }
-
-      &:nth-of-type(2) {
-        margin-left: 24px;
-      }
-
-      &--cta {
-        height: auto;
+      .contact__content {
         width: 100%;
+        max-width: 100vw;
+        margin: 0;
+        font-size: 0.9rem;
+        font-family: $text-font-family;
+        font-weight: 300;
+        color: $contact-font-color;
         margin: 0.35rem 0;
 
-        &-link {
-          font-size: 0.9rem;
-          text-decoration: none;
-          color: $contact-font-color;
-          font-family: $text-font-family;
-          font-weight: 400;
-          display: flex;
-          align-items: center;
-          transition: color 1s ease;
-
-          .contact-icon {
-            height: 1rem;
-            width: auto;
-            margin-right: 0.5rem;
-          }
+        .contact-icon {
+          height: 1rem;
+          width: auto;
+          padding-right: 0.5rem;
         }
 
-        &:hover .contact__content--cta-link {
-          color: $base-gold-color;
+        &:nth-of-type(2) {
+          padding-left: 24px;
         }
-      }
-    }
-  }
 
-  &-footer-menu-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    align-self: flex-start;
-    border-top: 1px solid #fff;
-
-    .footer-menu-title {
-      margin-top: 1.5rem;
-      margin-bottom: 0;
-      color: $footer-mobile-menu-font-color;
-      text-transform: uppercase;
-      font-family: $footer-mobile-menu-font-family;
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
-
-    .footer-menu {
-      margin-top: 0.75rem;
-      margin-bottom: 1.5rem;
-
-      ul {
-        width: 100%;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        text-transform: uppercase;
-
-        .page_item {
-          width: 100px;
-          margin: 0.25rem 0;
-          border-bottom: 1px solid transparent;
-          transition: border-color 1s ease;
-
-          &:hover {
-            border-color: $footer-mobile-menu-font-color;
-          }
-
-          a {
-            font-size: 0.9rem;
-            color: $footer-mobile-menu-font-color;
-            text-decoration: none;
-            font-family: $footer-mobile-menu-font-family;
-            font-weight: $footer-mobile-menu-font-weight;
-          }
-
-          &.current_page_item {
-            border-color: $footer-mobile-menu-font-color;
-          }
-        }
-      }
-    }
-  }
-
-  &-footer-form-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    align-self: flex-start;
-    border-top: 1px solid #fff;
-
-    .contact-form {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-top: 1rem;
-
-      .input-wrapper {
-        width: 100%;
-        position: relative;
-
-        .contact-form--input-name,
-        .contact-form--input-email,
-        .contact-form--input-phone,
-        .contact-form--input-message {
+        &--cta {
+          height: auto;
           width: 100%;
-          margin-top: 0.5rem;
-          padding: 0.5rem;
-          background-color: $mobile-contact-bg-color;
-          border: none;
-          border-radius: 0;
-          border-bottom: 1px solid #ffffff;
-          color: $contact-font-color;
-          font-family: $text-font-family;
-          font-size: 0.9rem;
+          margin: 0.35rem 0;
 
-          &:focus {
-            outline: none;
+          &-link {
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: $contact-font-color;
+            font-family: $text-font-family;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            transition: color 1s ease;
+
+            .contact-icon {
+              height: 1rem;
+              width: auto;
+              margin-right: 0.5rem;
+            }
           }
-        }
 
-        .contact-form--input-name,
-        .contact-form--input-email,
-        .contact-form--input-phone,
-        .contact-form--input-message {
-          &:hover::placeholder {
+          &:hover .contact__content--cta-link {
             color: $base-gold-color;
           }
-        }
-
-        .contact-form--input-name::placeholder,
-        .contact-form--input-email::placeholder,
-        .contact-form--input-phone::placeholder,
-        .contact-form--input-message::placeholder {
-          color: $contact-font-color;
-          font-family: $text-font-family;
-          font-weight: 300;
-          font-size: 0.9rem;
-          transition: color 1s ease;
-        }
-
-        .contact-form--input-message {
-          height: 100px;
-          resize: none;
-
-          &::placeholder {
-            transform: translateY(70px);
-          }
-        }
-
-        &::before {
-          position: absolute;
-          bottom: 5px;
-          right: 0;
-          height: 20px;
-          line-height: 20px;
-          width: auto;
-          padding: 0 1rem;
-          color: #ff0000;
-          visibility: hidden;
-          background-color: rgba(#ffffff, .5);
-          z-index: 5;
-          font-family: $text-font-family;
-          font-size: .8rem;
-        }
-        &:nth-of-type(1)::before {
-          content: 'Proszę podać Imię';
-        }
-        &:nth-of-type(2)::before {
-          content: 'Proszę podać email';
-        }
-        &:nth-of-type(3)::before {
-          content: 'Proszę podać telefon';
-        }
-        &:nth-of-type(4)::before {
-          bottom: 9px;
-          content: 'Proszę uzupełnić treść';
-        }
-
-        &.incorrect::before {
-          visibility: visible;
-        }
-      }
-
-      &--input-submit {
-        width: 100%;
-        padding: 0.5rem;
-        background-color: $mobile-contact-bg-color;
-        border-radius: 0;
-        color: $contact-font-color;
-        font-family: $text-font-family;
-        font-size: 0.9rem;
-        max-width: 240px;
-        margin: 1.5rem auto 0.5rem;
-        border: 1px solid #ffffff;
-        height: 2.25rem;
-        font-weight: 500;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color 1s ease, color 1s ease;
-
-        &:hover {
-          color: $mobile-contact-bg-color;
-          background-color: white;
-        }
-
-        &:focus {
-          outline: none;
         }
       }
     }
@@ -265,7 +88,7 @@
 
   &-footer-copyright {
     border-top: 1px solid #fff;
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: 100%;
     @include flex-center-center;
     flex-direction: column;
@@ -274,7 +97,7 @@
       color: $contact-font-color;
       font-family: $text-font-family;
       font-weight: 300;
-      margin: 0.5rem 0;
+      margin: 0.5rem 0 0 0;
       font-size: 0.9rem;
 
       &-link {
@@ -292,40 +115,51 @@
     justify-content: space-between;
 
     &-adress-wrapper {
-      width: calc(50% - 30px);
+      width: 100%;
       margin-bottom: 0;
-      height: 160px;
-    }
+      height: 70px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
 
-    &-footer-menu-wrapper {
-      width: calc(50% - 30px);
-      height: 160px;
-      border-left: 1px solid #fff;
-      border-top: none;
-      justify-content: flex-start;
+      .contact__content-logo {
+        width: 35%;
+        height: 60px;
+        margin: 0;
 
-      .footer-menu-title {
-        padding-left: 1.5rem;
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
+        .logo__image {
+          height: 90%;
+          width: auto;
+        }
       }
 
-      .footer-menu {
-        margin-top: 0;
-        padding-left: 1.5rem;
-      }
-    }
+      .contact__content-wrapper {
+        width: 35%;
+        .contact__content--cta {
+          width: 100%;
+        }
+        .contact__content {
+          width: 100%;
+          text-align: right;
 
-    &-footer-form-wrapper {
-      margin-top: 2rem;
+          .contact-icon {
+            height: 1rem;
+            width: auto;
+            margin-right: 0.75rem;
+          }
+        }
 
-      .contact-form {
-        margin-top: 0;
+        &:nth-of-type(2) {
+          width: 25%;
+        }
       }
     }
 
     &-footer-copyright {
       flex-direction: row;
+      width: 100%;
+      margin-top: 0;
 
       &--description {
         width: 50%;
@@ -339,44 +173,6 @@
 
   @media (min-width: 1024px) {
     margin-bottom: 0;
-
-    &-adress-wrapper {
-      margin-left: 30px;
-      max-width: 250px;
-      height: 270px;
-    }
-
-    &-footer-menu-wrapper {
-      max-width: 250px;
-      height: 270px;
-    }
-
-    &-footer-form-wrapper {
-      margin-right: 30px;
-      margin-top: 0;
-      max-width: 400px;
-      height: 270px;
-      border-left: 1px solid #fff;
-      border-top: none;
-
-      .contact-form {
-        margin-top: 0;
-        padding-left: 1.5rem;
-
-        .input-wrapper .contact-form--input-name {
-          margin-top: 0;
-        }
-
-        .input-wrapper .contact-form--input-message {
-          height: 80px;
-          resize: none;
-
-          &::placeholder {
-            transform: translateY(50px);
-          }
-        }
-      }
-    }
   }
 
   @media (min-width: 1280px) {
@@ -386,10 +182,6 @@
   @media (min-width: 1400px) {
     &-adress-wrapper {
       margin-left: 0;
-    }
-
-    &-footer-form-wrapper {
-      margin-right: 0;
     }
   }
 }

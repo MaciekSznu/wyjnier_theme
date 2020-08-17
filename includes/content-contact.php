@@ -1,7 +1,7 @@
 <section class='contact-page'>
   <h2 class='contact-page__title'>Kontakt</h2>
   <div class='contact-page__content-wrapper'>
-    <div class='contact-page__map'>mapa</div>
+    <div class='contact-page__map'></div>
     <div class='contact-page__content'>
       <h3 class='contact-page__content--title'>Wyjątkowe nieruchomości</h3>
       <p class='contact-page__content--adress'>

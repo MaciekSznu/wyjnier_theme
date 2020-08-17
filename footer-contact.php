@@ -20,24 +20,9 @@
     </div>
   </div>
 </footer>
-<script defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA3QLNwvqKmgX-zcRFCxLbBRn8SItRr7w&callback=initMap">
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA3QLNwvqKmgX-zcRFCxLbBRn8SItRr7w">
 </script>
 <?php wp_footer(); ?>
-
-<script>
-  // function initMap() {
-  //   const office = { lat: 50.047606, lng: 19.954092 };
-  //   const map = new google.maps.Map(document.querySelector('.contact-page__map'), {
-  //     zoom: 15,
-  //     center: office,
-  //   });
-  //   const marker = new google.maps.Marker({
-  //     position: office,
-  //     map: map,
-  //     title: 'Wyjątkowe nieruchomości',
-  //   });
-  // }
-</script>
 </body>
 </html>

@@ -81,15 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/app.js":
-/*!********************!*\
-  !*** ./src/app.js ***!
-  \********************/
+/***/ "./src/contact.js":
+/*!************************!*\
+  !*** ./src/contact.js ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -97,52 +97,102 @@
 
 /* BASE FUNCTIONS */
 
-var click = function click(target, callback) {
-  target.addEventListener('click', function (e) {
-    return callback(e);
+var documentReady = function documentReady(callbackFunc) {
+  if (document.readyState !== 'loading') {
+    callbackFunc();
+  } else if (document.addEventListener) {
+    document.addEventListener('DOMContentLoaded', callbackFunc);
+  } else {
+    document.attachEvent('onreadystatechange', function () {
+      if (document.readyState === 'complete') {
+        callbackFunc();
+      }
+    });
+  }
+};
+/* FORM VALIDATION */
+
+
+var inputName = document.querySelector('#input-name');
+var inputEmail = document.querySelector('#input-email');
+var inputPhone = document.querySelector('#input-phone');
+var inputMessage = document.querySelector('#input-message');
+var contactForm = document.querySelector('#contact-form');
+var emailRegEx = /\S+@\S+\.\S+/;
+var phoneRegEx = /^(?:\(?\?)?(?:[-\.\(\)\s]*(\d)){9}\)?$/;
+contactForm.addEventListener('submit', function (e) {
+  var errors = [];
+
+  if (inputName.value.trim() == "" || inputName.value == null) {
+    inputName.parentNode.classList.add('incorrect');
+    errors.push('name error');
+  } else {
+    inputName.parentNode.classList.remove('incorrect');
+  }
+
+  ;
+
+  if (!emailRegEx.test(inputEmail.value)) {
+    inputEmail.parentNode.classList.add('incorrect');
+    errors.push('mail error');
+  } else {
+    inputEmail.parentNode.classList.remove('incorrect');
+  }
+
+  ;
+
+  if (!phoneRegEx.test(inputPhone.value)) {
+    inputPhone.parentNode.classList.add('incorrect');
+    errors.push('phone error');
+  } else {
+    inputPhone.parentNode.classList.remove('incorrect');
+  }
+
+  ;
+
+  if (inputMessage.value.trim() == "" || inputMessage.value == null) {
+    inputMessage.parentNode.classList.add('incorrect');
+    errors.push('message error');
+  } else {
+    inputMessage.parentNode.classList.remove('incorrect');
+  }
+
+  ;
+
+  if (errors.length > 0) {
+    e.preventDefault();
+  }
+});
+/* MAP */
+
+var initMap = function initMap() {
+  var office = {
+    lat: 50.047606,
+    lng: 19.954092
+  };
+  var map = new google.maps.Map(document.querySelector('.contact-page__map'), {
+    zoom: 15,
+    center: office
+  });
+  var marker = new google.maps.Marker({
+    position: office,
+    map: map,
+    title: 'Wyjątkowe nieruchomości'
   });
 };
-/* BURGER MENU */
 
-
-var hamburgerButton = document.querySelector('.hamburger-menu');
-var mobileMenu = document.querySelector('.menu-main-menu-container');
-
-var showMobileMenu = function showMobileMenu() {
-  mobileMenu.classList.toggle('visible');
-};
-
-var hamburgerActive = function hamburgerActive() {
-  hamburgerButton.classList.toggle('hamburger-active');
-};
-
-hamburgerButton.addEventListener('click', function (e) {
-  showMobileMenu();
-  hamburgerActive();
-});
+documentReady(initMap);
 
 /***/ }),
 
-/***/ "./src/app.scss":
-/*!**********************!*\
-  !*** ./src/app.scss ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!*****************************************!*\
-  !*** multi ./src/app.js ./src/app.scss ***!
-  \*****************************************/
+/***/ 3:
+/*!******************************!*\
+  !*** multi ./src/contact.js ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Wordpress\Xampp\htdocs\bysiek\wordpress\wp-content\themes\wyjnier\src\app.js */"./src/app.js");
-module.exports = __webpack_require__(/*! C:\Wordpress\Xampp\htdocs\bysiek\wordpress\wp-content\themes\wyjnier\src\app.scss */"./src/app.scss");
+module.exports = __webpack_require__(/*! C:\Wordpress\Xampp\htdocs\bysiek\wordpress\wp-content\themes\wyjnier\src\contact.js */"./src/contact.js");
 
 
 /***/ })

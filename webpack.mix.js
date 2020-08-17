@@ -18,6 +18,7 @@ mix
 .js('src/app.js', 'dist/')
 .js('src/home-page-slider.js', 'dist/')
 .js('src/single-offer-slider.js', 'dist/')
+.js('src/contact.js', 'dist/')
 .sass('src/app.scss', 'dist/');
 // .minify('dist/app.css');
 
