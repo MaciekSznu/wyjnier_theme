@@ -52,7 +52,7 @@ function offer_post_type() {
     'hierarchical' => true,
     'public' => true,
     'has_archive' => true,
-    'supports' => array('title', 'editor', 'custom-fields'),
+    'supports' => array('title', 'custom-fields'),
   );
 
   register_post_type('oferty', $args);
