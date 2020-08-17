@@ -9,7 +9,6 @@ const singleOfferSlider =
     loop: true,
     perPage: {
       768: 2,
-      1024: 3,
     },
     duration: 750,
     easing: 'ease-out',

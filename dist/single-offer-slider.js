@@ -101,8 +101,7 @@ var singleOfferSlider = new Siema({
   selector: singleOfferSelector,
   loop: true,
   perPage: {
-    768: 2,
-    1024: 3
+    768: 2
   },
   duration: 750,
   easing: 'ease-out'

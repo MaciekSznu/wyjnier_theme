@@ -16,7 +16,7 @@
         </a>
       </p>
       <p class='contact-page__content--email'>
-        <a class='contact-page__content--email-link' href='mailto: biuro@wyjatkowenieruchomosci.pl'>
+        <a class='contact-page__content--email-link' href='mailto:biuro@wyjatkowenieruchomosci.pl'>
           <img class='contact-icon' src="<?php bloginfo('template_url'); ?>/images/icons/envelope-square-about.svg" alt="Wyślij email">
           biuro@wyjatkowenieruchomosci.pl
         </a>

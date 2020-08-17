@@ -8,9 +8,9 @@
     </a>
   </div>
   <div class='single-offer__contact--email'>
-    <a class='contact-link' href='mailto: biuro@wyjatkowenieruchomosci.pl'>
+    <a class='contact-link' href='mailto:michal.bysiek@wyjatkowenieruchomosci.pl'>
       <img class='contact-icon' src="../../wp-content/themes/wyjnier/images/icons/envelope-square-about.svg" alt="Wyślij email">
-      biuro@wyjatkowenieruchomosci.pl
+      michal.bysiek@wyjatkowenieruchomosci.pl
     </a>
   </div>
 </div>

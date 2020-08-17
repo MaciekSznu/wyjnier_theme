@@ -10,7 +10,7 @@
         </a>
       </div>
       <div class='contact__content--cta'>
-        <a class='contact__content--cta-link' href='mailto: biuro@wyjatkowenieruchomosci.pl'>
+        <a class='contact__content--cta-link' href='mailto:biuro@wyjatkowenieruchomosci.pl'>
           <img class='contact-icon' src="<?php bloginfo('template_url'); ?>/images/icons/envelope-square.svg" alt="Wyślij email">
           biuro@wyjatkowenieruchomosci.pl
         </a>
