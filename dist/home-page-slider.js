@@ -110,9 +110,10 @@ prev.addEventListener('click', function () {
 });
 next.addEventListener('click', function () {
   return homePageSlider.next();
-}); // setInterval(() => {
-//   homePageSlider.next();
-// }, 4000);
+});
+setInterval(function () {
+  homePageSlider.next();
+}, 4000);
 
 /***/ }),
 

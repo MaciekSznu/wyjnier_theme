@@ -6,7 +6,7 @@
       <h3 class='contact-page__content--title'>Wyjątkowe nieruchomości</h3>
       <p class='contact-page__content--adress'>
         <img class='contact-icon' src="<?php bloginfo('template_url'); ?>/images/icons/map-marker-alt-black.svg" alt="Wyślij email">
-        ul. Solna 1
+        ul. Solna 1/28
       </p>
       <p class='contact-page__content--adress'>30-527 Kraków</p>
       <p class='contact-page__content--phone'>

@@ -186,6 +186,30 @@ contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
   }
 });
+/* MAP */
+
+function initMap() {
+  var office = {
+    lat: 50.047606,
+    lng: 19.954092
+  };
+  var map = new google.maps.Map(document.querySelector('.contact-page__map'), {
+    zoom: 15,
+    center: office
+  });
+  var marker = new google.maps.Marker({
+    position: office,
+    map: map,
+    title: 'Wyjątkowe nieruchomości'
+  });
+}
+
+var displayMap = function displayMap() {
+  var mapContainer = document.querySelector('.contact-page__map');
+  mapContainer ? initMap() : null;
+};
+
+documentReady(displayMap);
 
 /***/ }),
 

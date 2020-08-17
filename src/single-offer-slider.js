@@ -10,7 +10,6 @@ const singleOfferSlider =
     perPage: {
       768: 2,
       1024: 3,
-      1280: 4,
     },
     duration: 750,
     easing: 'ease-out',
@@ -21,6 +20,6 @@ const next = document.querySelector('.single-control-next');
 prev.addEventListener('click', () => singleOfferSlider.prev());
 next.addEventListener('click', () => singleOfferSlider.next());
 
-// setInterval(() => {
-//   singleOfferSlider.next();
-// }, 4000);
+setInterval(() => {
+  singleOfferSlider.next();
+}, 3000);

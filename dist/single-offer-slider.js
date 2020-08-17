@@ -102,8 +102,7 @@ var singleOfferSlider = new Siema({
   loop: true,
   perPage: {
     768: 2,
-    1024: 3,
-    1280: 4
+    1024: 3
   },
   duration: 750,
   easing: 'ease-out'
@@ -115,9 +114,10 @@ prev.addEventListener('click', function () {
 });
 next.addEventListener('click', function () {
   return singleOfferSlider.next();
-}); // setInterval(() => {
-//   singleOfferSlider.next();
-// }, 4000);
+});
+setInterval(function () {
+  singleOfferSlider.next();
+}, 3000);
 
 /***/ }),
 

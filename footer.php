@@ -17,7 +17,7 @@
       </div>
       <p class='contact__content'>
         <img class='contact-icon' src="<?php bloginfo('template_url'); ?>/images/icons/map-marker-alt.svg" alt="Wyślij email">
-        ul. Solna 1
+        ul. Solna 1/28
       </p>
       <p class='contact__content'>30-527 Kraków</p>
     </div>

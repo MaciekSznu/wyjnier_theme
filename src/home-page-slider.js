@@ -14,6 +14,6 @@ const next = document.querySelector('.hero-control-next');
 prev.addEventListener('click', () => homePageSlider.prev());
 next.addEventListener('click', () => homePageSlider.next());
 
-// setInterval(() => {
-//   homePageSlider.next();
-// }, 4000);
+setInterval(() => {
+  homePageSlider.next();
+}, 4000);
