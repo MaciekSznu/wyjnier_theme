@@ -3,9 +3,6 @@
   <div class='hero-control-next'><img src="<?php bloginfo('template_url'); ?>/images/icons/chevron-right.svg" alt="Next slide"></div>
   <div class='hero-carousel'>
   <?php
-    $main_image = get_field('zdjecie_glowne');
-    $main_image_src = wp_get_attachment_image_src( $main_image, 'offer-large' );
-    $summary = get_field('podsumowanie');
     $posts = get_posts( array(
       'numberposts' => -1,
       'post_type' => 'oferty',
@@ -16,11 +13,12 @@
   <?php
     foreach ( $posts as $post ) :
       $main_image = get_field('zdjecie_glowne');
-      $main_image_src = wp_get_attachment_image_src( $main_image, 'offer-large' );
+      $url = $main_image['url'];
+      $alt = $main_image['alt'];
       $summary = get_field('podsumowanie');
       echo "
         <div class='hero-image-wrapper'>
-          <img class='hero-image' src=" . $main_image_src[0] . " alt=''>
+          <img class='hero-image' src=" . esc_url($url) . " alt='" . esc_attr($alt) . "'>
           <a href=" . get_permalink() . ">
           <div class='hero-image-description-wrapper'>
             <div class='hero-image-description'>

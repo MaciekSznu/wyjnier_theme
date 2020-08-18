@@ -66,13 +66,13 @@ $transactions = get_terms([
     <?php while( $query->have_posts() ) : $query->the_post();?>
       <?php
         $main_image = get_field('zdjecie_glowne');
+        $url = $main_image['url'];
         $summary = get_field('podsumowanie');
         $description = get_field('opis');
         $property = $description['nieruchomosc'];
-        $main_image_src = wp_get_attachment_image_src( $main_image, 'offer-small' );
       ?>
     <div class='investments__single-offer'>
-      <div class='investments__single-offer--image' style="background-image: url(<?php echo $main_image_src[0]; ?>)"></div>
+      <div class='investments__single-offer--image' style="background-image: url(<?php echo esc_url($url); ?>)"></div>
       <div class='investments__single-offer--description'>
         <div class='main-description'>
           <p class='main-description--city'><?php echo $summary['miasto'];?></p>

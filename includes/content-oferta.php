@@ -10,7 +10,8 @@
   $custom_list = str_replace( '<br />', '|', $custom_list);
   $items = explode( '|' , $custom_list );
   $main_image = get_field('zdjecie_glowne');
-  $main_image_src = wp_get_attachment_image_src( $main_image, 'offer-small' );
+  $url = $main_image['url'];
+  $alt = $main_image['alt'];
   $images = get_field('zdjecia');
 ?>
 
@@ -19,15 +20,17 @@
       <div class='single-control-prev'><img src="<?php bloginfo('template_url'); ?>/images/icons/chevron-left.svg" alt="Previous slide"></div>
       <div class='single-control-next'><img src="<?php bloginfo('template_url'); ?>/images/icons/chevron-right.svg" alt="Next slide"></div>
       <div class='single-offer-carousel'>
-        <div class='single-offer-carousel--image'>
-          <img src="<?php echo $main_image_src[0]; ?>" alt="">
+        <div class='single-offer-carousel--image first'>
+          <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($alt); ?>">
         </div>
         <?php
           if ( !empty($images)) {
             foreach ( $images as $image ) :
-              echo "<div class='single-offer-carousel--image'>
-              <img src=" . wp_get_attachment_image_src( $image, 'offer-small' )[0] . " alt=''>
-              </div>";
+              $image_url = $image['url'];
+              $image_alt = $image['alt'];
+              echo "<div class='single-offer-carousel--image'>";
+              echo "<img src='" . esc_url($image_url) . "' alt='" . $image_alt . "'>";
+              echo "</div>";
             endforeach;
           }
         ?>
