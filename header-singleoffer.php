@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/images/logos/favicon.png"/>
   <title><?php wp_title( '', true, 'right' ); ?></title>
+  <meta name="description" content="Wyjątkowe Nieruchomości - tutaj znajdziesz wyjątkowe oferty nieruchomości z Krakowa, Zakopanego oraz nadmorskich i górskich kurortów">
   <?php wp_head(); ?>
 </head>
 <body>
