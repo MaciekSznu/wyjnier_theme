@@ -50,7 +50,7 @@
             <input id='input-phone' class='contact-form--input-phone' type="tel" name="telefon" aria-required="true" aria-invalid="false" placeholder="Twój Telefon (wymagane)">
           </div>
           <div class="input-wrapper">
-            <textarea id='input-message' class='contact-form--input-message' type="text" name="message" aria-required="true" aria-invalid="false" placeholder="Wiadomość (wymagane)"></textarea>
+            <textarea id='input-message' class='contact-form--input-message' name="message" aria-required="true" aria-invalid="false" placeholder="Wiadomość (wymagane)"></textarea>
           </div>
           <input class='contact-form--input-submit' type="submit" value="Wyślij wiadomość">
         </form>

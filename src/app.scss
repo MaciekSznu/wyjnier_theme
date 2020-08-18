@@ -1,21 +1,19 @@
-@import './normalize';
-@import './variables';
-@import './mixins';
-@import './header';
-@import './hero';
-@import './about';
-@import './contact';
-// @import './social';
-@import './menu-toggler';
-@import './new-offers';
-@import './investments';
-@import './single-offer';
-@import './search';
-@import './contact-page';
-@import './404';
+@import "./normalize";
+@import "./variables";
+@import "./mixins";
+@import "./header";
+@import "./hero";
+@import "./about";
+@import "./contact";
+@import "./menu-toggler";
+@import "./new-offers";
+@import "./investments";
+@import "./single-offer";
+@import "./search";
+@import "./contact-page";
+@import "./404";
 
-
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Roboto:wght@300;400;500;600;700&family=Raleway:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400&family=Roboto:wght@300;400;500;700&family=Raleway:wght@700&display=swap");
 
 *,
 ::after,

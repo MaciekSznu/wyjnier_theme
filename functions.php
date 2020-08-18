@@ -95,7 +95,7 @@ function search_query(){
   $args = [
     'paged' => $paged,
     'post_type' => 'oferty',
-    'posts_per_page' => 3,
+    'posts_per_page' => 0,
     'tax_query' => [],
     'meta_query' => [
       'relation' => 'AND',

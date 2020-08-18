@@ -1,5 +1,5 @@
-@import './variables';
-@import './mixins';
+@import "./variables";
+@import "./mixins";
 
 .header {
   width: 100%;
@@ -24,8 +24,8 @@
       height: 100%;
 
       .logo__image {
-      height: 90%;
-      width: auto;
+        height: 90%;
+        width: auto;
       }
     }
   }
@@ -37,7 +37,7 @@
     height: calc(100vh - 2 * 60px);
     width: 100vw;
     background-color: $header-bg-color;
-    transition: transform 1s .2s ease-in-out;
+    transition: transform 1s 0.2s ease-in-out;
     z-index: 5;
 
     @include flex-center-center;
@@ -74,7 +74,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 
     .logo {
       max-height: 80px;
@@ -126,7 +125,6 @@
         }
       }
     }
-
   }
 
   @media (min-width: 1280px) {

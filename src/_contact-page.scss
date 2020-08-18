@@ -37,7 +37,6 @@
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    // margin-top: 5rem;
 
     .contact-page__map {
       width: 100%;
@@ -201,7 +200,6 @@
             }
 
             &::before {
-              // content: 'lalala';
               position: absolute;
               top: 0px;
               left: 5px;
@@ -214,19 +212,19 @@
               background-color: #ffffff;
               z-index: 5;
               font-family: $text-font-family;
-              font-size: .9rem;
+              font-size: 0.9rem;
             }
             &:nth-of-type(1)::before {
-              content: 'Proszę podać Imię';
+              content: "Proszę podać Imię";
             }
             &:nth-of-type(2)::before {
-              content: 'Proszę podać poprawny adres email';
+              content: "Proszę podać poprawny adres email";
             }
             &:nth-of-type(3)::before {
-              content: 'Proszę podać poprawny numer telefonu';
+              content: "Proszę podać poprawny numer telefonu";
             }
             &:nth-of-type(4)::before {
-              content: 'Proszę uzupełnić treść';
+              content: "Proszę uzupełnić treść";
             }
 
             &.incorrect::before {
@@ -331,8 +329,6 @@
     &__content-wrapper {
       max-width: 1280px;
       flex-direction: row;
-      // margin-bottom: 2rem;
-      // margin-top: 8rem;
 
       .contact-page__map {
         min-width: 35%;
@@ -350,7 +346,6 @@
 .contact-page-footer {
   width: 100%;
   height: auto;
-  // margin-top: 1rem;
   margin-bottom: 60px;
   padding: 1rem;
   background-color: $mobile-contact-bg-color;

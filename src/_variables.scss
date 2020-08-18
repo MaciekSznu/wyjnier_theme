@@ -1,59 +1,39 @@
-$menu-font-color: #000000;
-$hero-font-color: #929292;
-$base-gold-color: #CD9B32;
-$light-gold-color: #E1B950;
-
-
+$base-gold-color: #cd9b32;
+$mobile-top-bar-height: 60px;
+$desktop-top-bar-height: 90px;
 $header-bg-color: #002349;
-$text-font-family: 'Roboto', sans-serif;
+$text-font-family: "Roboto", sans-serif;
+
+$hero-image-description-bg-color: rgba(#36446d, 0.75);
+$hero-image-description-font-color: #ffffff;
 
 $mobile-menu-font-size: 1.35rem;
-$mobile-menu-font-family: 'Archivo', sans-serif;
+$mobile-menu-font-family: "Archivo", sans-serif;
 $mobile-menu-font-weight: 400;
 $mobile-menu-font-color: #ffffff;
 $mobile-menu-bg-color: #002349;
 
-$mobile-top-bar-height: 60px;
-$desktop-top-bar-height: 90px;
-
-$desktop-menu-font-family: 'Archivo', sans-serif;
+$desktop-menu-font-family: "Archivo", sans-serif;
 $desktop-menu-font-size: 14px;
 $desktop-menu-font-weight: 400;
 $desktop-menu-font-color: #ffffff;
 $desktop-menu-font-letter-spacing: 1px;
 
-$new-offer-font-color:  #002349;
-
-$new-offer-main-desc-bg-color: rgba(#dbe3fd, .5);
-$new-offer-add-desc-bg-color: #f1f4fe;
-
-$investment-main-desc-bg-color: rgba(#dbe3fd, .5);
-$investment-add-desc-bg-color: rgba(#f1f4fe, .5);
+$new-offer-font-color: #002349;
+$investment-main-desc-bg-color: rgba(#dbe3fd, 0.5);
+$investment-add-desc-bg-color: rgba(#f1f4fe, 0.5);
 
 $site-title-bg-color: #dbe3fd;
-$site-desc-bg-color: #f1f4fe;
-
 $summary-bg-color: #f6f8f8;
-$description-bg-color: rgba(#f6f8f8, .25);
+$description-bg-color: rgba(#f6f8f8, 0.25);
 $summary-font-color: #0a1612;
 
 $single-offer-title-font-size: 1.5rem;
 $single-offer-subtitle-font-size: 1.25rem;
 $single-offer-text-font-size: 1rem;
-
 $single-offer-title-font-color: #0a1612;
 $single-offer-subtitle-font-color: #1a2930;
 $single-offer-text-font-color: #1d2731;
 
 $mobile-contact-bg-color: #002349;
 $contact-font-color: #ffffff;
-$contact-cta-border-color: #ffffff;
-$contact-cta-bg-color: #1d2731;
-
-$footer-mobile-menu-font-size: 1rem;
-$footer-mobile-menu-font-family: 'Roboto', sans-serif;
-$footer-mobile-menu-font-weight: 300;
-$footer-mobile-menu-font-color: #ffffff;
-
-$hero-image-description-bg-color: rgba(#36446d, .75);
-$hero-image-description-font-color: #ffffff;
