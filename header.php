@@ -4,8 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/images/logos/favicon.png"/>
-  <title>Wyjątkowe Nieruchomości - Kraków, Zakopane, kurorty</title>
-  <meta name="description" content="Wyjątkowe Nieruchomości - tutaj znajdziesz wyjątkowe oferty nieruchomości z Krakowa, Zakopanego oraz nadmorskich i górskich kurortów">
+  <title>Wyjątkowe Nieruchomości - Kraków, Zakopane, Kurorty.</title>
+  <meta name="title" content="Wyjątkowe Nieruchomości - Kraków, Zakopane, Kurorty.">
+  <meta name="description" content="Wyjątkowe Nieruchomości - tutaj znajdziesz wyjątkowe oferty nieruchomości z Krakowa, Zakopanego oraz nadmorskich i górskich kurortów.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wyjatkowenieruchomosci.pl/">
+  <meta property="og:title" content="Wyjątkowe Nieruchomości - Kraków, Zakopane, Kurorty.">
+  <meta property="og:description" content="Wyjątkowe Nieruchomości - tutaj znajdziesz wyjątkowe oferty nieruchomości z Krakowa, Zakopanego oraz nadmorskich i górskich kurortów.">
+  <meta property="og:image" content="<?php bloginfo('template_url'); ?>/images/logos/wyjatkowe_nieruchomosci.jpg">
   <?php wp_head(); ?>
 </head>
 <body>

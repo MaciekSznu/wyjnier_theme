@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/images/logos/favicon.png"/>
   <title><?php wp_title( '', true, 'right' ); ?></title>
-  <meta name="description" content="Wyjątkowe Nieruchomości - tutaj znajdziesz wyjątkowe oferty nieruchomości z Krakowa, Zakopanego oraz nadmorskich i górskich kurortów">
+  <meta name="description" content="Wyjątkowe Nieruchomości - tutaj znajdziesz wyjątkowe oferty nieruchomości z Krakowa, Zakopanego oraz nadmorskich i górskich kurortów.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wyjatkowenieruchomosci.pl/">
+  <meta property="og:title" content="<?php wp_title( '', true, 'right' ); ?>">
+  <meta property="og:description" content="Wyjątkowe Nieruchomości - tutaj znajdziesz wyjątkowe oferty nieruchomości z Krakowa, Zakopanego oraz nadmorskich i górskich kurortów.">
+  <meta property="og:image" content="<?php bloginfo('template_url'); ?>/images/logos/wyjatkowe_nieruchomosci.jpg">
   <?php wp_head(); ?>
 </head>
 <body>
