@@ -24,22 +24,24 @@
       <h4 class='contact-page__content--subtitle'>Napisz do nas</h4>
       <div class='contact-form-wrapper'>
         <?php
+          if (isset($_POST['submit'])) {
           $imie = $_POST['imie'];
           $formemail = $_POST['email'];
           $formtelefon = $_POST['telefon'];
           $formmessage = $_POST['message'];
-          $to = 'msznurawa@gmail.com';
-          $subject = 'Wiadomość z formularza kontaktowego Wyjątkowe Nieruchomości';
           $message = "Imię: $imie\n Email: $formemail\n Telefon: $formtelefon\n Wiadomość: $formmessage";
-          if ($_POST['submit']) {
-            if (mail($to, $subject, $message, $formemail)) {
-              echo '<p>Twoja wiadomośc została wysłana</p>';
+          $to = 'biuro@wyjatkowenieruchomosci.pl';
+          $subject = 'Wiadomość z formularza kontaktowego Wyjątkowe Nieruchomości';
+          $from = '-f form@wyjatkowenieruchomosci.pl';
+          $headers = ['From' => $from, 'Reply-To' => $formemail, 'Content-type' => 'text/html; charset=iso-8859-1'];
+          if (wp_mail($to, $subject, $message, $headers, $from)) {
+              echo '<p class="contact-form-alert positive">Twoja wiadomośc została wysłana</p>';
             } else {
-              echo '<p>Coś poszło nie tak, spróbuj raz jeszcze</p>';
+              echo '<p class="contact-form-alert negative">Coś poszło nie tak, spróbuj raz jeszcze</p>';
             }
           }
         ?>
-        <form id='contact-form' class='contact-form' method='post'>
+        <form action='' id='contact-form' class='contact-form' method='post'>
           <div class="input-wrapper">
             <input id='input-name' class='contact-form--input-name' type="text" name="imie" aria-required="true" aria-invalid="false" placeholder="Twoje Imię (wymagane)">
           </div>
@@ -52,7 +54,8 @@
           <div class="input-wrapper">
             <textarea id='input-message' class='contact-form--input-message' name="message" aria-required="true" aria-invalid="false" placeholder="Wiadomość (wymagane)"></textarea>
           </div>
-          <input class='contact-form--input-submit' type="submit" value="Wyślij wiadomość">
+          <div class="disclaimer"><span>Klikając "Wyślij wiadomość" akceptujesz naszą <a href="<?php echo home_url(); ?>/politykaprywatnosci" target="_blank" rel="noopener noreferrer">politykę prywatności</a>.</span></div>
+          <input name='submit' class='contact-form--input-submit' type="submit" value="Wyślij wiadomość">
         </form>
       </div>
     </div>

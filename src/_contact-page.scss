@@ -138,6 +138,24 @@
         align-items: flex-start;
         align-self: flex-start;
 
+        .contact-form-alert {
+          width: 100%;
+          text-align: center;
+          font-family: $text-font-family;
+          font-weight: 400;
+          font-size: .8rem;
+          margin: 0.25rem 0;
+          text-transform: uppercase;
+
+          &.positive {
+            color: rgb(28, 114, 28);
+          }
+
+          &.negative {
+            color: rgb(158, 27, 27);
+          }
+        }
+
         .contact-form {
           width: 100%;
           padding: 0 1rem 1rem;
@@ -229,6 +247,23 @@
 
             &.incorrect::before {
               visibility: visible;
+            }
+          }
+
+          .disclaimer {
+            width: 100%;
+            padding-top: .5rem;
+            @include flex-center-center;
+            font-family: $text-font-family;
+            font-size: .8rem;
+            color: $base-gold-color;
+            
+            span {
+              text-align: center;
+              
+              a {
+                color: $base-gold-color;
+              }
             }
           }
 
