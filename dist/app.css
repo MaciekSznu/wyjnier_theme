@@ -780,6 +780,8 @@ template {
 
 .about {
   width: 100%;
+  max-width: 100vw;
+  padding: 0 1rem;
   height: auto;
   margin-top: 1rem;
   display: flex;
@@ -787,126 +789,75 @@ template {
   align-items: center;
   justify-content: center;
 }
-.about__title {
+.about__article {
   width: 100%;
-  margin: 0;
-  font-size: 1.6rem;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  color: black;
-  text-align: center;
-  margin: 2rem auto;
+  margin: 1rem 0 0;
+  padding: 1rem 0;
+  background-color: rgba(246, 248, 248, 0.25);
 }
-.about__content-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  padding-top: 1rem;
-}
-.about__content-wrapper .about__photo {
-  width: 100%;
-  height: 100vw;
-  background-image: url("../images/gallery/face_01_533_533.jpg");
+.about__article-icon {
+  height: 4rem;
+  background-image: url("../images/icons/hands-helping.svg");
   background-position: center;
-  background-size: cover;
-  margin-bottom: 2rem;
+  background-repeat: no-repeat;
 }
-.about__content-wrapper .about__content--title, .about__content-wrapper .about__content--job, .about__content-wrapper .about__content--description, .about__content-wrapper .about__content--phone, .about__content-wrapper .about__content--email {
-  width: 100%;
-  margin: 0;
-  padding: 0 1.5rem;
-  font-size: 1rem;
-  color: black;
-  margin-bottom: 1rem;
-  line-height: 1.25;
-}
-.about__content-wrapper .about__content--title {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-size: 1.35rem;
-}
-.about__content-wrapper .about__content--job {
+.about__article-title {
+  font-size: 1.25rem;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  font-size: 1.2rem;
+  color: #002349;
+  text-align: center;
+  margin: 1rem auto;
 }
-.about__content-wrapper .about__content--description {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
-}
-.about__content-wrapper .about__content--phone, .about__content-wrapper .about__content--email {
-  height: auto;
+.about__article-subtitle {
   width: 100%;
-  margin: 0.35rem 0;
+  font-size: 1.1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #002349;
+  text-align: left;
+  margin: 0.5rem 0;
 }
-.about__content-wrapper .about__content--phone-link, .about__content-wrapper .about__content--email-link {
-  font-size: 0.9rem;
-  text-decoration: none;
-  color: inherit;
+.about__article-paragraph {
+  font-size: 1rem;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  display: flex;
-  align-items: center;
-  transition: color 1s ease;
+  color: #002349;
+  text-align: left;
+  margin: 0.5rem 0;
 }
-.about__content-wrapper .about__content--phone-link .contact-icon, .about__content-wrapper .about__content--email-link .contact-icon {
-  height: 1.15rem;
-  width: auto;
-  margin-right: 0.75rem;
+.about__article-list {
+  padding-left: 2rem;
+  margin: 0 0 0.5rem 0;
 }
-.about__content-wrapper .about__content--phone:hover .about__content-wrapper .about__content--phone-link, .about__content-wrapper .about__content--phone:hover .about__content-wrapper .about__content--email-link, .about__content-wrapper .about__content--email:hover .about__content-wrapper .about__content--phone-link, .about__content-wrapper .about__content--email:hover .about__content-wrapper .about__content--email-link {
-  color: #cd9b32;
+.about__article-list-item {
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #002349;
+  text-align: left;
+  margin: 0.5rem 0 0;
 }
-.about__content-wrapper .about__content--email {
-  margin-bottom: 1rem;
+.about__article:nth-of-type(2) .about__article-icon {
+  background-image: url("../images/icons/award.svg");
 }
-@media (orientation: landscape) {
-  .about__content-wrapper {
-    flex-direction: row;
-  }
-  .about__content-wrapper .about__photo {
-    min-width: 50%;
-    background-image: url("../images/gallery/face_01_533_800.jpg");
-  }
+.about__article:nth-of-type(3) .about__article-icon {
+  background-image: url("../images/icons/crosshairs.svg");
+}
+.about__article:nth-of-type(4) .about__article-icon {
+  background-image: url("../images/icons/user-friends.svg");
+}
+.about__article:nth-of-type(5) .about__article-icon {
+  background-image: url("../images/icons/cogs.svg");
 }
 @media (min-width: 768px) {
-  .about__content-wrapper {
-    flex-direction: row;
-    margin-bottom: 2rem;
-  }
-  .about__content-wrapper .about__photo {
-    min-width: 50%;
-    max-height: 533px;
-    background-image: url("../images/gallery/face_01_533_533.jpg");
-    margin: 1rem 0;
-  }
-  .about__content-wrapper .about__content {
-    max-height: 533px;
-    justify-content: center;
+  .about__article {
+    padding: 1rem 2rem;
   }
 }
 @media (min-width: 1280px) {
-  .about__title {
-    font-size: 2.5rem;
-  }
-  .about__content-wrapper {
-    max-width: 1280px;
-    flex-direction: row;
-    margin-bottom: 2rem;
-  }
-  .about__content-wrapper .about__photo {
-    min-width: 35%;
-    max-height: 533px;
-    background-image: url("../images/gallery/face_01_533_533.jpg");
-    margin: 1rem 0;
-  }
-  .about__content-wrapper .about__content {
-    margin-left: 4rem;
-    max-height: 533px;
-    justify-content: center;
+  .about__article {
+    padding: 1rem calc((100vw - 1280px + 4rem)/2);
   }
 }
 
