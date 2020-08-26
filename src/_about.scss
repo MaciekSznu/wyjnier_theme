@@ -3,6 +3,8 @@
 
 .about {
   width: 100%;
+  max-width: 100vw;
+  padding: 0 1rem;
   height: auto;
   margin-top: 1rem;
   display: flex;
@@ -10,148 +12,97 @@
   align-items: center;
   justify-content: center;
 
-  &__title {
+  &__article {
     width: 100%;
-    margin: 0;
-    font-size: 1.6rem;
-    font-family: $text-font-family;
-    font-weight: 500;
-    color: black;
-    text-align: center;
-    margin: 2rem auto;
-  }
+    margin: 1rem 0 0;
+    padding: 1rem 0;
+    background-color: $description-bg-color;
 
-  &__content-wrapper {
-    @include flex-center-center;
-    flex-direction: column;
-    width: 100%;
-    padding-top: 1rem;
-
-    .about__photo {
-      width: 100%;
-      height: 100vw;
-      background-image: url("../images/gallery/face_01_533_533.jpg");
+    &-icon {
+      height: 4rem;
+      background-image: url("../images/icons/hands-helping.svg");
       background-position: center;
-      background-size: cover;
-      margin-bottom: 2rem;
+      background-repeat: no-repeat;
     }
 
-    .about__content {
-      &--title,
-      &--job,
-      &--description,
-      &--phone,
-      &--email {
-        width: 100%;
-        margin: 0;
-        padding: 0 1.5rem;
+    &-title {
+      font-size: 1.25rem;
+      font-family: $text-font-family;
+      font-weight: 500;
+      color: $header-bg-color;
+      text-align: center;
+      margin: 1rem auto;
+    }
+
+    &-subtitle {
+      width: 100%;
+      font-size: 1.1rem;
+      font-family: $text-font-family;
+      font-weight: 500;
+      color: $header-bg-color;
+      text-align: left;
+      margin: .5rem 0;
+    }
+
+    &-paragraph {
+      font-size: 1rem;
+      font-family: $text-font-family;
+      font-weight: 400;
+      color:$header-bg-color;
+      text-align: left;
+      margin: .5rem 0;
+      line-height: 1.25rem;
+    }
+
+    &-list {
+      padding-left: 2rem;
+      margin: 0 0 .5rem 0;
+
+      &-item {
         font-size: 1rem;
-        color: black;
-        margin-bottom: 1rem;
-        line-height: 1.25;
-      }
-
-      &--title {
         font-family: $text-font-family;
-        font-weight: 700;
-        font-size: 1.35rem;
-      }
-
-      &--job {
-        font-family: $text-font-family;
-        font-weight: 500;
-        font-size: 1.2rem;
-      }
-
-      &--description {
-        font-family: $text-font-family;
-        font-weight: 300;
-        font-size: 1rem;
-      }
-
-      &--phone,
-      &--email {
-        height: auto;
-        width: 100%;
-        margin: 0.35rem 0;
-
-        &-link {
-          font-size: 0.9rem;
-          text-decoration: none;
-          color: inherit;
-          font-family: $text-font-family;
-          font-weight: 400;
-          display: flex;
-          align-items: center;
-          transition: color 1s ease;
-
-          .contact-icon {
-            height: 1.15rem;
-            width: auto;
-            margin-right: 0.75rem;
-          }
-        }
-
-        &:hover &-link {
-          color: $base-gold-color;
-        }
-      }
-
-      &--email {
-        margin-bottom: 1rem;
+        font-weight: 400;
+        color:$header-bg-color;
+        text-align: left;
+        margin: .5rem 0 0;
+        line-height: 1.25rem;
       }
     }
 
-    @media (orientation: landscape) {
-      flex-direction: row;
-      .about__photo {
-        min-width: 50%;
-        background-image: url("../images/gallery/face_01_533_800.jpg");
+    &:nth-of-type(2) {
+      .about__article-icon {
+        background-image: url("../images/icons/award.svg");
+      }
+    }
+
+    &:nth-of-type(3) {
+      .about__article-icon {
+        background-image: url("../images/icons/crosshairs.svg");
+      }
+    }
+
+    &:nth-of-type(4) {
+      .about__article-icon {
+        background-image: url("../images/icons/user-friends.svg");
+      }
+    }
+
+    &:nth-of-type(5) {
+      .about__article-icon {
+        background-image: url("../images/icons/cogs.svg");
       }
     }
   }
 
   @media (min-width: 768px) {
-    &__content-wrapper {
-      flex-direction: row;
-      margin-bottom: 2rem;
-
-      .about__photo {
-        min-width: 50%;
-        max-height: 533px;
-        background-image: url("../images/gallery/face_01_533_533.jpg");
-        margin: 1rem 0;
-      }
-
-      .about__content {
-        max-height: 533px;
-        justify-content: center;
-      }
+    &__article {
+      padding: 1rem 2rem;
     }
   }
 
   @media (min-width: 1280px) {
-    &__title {
-      font-size: 2.5rem;
-    }
-
-    &__content-wrapper {
-      max-width: 1280px;
-      flex-direction: row;
-      margin-bottom: 2rem;
-
-      .about__photo {
-        min-width: 35%;
-        max-height: 533px;
-        background-image: url("../images/gallery/face_01_533_533.jpg");
-        margin: 1rem 0;
-      }
-
-      .about__content {
-        margin-left: 4rem;
-        max-height: 533px;
-        justify-content: center;
-      }
+    &__article {
+      padding: 1rem calc((100vw - 1280px + 4rem)/2);
     }
   }
 }
