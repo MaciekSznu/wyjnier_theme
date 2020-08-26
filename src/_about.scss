@@ -41,30 +41,30 @@
       font-weight: 500;
       color: $header-bg-color;
       text-align: left;
-      margin: .5rem 0;
+      margin: 0.5rem 0;
     }
 
     &-paragraph {
       font-size: 1rem;
       font-family: $text-font-family;
       font-weight: 400;
-      color:$header-bg-color;
+      color: $header-bg-color;
       text-align: left;
-      margin: .5rem 0;
+      margin: 0.5rem 0;
       line-height: 1.25rem;
     }
 
     &-list {
       padding-left: 2rem;
-      margin: 0 0 .5rem 0;
+      margin: 0 0 0.5rem 0;
 
       &-item {
         font-size: 1rem;
         font-family: $text-font-family;
         font-weight: 400;
-        color:$header-bg-color;
+        color: $header-bg-color;
         text-align: left;
-        margin: .5rem 0 0;
+        margin: 0.5rem 0 0;
         line-height: 1.25rem;
       }
     }
@@ -102,7 +102,7 @@
 
   @media (min-width: 1280px) {
     &__article {
-      padding: 1rem calc((100vw - 1280px + 4rem)/2);
+      padding: 1rem calc((100vw - 1280px + 4rem) / 2);
     }
   }
 }

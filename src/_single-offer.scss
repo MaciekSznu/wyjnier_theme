@@ -83,11 +83,36 @@
 
     &-price,
     &-localization,
-    &-data {
+    &-data,
+    &-info {
       display: flex;
 
       p {
         margin: 0.5rem 0 0.5rem 1rem;
+      }
+    }
+
+    &.invest {
+      height: 30vh;
+      max-height: 180px;
+      font-size: 0.9rem;
+
+      .single-offer__summary-price,
+      .single-offer__summary-data {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        p {
+          width: 100%;
+          margin: 0.25rem 0 0.25rem 1rem;
+        }
+      }
+
+      .single-offer__summary-localization {
+        p {
+          font-size: 1rem;
+          margin: 0.25rem 0 0.25rem 1rem;
+        }
       }
     }
 
@@ -185,7 +210,7 @@
       margin-left: 1rem;
       margin-bottom: 1rem;
       .contact-link {
-        font-size: .9rem;
+        font-size: 0.9rem;
         text-decoration: none;
         color: $single-offer-subtitle-font-color;
         font-family: $text-font-family;
@@ -224,6 +249,31 @@
       padding: 1rem;
       height: 15vh;
       max-height: 120px;
+
+      &.invest {
+        height: 20vh;
+        max-height: 110px;
+        font-size: 1rem;
+
+        .single-offer__summary-price,
+        .single-offer__summary-data {
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+
+          p {
+            width: auto;
+            margin: 0.35rem 0.25rem;
+          }
+        }
+
+        .single-offer__summary-localization {
+          p {
+            font-size: 1.1rem;
+            margin: 0.35rem 0.25rem;
+          }
+        }
+      }
     }
 
     &__description {
@@ -273,6 +323,37 @@
       &-price p:first-of-type {
         margin: 0.5rem 0;
       }
+
+      &.invest {
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0.5rem 2rem;
+        height: 20vh;
+        max-height: 120px;
+        font-size: 1rem;
+
+        .single-offer__summary-price,
+        .single-offer__summary-data {
+          width: 100%;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+
+          p {
+            width: auto;
+            margin: 0.35rem 0.25rem;
+          }
+        }
+
+        .single-offer__summary-localization {
+          width: 100%;
+
+          p {
+            font-size: 1.1rem;
+            margin: 0.35rem 0.25rem;
+          }
+        }
+      }
     }
 
     &__description {
@@ -300,7 +381,8 @@
   }
 
   @media (min-width: 1280px) {
-    &__summary {
+    &__summary,
+    &__summary.invest {
       padding: 1rem calc((100vw - 1280px) / 2);
     }
   }

@@ -117,4 +117,3 @@ $transactions = get_terms([
   <?php endif; ?>
   </div>
 </section>
-
