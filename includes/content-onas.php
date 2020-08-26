@@ -45,5 +45,5 @@
     </ul>
     <h3 class='about__article-title'>Skontaktuj się z nami i sprawdź co jeszcze możemy dla Ciebie zrobić</h3>
   </article>
-  <?php get_template_part('includes/section', 'singleoffercontact'); ?>
+  <?php get_template_part('includes/section', 'aboutcontact'); ?>
 </section>

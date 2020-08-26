@@ -825,6 +825,7 @@ template {
   color: #002349;
   text-align: left;
   margin: 0.5rem 0;
+  line-height: 1.25rem;
 }
 .about__article-list {
   padding-left: 2rem;
@@ -837,6 +838,7 @@ template {
   color: #002349;
   text-align: left;
   margin: 0.5rem 0 0;
+  line-height: 1.25rem;
 }
 .about__article:nth-of-type(2) .about__article-icon {
   background-image: url("../images/icons/award.svg");
@@ -1668,7 +1670,7 @@ template {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
-.single-offer__contact--photo, .single-offer__contact--description, .single-offer__contact--phone, .single-offer__contact--email {
+.single-offer__contact--photo, .single-offer__contact--description {
   margin-left: 2rem;
   margin-bottom: 1rem;
 }
@@ -1691,8 +1693,12 @@ template {
   font-weight: 500;
   color: #1a2930;
 }
+.single-offer__contact--phone, .single-offer__contact--email {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
 .single-offer__contact--phone .contact-link, .single-offer__contact--email .contact-link {
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-decoration: none;
   color: #1a2930;
   font-family: "Roboto", sans-serif;
@@ -1729,6 +1735,12 @@ template {
   }
   .single-offer__contact {
     justify-content: center;
+  }
+  .single-offer__contact--phone, .single-offer__contact--email {
+    margin-left: 2rem;
+  }
+  .single-offer__contact--phone .contact-link, .single-offer__contact--email .contact-link {
+    font-size: 1rem;
   }
 }
 @media (min-width: 1024px) {

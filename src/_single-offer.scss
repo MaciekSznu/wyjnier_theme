@@ -154,9 +154,7 @@
     justify-content: flex-start;
 
     &--photo,
-    &--description,
-    &--phone,
-    &--email {
+    &--description {
       margin-left: 2rem;
       margin-bottom: 1rem;
     }
@@ -184,8 +182,10 @@
 
     &--phone,
     &--email {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
       .contact-link {
-        font-size: 1rem;
+        font-size: .9rem;
         text-decoration: none;
         color: $single-offer-subtitle-font-color;
         font-family: $text-font-family;
@@ -232,6 +232,14 @@
 
     &__contact {
       justify-content: center;
+
+      &--phone,
+      &--email {
+        margin-left: 2rem;
+        .contact-link {
+          font-size: 1rem;
+        }
+      }
     }
   }
 
