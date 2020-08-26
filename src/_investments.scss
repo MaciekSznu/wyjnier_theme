@@ -82,12 +82,20 @@
           &--rooms,
           &--bathrooms,
           &--area,
-          &--price {
+          &--price,
+          &--areas,
+          &--prices,
+          &--prices-m2 {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
             padding: 0.5rem;
+
+            .description {
+              font-size: .9rem;
+              margin-bottom: .5rem;
+            }
 
             .description-icon {
               height: 20px;
@@ -154,6 +162,21 @@
             background-color: $investment-main-desc-bg-color;
             border-bottom: 1px solid transparent;
           }
+
+          .additional-description {
+            &--areas,
+            &--prices,
+            &--prices-m2 {
+              .description {
+                font-size: .9rem;
+                margin-bottom: .6rem;
+              }
+  
+              .description-value {
+                font-size: 0.8rem;
+              }
+            }
+          }
         }
       }
 
@@ -165,13 +188,13 @@
         display: flex;
 
         &--image {
-          width: 50%;
+          width: 40%;
           height: auto;
           min-height: 400px;
         }
 
         &--description {
-          width: 50%;
+          width: 60%;
 
           .main-description {
             height: 10%;
