@@ -11,6 +11,7 @@
   <meta property="og:title" content="<?php wp_title( '', true, 'right' ); ?>">
   <meta property="og:description" content="Wyjątkowe Nieruchomości - tutaj znajdziesz wyjątkowe oferty nieruchomości z Krakowa, Zakopanego oraz nadmorskich i górskich kurortów.">
   <meta property="og:image" content="<?php bloginfo('template_url'); ?>/images/logos/wyjatkowe_nieruchomosci.jpg">
+  <meta name="format-detection" content="telephone=no">
   <?php wp_head(); ?>
 </head>
 <body>
