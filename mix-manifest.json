@@ -3,5 +3,6 @@
     "/dist/app.css": "/dist/app.css",
     "/dist/contact.js": "/dist/contact.js",
     "/dist/home-page-slider.js": "/dist/home-page-slider.js",
+    "/dist/scroll-animations.js": "/dist/scroll-animations.js",
     "/dist/single-offer-slider.js": "/dist/single-offer-slider.js"
 }

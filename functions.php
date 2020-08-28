@@ -7,21 +7,18 @@ function scripts(){
 
   wp_enqueue_script('jquery');
 
-  wp_register_script('siema', get_template_directory_uri() . '/dist/siema.min.js', ['jquery'], 1, true);
-  wp_enqueue_script('siema');
-
   wp_register_script('app', get_template_directory_uri() . '/dist/app.js', ['jquery'], 1, true);
   wp_enqueue_script('app');
   
   if ( is_front_page() ) :
-    wp_register_script('siema', get_template_directory_uri() . '/dist/siema.min.js', ['jquery'], 1, true);
+    wp_register_script('siema', 'https://cdn.jsdelivr.net/npm/siema@1.5.1/dist/siema.min.js', [], 1, true);
     wp_enqueue_script('siema');
     wp_register_script('homepageslider', get_template_directory_uri() . '/dist/home-page-slider.js', false, 1, true);
     wp_enqueue_script('homepageslider');
   endif;
 
   if ( is_singular('oferty') || is_singular('inwestycje')) :
-    wp_register_script('siema', get_template_directory_uri() . '/dist/siema.min.js', ['jquery'], 1, true);
+    wp_register_script('siema', 'https://cdn.jsdelivr.net/npm/siema@1.5.1/dist/siema.min.js', [], 1, true);
     wp_enqueue_script('siema');
     wp_register_script('singleofferslider', get_template_directory_uri() . '/dist/single-offer-slider.js', false, 1, true);
     wp_enqueue_script('singleofferslider');
@@ -30,6 +27,13 @@ function scripts(){
   if ( is_page('kontakt') ) :
     wp_register_script('contact', get_template_directory_uri() . '/dist/contact.js', false, 1, true);
     wp_enqueue_script('contact');
+  endif;
+
+  if ( is_page('onas') ) :
+    wp_register_script('scroll-out', 'https://unpkg.com/scroll-out/dist/scroll-out.min.js', false, 1, false);
+    wp_enqueue_script('scroll-out');
+    wp_register_script('scroll-animations', get_template_directory_uri() . '/dist/scroll-animations.js', false, 1, true);
+    wp_enqueue_script('scroll-animations');
   endif;
 
 }
