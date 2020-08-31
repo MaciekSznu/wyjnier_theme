@@ -29,13 +29,6 @@ function scripts(){
     wp_enqueue_script('contact');
   endif;
 
-  if ( is_page('onas') ) :
-    wp_register_script('scroll-out', 'https://unpkg.com/scroll-out/dist/scroll-out.min.js', false, 1, false);
-    wp_enqueue_script('scroll-out');
-    wp_register_script('scroll-animations', get_template_directory_uri() . '/dist/scroll-animations.js', false, 1, true);
-    wp_enqueue_script('scroll-animations');
-  endif;
-
 }
 add_action('wp_enqueue_scripts', 'scripts');
 
@@ -168,7 +161,7 @@ function new_offers_query(){
 function investments_query(){
   $args = [
     'post_type' => 'inwestycje',
-    'posts_count' => 3,
+    'posts_count' => 10,
     'tax_query' => [],
   ];
   return new WP_Query($args);
