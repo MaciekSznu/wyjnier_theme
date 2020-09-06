@@ -23,3 +23,16 @@ hamburgerButton.addEventListener('click', (e) => {
   showMobileMenu();
   hamburgerActive();
 });
+
+// COOKIE BANNER
+const cookieBanner = document.querySelector('.cookie-banner');
+const closeButton = document.querySelector('.close');
+
+if (localStorage.getItem('cookieSeen') != 'shown') {
+  cookieBanner.classList.remove('hidden');
+  localStorage.setItem('cookieSeen', 'shown');
+}
+
+closeButton.addEventListener('click', (e) => {
+  cookieBanner.classList.add('hidden');
+});

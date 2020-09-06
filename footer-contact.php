@@ -20,6 +20,9 @@
     </div>
   </div>
 </footer>
+
+<?php get_template_part('includes/content', 'cookiebanner'); ?>
+
 <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA3QLNwvqKmgX-zcRFCxLbBRn8SItRr7w">
 </script>
