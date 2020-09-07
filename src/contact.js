@@ -56,8 +56,16 @@ contactForm.addEventListener('submit', (e) => {
 });
 
 /* MAP */
-const initMap = () => {
-  const office = { lat: 50.047606, lng: 19.954092 };
+const script = document.createElement('script');
+script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDA3QLNwvqKmgX-zcRFCxLbBRn8SItRr7w&callback=initMap';
+script.async = true;
+script.defer = true;
+
+window.initMap = () => {
+  const office = {
+    lat: 50.047606,
+    lng: 19.954092
+  };
   const map = new google.maps.Map(document.querySelector('.contact-page__map'), {
     zoom: 15,
     center: office,
@@ -69,4 +77,4 @@ const initMap = () => {
   });
 };
 
-documentReady(initMap);
+document.body.appendChild(script);
