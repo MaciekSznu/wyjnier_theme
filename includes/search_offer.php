@@ -69,6 +69,7 @@ $transactions = get_terms([
         $summary = get_field('podsumowanie');
         $description = get_field('opis');
         $property = $description['nieruchomosc'];
+        $rooms = str_replace(' ', '', $summary['pokoje']);
       ?>
     <div class='investments__single-offer'>
       <div class='investments__single-offer--image' style="background-image: url(<?php echo esc_url($url); ?>)"></div>
@@ -79,14 +80,14 @@ $transactions = get_terms([
         </div>
         <div class='additional-description'>
           <p class='additional-description--type'><?php echo $summary['nieruchomosc'];?></p>
-          <?php if(substr($summary['pokoje'], 0, -7) > 0)
+          <?php if(!empty($rooms) && $rooms > 0)
              echo
               "<div class='additional-description--rooms'>
                 <span class='description-icon'></span>
-                <span class='description-value'>" . substr($summary['pokoje'], 0, -7) . "</span>
+                <span class='description-value'>" . $rooms . "</span>
               </div>"
           ?>
-          <?php if($summary['lazienki'] > 0)
+          <?php if(!empty($summary['lazienki']) && $summary['lazienki'] > 0)
              echo
               "<div class='additional-description--bathrooms'>
                 <span class='description-icon'></span>

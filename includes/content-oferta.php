@@ -13,6 +13,8 @@
   $url = $main_image['url'];
   $alt = $main_image['alt'];
   $images = get_field('zdjecia');
+  $rooms = str_replace(' ', '', $summary['pokoje']);
+  $rooms_last_integer = $rooms[strlen($rooms) - 1];
 ?>
 
 <section class='single-offer'>
@@ -49,13 +51,21 @@
       </div>
       <div class='single-offer__summary-data'>
         <p class='single-offer__summary-data--area'><?php echo $summary['powierzchnia'];?> m<sup>2</sup></p>
-        <?php if($summary['pokoje'] > 0)
+          <?php if(!empty($summary['pokoje']) && $rooms == 1)
+            echo
+            "<p class='single-offer__summary-data--rooms'>" . $rooms . " pokój</p>"
+          ?>
+          <?php if(!empty($summary['pokoje']) && $rooms > 1 && $rooms_last_integer > 1 && $rooms_last_integer < 5)
+            echo
+            "<p class='single-offer__summary-data--rooms'>" . $rooms . " pokoje</p>"
+          ?>
+          <?php if(!empty($summary['pokoje']) && $rooms > 1 && $rooms_last_integer == 1 || $rooms_last_integer > 4)
+            echo
+            "<p class='single-offer__summary-data--rooms'>" . $rooms . " pokoi</>"
+          ?>
+        <?php if( !empty($summary['rok_budowy']))
           echo
-            "<p class='single-offer__summary-data--rooms'>" . $summary['pokoje'] . "</p>"
-        ?>
-        <?php if($summary['rok_budowy'] > 0)
-          echo
-            "<p class='single-offer__summary-data--year'>" . $summary['rok_budowy'] . "</p>"
+            "<p class='single-offer__summary-data--year'>" . $summary['rok_budowy'] . " r.</p>"
         ?>
       </div>
     </div>

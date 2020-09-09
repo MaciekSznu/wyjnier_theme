@@ -10,6 +10,7 @@
         $main_image = get_field('zdjecie_glowne');
         $url = $main_image['url'];
         $summary = get_field('podsumowanie');
+        $rooms = str_replace(' ', '', $summary['pokoje']);
       ?>
     <div class='new-offers__single-offer'>
       <div class='new-offers__single-offer--image' style="background-image: url(<?php echo esc_url($url); ?>)"></div>
@@ -20,14 +21,14 @@
         </div>
         <div class='additional-description'>
           <p class='additional-description--type'><?php echo $summary['nieruchomosc'];?></p>
-          <?php if(substr($summary['pokoje'], 0, -7) > 0)
+          <?php if(!empty($rooms))
              echo
               "<div class='additional-description--rooms'>
                 <span class='description-icon'></span>
-                <span class='description-value'>" . substr($summary['pokoje'], 0, -7) . "</span>
+                <span class='description-value'>" . $rooms . "</span>
               </div>"
           ?>
-          <?php if($summary['lazienki'] > 0)
+          <?php if(!empty($summary['lazienki']))
              echo
               "<div class='additional-description--bathrooms'>
                 <span class='description-icon'></span>
