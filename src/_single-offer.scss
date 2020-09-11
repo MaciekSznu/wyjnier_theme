@@ -86,10 +86,15 @@
     &-data,
     &-info {
       display: flex;
+      justify-content: center;
 
       p {
-        margin: 0.5rem 0 0.5rem 1rem;
+        margin: 0.5rem 1rem;
       }
+    }
+
+    &-price {
+      justify-content: space-between;
     }
 
     &.invest {
@@ -175,14 +180,7 @@
   &__contact {
     background-color: $description-bg-color;
     @include flex-center-center;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-
-    &--photo,
-    &--description {
-      margin-left: 2rem;
-      margin-bottom: 1rem;
-    }
+    flex-direction: column;
 
     &--photo {
       background-image: url("../images/gallery/face_01_533_533.jpg");
@@ -194,6 +192,7 @@
       max-height: 100px;
       border: none;
       border-radius: 50%;
+      margin-bottom: 1rem;
     }
 
     &--description {
@@ -203,11 +202,11 @@
       font-size: $single-offer-subtitle-font-size;
       font-weight: 500;
       color: $single-offer-subtitle-font-color;
+      margin-bottom: 1rem;
     }
 
     &--phone,
     &--email {
-      margin-left: 1rem;
       margin-bottom: 1rem;
       .contact-link {
         font-size: 0.9rem;
@@ -281,11 +280,8 @@
     }
 
     &__contact {
-      justify-content: center;
-
       &--phone,
       &--email {
-        margin-left: 2rem;
         .contact-link {
           font-size: 1rem;
         }
@@ -370,13 +366,6 @@
     &__description > div {
       width: 100%;
       max-width: 1280px;
-    }
-    &__contact {
-      padding: 1rem calc((100vw - 1280px) / 2);
-
-      &--photo {
-        margin-left: 0;
-      }
     }
   }
 

@@ -244,14 +244,29 @@
 }
 
 .hero-about {
-  background-image: url("../images/heroes/contact_768_432.jpg");
+  background-image: url("../images/heroes/about_hero_768_494.jpg");
 
-  @media (min-width: 768px) {
-    background-image: url("../images/heroes/contact_1024_576.jpg");
+  .hero__title {
+    bottom: 1rem;
   }
 
+  @media (min-width: 768px) {
+    background-image: url("../images/heroes/about_hero_1024_658.jpg");
+    .hero__title {
+      bottom: 1.5rem;
+    }
+  }
   @media (min-width: 1024px) {
-    background-image: url("../images/heroes/contact_1920_1080.jpg");
+    background-image: url("../images/heroes/about_hero_1680_1080.jpg");
+    .hero__title {
+      bottom: 1rem;
+    }
+  }
+  @media (min-width: 1680px) {
+    background-image: url("../images/heroes/about_hero_1920_1080.jpg");
+    .hero__title {
+      bottom: 2rem;
+    }
   }
 }
 
