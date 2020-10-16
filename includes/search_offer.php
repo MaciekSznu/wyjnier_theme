@@ -59,27 +59,57 @@ $transactions = get_terms([
     $query = search_query();
 ?>
 
+<?php
+function cutstring($string, $delimeter) {
+  if (mb_strlen($string) > $delimeter || $string == '')
+  {
+    $words = preg_split('/\s/', $string);
+    $output = '';
+    $i = 0;
+
+    while (1)
+    {
+      $length = mb_strlen($output)+mb_strlen($words[$i]);
+      if ($length > $delimeter)
+      {
+        break;
+      }
+      else {
+        $output .= " " . $words[$i];
+        $i++;
+      }
+    }
+    $output .= "...";
+  }
+  else {
+    $output = $string;
+  }
+  return $output;
+}
+?>
+
 <section class='investments'>
   <div class='investments__wrapper'>
   <?php if( $query->have_posts() ) :?>
     <?php while( $query->have_posts() ) : $query->the_post();?>
       <?php
         $main_image = get_field('zdjecie_glowne');
-        $url = $main_image['url'];
         $summary = get_field('podsumowanie');
         $description = get_field('opis');
         $property = $description['nieruchomosc'];
         $rooms = str_replace(' ', '', $summary['pokoje']);
+        $property_name = $summary['nieruchomosc'];
+        $short_property_name = explode(" ", $property_name)[0];
       ?>
     <div class='investments__single-offer'>
-      <div class='investments__single-offer--image' style="background-image: url(<?php echo esc_url($url); ?>)"></div>
+      <div class='investments__single-offer--image' style="background-image: url(<?php echo $main_image; ?>)"></div>
       <div class='investments__single-offer--description'>
         <div class='main-description'>
           <p class='main-description--city'><?php echo $summary['miasto'];?></p>
-          <p class='main-description--street'><?php echo $summary['ulica'];?></p>
+          <p class='main-description--street'><?php echo $summary['etykieta_ulicy'] . ' ' . $summary['ulica'];?></p>
         </div>
         <div class='additional-description'>
-          <p class='additional-description--type'><?php echo $summary['nieruchomosc'];?></p>
+          <p class='additional-description--type'><?php echo $short_property_name;?></p>
           <?php if(!empty($rooms) && $rooms > 0)
              echo
               "<div class='additional-description--rooms'>
@@ -104,7 +134,7 @@ $transactions = get_terms([
           </div>
         </div>
         <div class='long-description'>
-          <p class='long-description--text'><?php echo $property['opis'];?></p>
+          <p class='long-description--text'><?php echo cutstring($description['opis'], 360);;?></p>
         </div>
         <div class='show-offer'>
           <a href="<?php the_permalink() ?>">zobacz</a>

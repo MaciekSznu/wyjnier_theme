@@ -175,6 +175,19 @@
         }
       }
     }
+
+    &--property ul {
+      margin: 0.8rem 0;
+      font-family: $text-font-family;
+      font-size: $single-offer-text-font-size;
+      font-weight: 400;
+      color: $single-offer-text-font-color;
+      padding: 0 0 0 1.25rem;
+
+      li {
+        padding-bottom: 0.4rem;
+      }
+    }
   }
 
   &__contact {
@@ -264,6 +277,11 @@
             width: auto;
             margin: 0.35rem 0.25rem;
           }
+        }
+
+        .single-offer__summary-data--flats {
+          flex-grow: 2;
+          text-align: center;
         }
 
         .single-offer__summary-localization {
