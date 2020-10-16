@@ -8,19 +8,20 @@
   <?php while( $query->have_posts() ) : $query->the_post();?>
       <?php
         $main_image = get_field('zdjecie_glowne');
-        $url = $main_image['url'];
         $summary = get_field('podsumowanie');
         $rooms = str_replace(' ', '', $summary['pokoje']);
+        $property_name = $summary['nieruchomosc'];
+        $short_property_name = explode(" ", $property_name)[0];
       ?>
     <div class='new-offers__single-offer'>
-      <div class='new-offers__single-offer--image' style="background-image: url(<?php echo esc_url($url); ?>)"></div>
+      <div class='new-offers__single-offer--image' style="background-image: url(<?php echo $main_image; ?>)"></div>
       <div class='new-offers__single-offer--description'>
         <div class='main-description'>
           <p class='main-description--city'><?php echo $summary['miasto'];?></p>
           <p class='main-description--price'><?php echo number_format($summary['cena'], 0, ',', ' ');?> zł</p>
         </div>
         <div class='additional-description'>
-          <p class='additional-description--type'><?php echo $summary['nieruchomosc'];?></p>
+          <p class='additional-description--type'><?php echo $short_property_name;?></p>
           <?php if(!empty($rooms))
              echo
               "<div class='additional-description--rooms'>

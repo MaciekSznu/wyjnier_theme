@@ -69,10 +69,10 @@
   }
 
   @media (min-width: 1024px) {
-    margin-top: 0;
+    margin-top: $desktop-top-bar-height;
     padding-top: $desktop-top-bar-height;
-    height: 100vh;
-    max-height: 100vh;
+    height: calc(100vh - #{$desktop-top-bar-height});
+    max-height: calc(100vh - #{$desktop-top-bar-height});
 
     @media (orientation: portrait) {
       height: 75vh;
@@ -114,9 +114,13 @@
     .hero-image-wrapper {
       position: relative;
       height: calc(80vw + #{$mobile-top-bar-height});
-      max-height: 100vh;
+      max-height: 100vw;
       max-width: 100vw;
       overflow: hidden;
+
+      @media (min-width: 1024px) {
+        max-height: calc(100vh - #{$desktop-top-bar-height});
+      }
 
       .hero-image {
         position: absolute;
@@ -234,36 +238,33 @@
   }
 
   .hero-control-next {
-    right: 1rem;
+    right: 2rem;
     padding-left: 0.125rem;
-
-    @media (min-width: 1025px) {
-      right: 2rem;
-    }
   }
 }
 
 .hero-about {
-  background-image: url("../images/heroes/about_hero_768_494.jpg");
+  background-image: url("../images/heroes/about_hero_768_371.jpg");
 
   .hero__title {
     bottom: 1rem;
   }
 
   @media (min-width: 768px) {
-    background-image: url("../images/heroes/about_hero_1024_658.jpg");
+    background-image: url("../images/heroes/about_hero_1024_495.jpg");
     .hero__title {
       bottom: 1.5rem;
     }
   }
   @media (min-width: 1024px) {
-    background-image: url("../images/heroes/about_hero_1680_1080.jpg");
+    position: relative;
+    background-image: url("../images/heroes/about_hero_1920_929.jpg");
+
     .hero__title {
       bottom: 1rem;
     }
   }
   @media (min-width: 1680px) {
-    background-image: url("../images/heroes/about_hero_1920_1080.jpg");
     .hero__title {
       bottom: 2rem;
     }

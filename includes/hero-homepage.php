@@ -13,12 +13,14 @@
   <?php
     foreach ( $posts as $post ) :
       $main_image = get_field('zdjecie_glowne');
-      $url = $main_image['url'];
-      $alt = $main_image['alt'];
+      $main_image_big = str_replace('_max', '_raw', $main_image);
       $summary = get_field('podsumowanie');
       echo "
         <div class='hero-image-wrapper'>
-          <img class='hero-image' src=" . esc_url($url) . " alt='" . esc_attr($alt) . "'>
+          <picture>
+            <source class='hero-image' srcset='" . $main_image_big . "' media='(min-width: 1024px)'>
+            <img class='hero-image' src='" . $main_image . "' alt='" . $main_image . "'>
+          </picture>
           <a href=" . get_permalink() . ">
           <div class='hero-image-description-wrapper'>
             <div class='hero-image-description'>
