@@ -211,7 +211,7 @@ add_image_size('offer-large', 1920, false);
 function get_offers_from_esti(){
   $company = '5701';
   $token = '2f9670d05e';
-  $status = '1,3,7,99';
+  $status = '3,7,99';
   $offers = [];
   $results = wp_remote_retrieve_body( wp_remote_get('https://app.esticrm.pl/apiClient/offer/list?company=' . $company . '&token=' . $token . '&status=' . $status));
 
