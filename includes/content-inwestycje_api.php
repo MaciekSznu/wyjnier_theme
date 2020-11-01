@@ -22,7 +22,7 @@ function cutstring($string, $delimeter) {
         $i++;
       }
     }
-    $output .= "...";
+    $output .= " ...";
   }
   else {
     $output = $string;

@@ -149,7 +149,7 @@ add_action('init', 'investment_post_type');
 function new_offers_query(){
   $args = [
     'post_type' => 'oferty',
-    'posts_count' => 3,
+    'post_count' => 3,
     'tax_query' => [],
   ];
   return new WP_Query($args);
@@ -159,7 +159,8 @@ function new_offers_query(){
 function investments_query(){
   $args = [
     'post_type' => 'inwestycje',
-    'posts_count' => 10,
+    'post_count' => 50,
+    'posts_per_page' => 50,
     'tax_query' => [],
   ];
   return new WP_Query($args);

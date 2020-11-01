@@ -8,7 +8,7 @@
       <?php
         $main_image = get_field('zdjecie_glowne_inv');
         $url = $main_image['url'];
-        $summary = get_field('podsumowanie_inv');
+        $summary = get_field('podsumowanie_inwestycji');
         $description = get_field('opis_inv');
         $property = $description['nieruchomosc'];
       ?>
@@ -17,7 +17,7 @@
       <div class='investments__single-offer--description'>
         <div class='main-description'>
           <p class='main-description--city'><?php echo $summary['miasto'];?></p>
-          <p class='main-description--street'><?php echo $summary['dzielnica'];?></p>
+          <p class='main-description--street'><?php echo $summary['dzielnica_inwestycji'];?></p>
         </div>
         <div class='additional-description'>
           <p class='additional-description--type'><?php echo $summary['nazwa_inwestycji'];?></p>
