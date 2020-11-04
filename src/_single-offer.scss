@@ -98,25 +98,25 @@
     }
 
     &.invest {
-      height: 30vh;
-      max-height: 180px;
+      height: 20vh;
+      max-height: 150px;
       font-size: 0.9rem;
 
-      .single-offer__summary-price,
       .single-offer__summary-data {
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: block;
 
         p {
           width: 100%;
-          margin: 0.25rem 0 0.25rem 1rem;
+          margin: 0.25rem 0;
+          text-align: center;
         }
       }
 
       .single-offer__summary-localization {
         p {
           font-size: 1rem;
-          margin: 0.25rem 0 0.25rem 1rem;
+          margin: 0.25rem 0;
+          text-align: center;
         }
       }
     }
@@ -152,6 +152,7 @@
       .list {
         margin: 0.8rem 0;
         font-family: $text-font-family;
+        line-height: 1.4;
       }
 
       .title {
@@ -264,10 +265,9 @@
 
       &.invest {
         height: 20vh;
-        max-height: 110px;
+        max-height: 100px;
         font-size: 1rem;
 
-        .single-offer__summary-price,
         .single-offer__summary-data {
           flex-direction: row;
           flex-wrap: nowrap;
@@ -275,6 +275,7 @@
 
           p {
             width: auto;
+            min-width: 30%;
             margin: 0.35rem 0.25rem;
           }
         }
@@ -288,6 +289,10 @@
           p {
             font-size: 1.1rem;
             margin: 0.35rem 0.25rem;
+
+            &:nth-of-type(2) {
+              margin: 0.35rem 0 0.25rem 0;
+            }
           }
         }
       }
@@ -343,19 +348,27 @@
         justify-content: space-between;
         padding: 0.5rem 2rem;
         height: 20vh;
-        max-height: 120px;
+        max-height: 90px;
         font-size: 1rem;
 
-        .single-offer__summary-price,
         .single-offer__summary-data {
           width: 100%;
+          display: flex;
           flex-direction: row;
           flex-wrap: nowrap;
           justify-content: space-between;
 
           p {
-            width: auto;
+            width: 30%;
             margin: 0.35rem 0.25rem;
+
+            &.single-offer__summary-data--area {
+              text-align: left;
+            }
+
+            &.single-offer__summary-data--square-meter {
+              text-align: right;
+            }
           }
         }
 
@@ -365,6 +378,10 @@
           p {
             font-size: 1.1rem;
             margin: 0.35rem 0.25rem;
+
+            &:nth-of-type(2) {
+              margin: 0.35rem 0 0.25rem 0;
+            }
           }
         }
       }

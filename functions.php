@@ -269,7 +269,7 @@ function get_offers_from_esti(){
       }
       
       // Custom Fields
-      $main_image = $offer->pictures[0];
+      $main_image = (!empty($offer->pictures[0]) ? $offer->pictures[0] : '');
       $image_01 = (!empty($offer->pictures[1]) ? $offer->pictures[1] : null);
       $image_02 = (!empty($offer->pictures[2]) ? $offer->pictures[2] : null);
       $image_03 = (!empty($offer->pictures[3]) ? $offer->pictures[3] : null);
@@ -328,7 +328,7 @@ function get_offers_from_esti(){
         wp_set_object_terms($existing_offer_id, $transaction_type_tags, 'transakcje');
         wp_set_object_terms($existing_offer_id, $property_type_tags, 'rodzaje');
 
-        $main_image = $offer->pictures[0];
+        $main_image = (!empty($offer->pictures[0]) ? $offer->pictures[0] : '');
         $image_01 = (!empty($offer->pictures[1]) ? $offer->pictures[1] : '');
         $image_02 = (!empty($offer->pictures[2]) ? $offer->pictures[2] : '');
         $image_03 = (!empty($offer->pictures[3]) ? $offer->pictures[3] : '');

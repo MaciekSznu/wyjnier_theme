@@ -24,8 +24,8 @@
           <a href=" . get_permalink() . ">
           <div class='hero-image-description-wrapper'>
             <div class='hero-image-description'>
-              <p class='hero-image-description--city'>" . $summary['miasto'] . " " . $summary['ulica'] . "</p>
-              <p class='hero-image-description--price'>" . number_format($summary['cena'], 2, ',', ' ') . " zł</p>
+              <p class='hero-image-description--city'>" . $summary['miasto'] . ", " . $summary['ulica'] . "</p>
+              <p class='hero-image-description--price'>" . number_format($summary['cena'], 0, '', ' ') . " zł</p>
             </div>
           </div>
           </a>

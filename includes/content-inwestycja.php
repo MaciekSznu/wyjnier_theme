@@ -35,17 +35,12 @@
   </div>
   <div class='single-offer__summary invest'>
     <div class='single-offer__summary-localization'>
-      <p class='single-offer__summary-localization--city'><?php echo $summary['miasto'];?></p>
-      <p class='single-offer__summary-localization--street'><?php echo $summary['dzielnica_inwestycji'];?></p>
+      <p class='single-offer__summary-localization--city'><?php echo $summary['miasto'];?> -&nbsp;<?php echo $summary['dzielnica_inwestycji'];?></p>
     </div>
     <div class='single-offer__summary-data'>
-      <p class='single-offer__summary-data--term'>Termin realizacji: <?php echo $summary['termin_realizacji_inwestycji'];?> r.</p>
-      <p class='single-offer__summary-data--flats'>Liczba mieszkań: <?php echo $summary['liczba_mieszkan'];?></p>
       <p class='single-offer__summary-data--area'>Powierzchnie: <?php echo $summary['powierzchnia_min'];?> - <?php echo $summary['powierzchnia_max'];?> m<sup>2</sup></p>
-    </div>
-    <div class='single-offer__summary-price'>
-      <p class='single-offer__summary-price--total'>Ceny: <?php echo number_format($summary['cena_min'], 0, ',', ' ');?> - <?php echo number_format($summary['cena_max'], 0, ',', ' ');?> zł</p>
-      <p class='single-offer__summary-price--square-meter'>Ceny m<sup>2</sup>: <?php echo number_format($summary['cena_min_m2'], 0, ',', ' ');?> - <?php echo number_format($summary['cena_max_m2'], 0, ',', ' ');?> zł/m<sup>2</sup></p>
+      <p class='single-offer__summary-data--total'>Ceny: <?php echo number_format($summary['cena_min'], 0, ',', ' ');?> - <?php echo number_format($summary['cena_max'], 0, ',', ' ');?> zł</p>
+      <p class='single-offer__summary-data--square-meter'>Ceny m<sup>2</sup>: <?php echo number_format($summary['cena_min_m2'], 0, ',', ' ');?> - <?php echo number_format($summary['cena_max_m2'], 0, ',', ' ');?> zł/m<sup>2</sup></p>
     </div>
   </div>
   <div class='single-offer__description'>
