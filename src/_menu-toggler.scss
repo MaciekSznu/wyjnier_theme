@@ -81,3 +81,26 @@
     display: none;
   }
 }
+
+.phone-cta {
+  position: fixed;
+  bottom: 0;
+  right: 36px;
+  width: 30%;
+  max-width: 30vw;
+  height: 60px;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  &--link {
+    height: 24px;
+    width: 24px;
+    opacity: 0.9;
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}

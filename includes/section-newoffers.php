@@ -14,7 +14,9 @@
         $short_property_name = explode(" ", $property_name)[0];
       ?>
     <div class='new-offers__single-offer'>
-      <div class='new-offers__single-offer--image' style="background-image: url(<?php echo $main_image; ?>)"></div>
+      <a href="<?php the_permalink() ?>">
+        <div class='new-offers__single-offer--image' style="background-image: url(<?php echo $main_image; ?>)"></div>
+      </a>
       <div class='new-offers__single-offer--description'>
         <div class='main-description'>
           <p class='main-description--city'><?php echo $summary['miasto'];?></p>

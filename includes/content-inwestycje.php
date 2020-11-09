@@ -13,7 +13,9 @@
         $property = $description['nieruchomosc'];
       ?>
     <div class='investments__single-offer'>
-      <div class='investments__single-offer--image' style="background-image: url(<?php echo esc_url($url); ?>)"></div>
+      <a class='investments__single-offer--image-link' href="<?php the_permalink() ?>">
+        <div class='investments__single-offer--image' style="background-image: url(<?php echo esc_url($url); ?>)"></div>
+      </a>
       <div class='investments__single-offer--description'>
         <div class='main-description'>
           <p class='main-description--city'><?php echo $summary['miasto'];?></p>

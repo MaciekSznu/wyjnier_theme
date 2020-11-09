@@ -30,8 +30,13 @@
         )
       ); ?>
   </header>
-  <section class='menu__toggler'>
+  <div class='menu__toggler'>
     <button class="hamburger-menu">
       <span class="hamburger-menu-line"></span>
     </button>
-  </section>
+  </div>
+  <div class='phone-cta'>
+    <a class='phone-cta--link' href='tel:733-003-652'>
+      <img class='phone-cta--link-icon' src="<?php bloginfo('template_url'); ?>/images/icons/phone-square-contact.svg" alt="Zadzwoń do nas">
+    </a>
+  </div>

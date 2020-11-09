@@ -102,7 +102,9 @@ function cutstring($string, $delimeter) {
         $short_property_name = explode(" ", $property_name)[0];
       ?>
     <div class='investments__single-offer'>
-      <div class='investments__single-offer--image' style="background-image: url(<?php echo $main_image; ?>)"></div>
+      <a class='investments__single-offer--image-link' href="<?php the_permalink() ?>">
+        <div class='investments__single-offer--image' style="background-image: url(<?php echo $main_image; ?>)"></div>
+      </a>
       <div class='investments__single-offer--description'>
         <div class='main-description'>
           <p class='main-description--city'><?php echo $summary['miasto'];?></p>

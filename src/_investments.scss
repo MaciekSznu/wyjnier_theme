@@ -33,13 +33,19 @@
       height: auto;
       margin-bottom: 2rem;
 
-      &--image {
-        position: relative;
+      .investments__single-offer--image-link {
+        display: block;
         width: 100%;
         height: 80vw;
-        max-height: 400px;
-        background-position: center;
-        background-size: cover;
+
+        .investments__single-offer--image {
+          position: relative;
+          width: 100%;
+          height: 80vw;
+          max-height: 400px;
+          background-position: center;
+          background-size: cover;
+        }
       }
 
       &--description {
@@ -121,7 +127,7 @@
             }
           }
 
-          &--area {
+          &--are.investments__single-offer--image-link {
             .description-icon {
               background-image: url("../images/icons/clone.svg");
             }
@@ -152,8 +158,12 @@
         width: 80%;
         max-width: 560px;
 
-        &--image {
+        .investments__single-offer--image-link {
           height: 45vw;
+
+          .investments__single-offer--image {
+            height: 45vw;
+          }
         }
 
         &--description {
@@ -188,10 +198,16 @@
         max-height: 440px;
         display: flex;
 
-        &--image {
+        .investments__single-offer--image-link {
           width: 40%;
           height: auto;
           min-height: 400px;
+
+          .investments__single-offer--image {
+            width: 100%;
+            height: auto;
+            min-height: 400px;
+          }
         }
 
         &--description {
@@ -250,9 +266,14 @@
         max-height: 400px;
         display: flex;
 
-        &--image {
+        .investments__single-offer--image-link {
           width: 40%;
           height: auto;
+
+          .investments__single-offer--image {
+            width: 100%;
+            height: auto;
+          }
         }
 
         &--description {
