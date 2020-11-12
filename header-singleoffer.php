@@ -12,6 +12,15 @@
   <meta property="og:description" content="Wyjątkowe Nieruchomości - tutaj znajdziesz wyjątkowe oferty nieruchomości z Krakowa, Zakopanego oraz nadmorskich i górskich kurortów.">
   <meta property="og:image" content="<?php bloginfo('template_url'); ?>/images/logos/wyjatkowe_nieruchomosci.jpg">
   <meta name="format-detection" content="telephone=no">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTZE9DEHD0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-TTZE9DEHD0');
+  </script>
   <?php wp_head(); ?>
 </head>
 <body>
