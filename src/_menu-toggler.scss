@@ -82,6 +82,29 @@
   }
 }
 
+.mail-cta {
+  position: fixed;
+  bottom: 0;
+  left: 36px;
+  width: 30%;
+  max-width: 30vw;
+  height: 60px;
+  z-index: 11;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &--link {
+    height: 24px;
+    width: 24px;
+    opacity: 0.9;
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
 .phone-cta {
   position: fixed;
   bottom: 0;
@@ -89,7 +112,7 @@
   width: 30%;
   max-width: 30vw;
   height: 60px;
-  z-index: 10;
+  z-index: 11;
   display: flex;
   justify-content: flex-end;
   align-items: center;

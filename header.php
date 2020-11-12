@@ -30,6 +30,11 @@
         )
       ); ?>
   </header>
+  <div class='mail-cta'>
+    <a class='mail-cta--link' href='mailto:biuro@wyjatkowenieruchomosci.pl'>
+      <img class='mail-cta--link-icon' src="<?php bloginfo('template_url'); ?>/images/icons/envelope-square.svg" alt="Wyślij wiadomość">
+    </a>
+  </div>
   <div class='menu__toggler'>
     <button class="hamburger-menu">
       <span class="hamburger-menu-line"></span>
