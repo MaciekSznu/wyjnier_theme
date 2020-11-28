@@ -110,6 +110,11 @@
   padding-top: 0;
   overflow: hidden;
 
+  @media (min-width: 1024px) {
+    height: calc(100vw / 16 * 9);
+    max-height: calc(100vw / 16 * 9);
+  }
+
   &-carousel {
     .hero-image-wrapper {
       position: relative;
@@ -119,7 +124,8 @@
       overflow: hidden;
 
       @media (min-width: 1024px) {
-        max-height: calc(100vh - #{$desktop-top-bar-height});
+        width: 100vw;
+        height: calc(100vw / 16 * 9);
       }
 
       .hero-image {
@@ -141,15 +147,18 @@
         }
 
         @media (min-width: 1024px) {
-          bottom: 5rem;
+          bottom: unset;
+          top: calc(100% - 128px);
         }
 
         @media (min-width: 1280px) {
-          bottom: 4rem;
+          bottom: unset;
+          top: calc(100% - 320px);
           font-size: 1.25rem;
 
           @media (min-height: 960px) {
-            bottom: 6rem;
+            bottom: unset;
+            top: calc(100% - 288px);
           }
         }
 

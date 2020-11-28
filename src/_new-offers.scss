@@ -182,6 +182,7 @@
   @media (min-width: 1024px) {
     @include flex-center-center;
     flex-direction: column;
+    margin-top: 4rem;
 
     &__wrapper {
       max-width: 1280px;
