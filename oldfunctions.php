@@ -2,7 +2,7 @@
 
 // SCRIPTS AND STYLES
 function scripts(){
-  wp_register_style('style', get_template_directory_uri() . '/dist/app_v2.css', [], 1, 'all');
+  wp_register_style('style', get_template_directory_uri() . '/dist/app.css', [], 1, 'all');
   wp_enqueue_style('style');
 
   wp_register_script('app', get_template_directory_uri() . '/dist/app.js', [], 1, true);
@@ -94,7 +94,6 @@ function search_query(){
   $args = [
     'paged' => $paged,
     'post_type' => 'oferty',
-    'post_status' => 'publish',
     'posts_per_page' => 50,
     'tax_query' => [],
     'meta_query' => [
@@ -150,7 +149,6 @@ add_action('init', 'investment_post_type');
 function new_offers_query(){
   $args = [
     'post_type' => 'oferty',
-    'post_status' => 'publish',
     'post_count' => 3,
     'tax_query' => [],
   ];
@@ -271,7 +269,7 @@ function get_offers_from_esti(){
       }
       
       // Custom Fields
-      $main_image = (!empty($offer->pictures[0]) ? $offer->pictures[0] : '');
+      $main_image = $offer->pictures[0];
       $image_01 = (!empty($offer->pictures[1]) ? $offer->pictures[1] : null);
       $image_02 = (!empty($offer->pictures[2]) ? $offer->pictures[2] : null);
       $image_03 = (!empty($offer->pictures[3]) ? $offer->pictures[3] : null);
@@ -330,7 +328,7 @@ function get_offers_from_esti(){
         wp_set_object_terms($existing_offer_id, $transaction_type_tags, 'transakcje');
         wp_set_object_terms($existing_offer_id, $property_type_tags, 'rodzaje');
 
-        $main_image = (!empty($offer->pictures[0]) ? $offer->pictures[0] : '');
+        $main_image = $offer->pictures[0];
         $image_01 = (!empty($offer->pictures[1]) ? $offer->pictures[1] : '');
         $image_02 = (!empty($offer->pictures[2]) ? $offer->pictures[2] : '');
         $image_03 = (!empty($offer->pictures[3]) ? $offer->pictures[3] : '');
